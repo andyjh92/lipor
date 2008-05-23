@@ -9,6 +9,10 @@ import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 
+import rjPokerReplay.actions.ShowViewAction;
+import rjPokerReplay.views.ViewHandhistory;
+import rjPokerReplay.views.ViewTableinfo;
+
 /**
  * An action bar advisor is responsible for creating, adding, and disposing of
  * the actions added to a workbench window. Each window will be populated with
@@ -21,9 +25,12 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	// in the fill methods. This ensures that the actions aren't recreated
 	// when fillActionBars is called with FILL_PROXY.
 	private IWorkbenchAction exitAction;
-	private FileOpenAction openFileAction;
+	private IWorkbenchAction importAction;
 	private IWorkbenchAction helpAction;
 	private IWorkbenchAction aboutAction;
+	private IWorkbenchAction preferenceAction;
+	private ShowViewAction showHandhistoryViewAction;
+	private ShowViewAction showTableinfoViewAction;
 
 	public ApplicationActionBarAdvisor(IActionBarConfigurer configurer) {
 		super(configurer);
@@ -40,8 +47,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		exitAction = ActionFactory.QUIT.create(window);
 		register(exitAction);
 		
-		openFileAction = new FileOpenAction(window); // TODO durch Importdialog ersetzen
-		register(openFileAction);
+		importAction = ActionFactory.IMPORT.create(window);
+		register(importAction);
 		
 		helpAction = ActionFactory.HELP_CONTENTS.create(window);
 		register(helpAction);
@@ -49,15 +56,30 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		aboutAction = ActionFactory.ABOUT.create(window);
 		register(aboutAction);
 		
+		preferenceAction = ActionFactory.PREFERENCES.create(window);
+		register(preferenceAction);
 		
+		showHandhistoryViewAction = new ShowViewAction(window, "Handhistory", ViewHandhistory.ID);
+		showHandhistoryViewAction.show(false);
+		register(showHandhistoryViewAction);
+		
+		showTableinfoViewAction = new ShowViewAction(window, "Tischinformations", ViewTableinfo.ID);
+		showTableinfoViewAction.show(true);
+		register(showTableinfoViewAction);
 	}
 
 	protected void fillMenuBar(IMenuManager menuBar) {
 		MenuManager fileMenu = new MenuManager("&File",  
 				IWorkbenchActionConstants.M_FILE);
 		menuBar.add(fileMenu);
-		fileMenu.add(openFileAction);
+		fileMenu.add(importAction);
 		fileMenu.add(exitAction);
+		
+		MenuManager windowMenu = new MenuManager("&Window", IWorkbenchActionConstants.M_WINDOW);
+		windowMenu.add(showHandhistoryViewAction);
+		windowMenu.add(showTableinfoViewAction);
+		windowMenu.add(preferenceAction);
+		menuBar.add(windowMenu);
 		
 		MenuManager helpMenu = new MenuManager("&Help",  
 				IWorkbenchActionConstants.M_HELP);
@@ -65,5 +87,5 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		helpMenu.add(helpAction);
 		helpMenu.add(aboutAction);
 	}
-    
+   
 }

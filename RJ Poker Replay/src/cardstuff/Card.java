@@ -21,7 +21,9 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.widgets.Display;
 
-import rjPokerReplay.View;
+import rjPokerReplay.ApplicationWorkbenchAdvisor;
+import rjPokerReplay.Constants;
+import rjPokerReplay.views.ViewTable;
 import cardstuffExceptions.CardIllegalSuitException;
 import cardstuffExceptions.CardIllegalValueException;
 
@@ -281,75 +283,187 @@ public class Card {
 
 		// String mit dem Dateinamen erstellen
 		// Der Wert
-		switch (value) {
-		case 2:
-			ret = "2_"; //$NON-NLS-1$
-			break;
-		case 3:
-			ret = "3_"; //$NON-NLS-1$
-			break;
-		case 4:
-			ret = "4_"; //$NON-NLS-1$
-			break;
-		case 5:
-			ret = "5_"; //$NON-NLS-1$
-			break;
-		case 6:
-			ret = "6_"; //$NON-NLS-1$
-			break;
-		case 7:
-			ret = "7_"; //$NON-NLS-1$
-			break;
-		case 8:
-			ret = "8_"; //$NON-NLS-1$
-			break;
-		case 9:
-			ret = "9_"; //$NON-NLS-1$
-			break;
-		case 10:
-			ret = "10_"; //$NON-NLS-1$
-			break;
-		case 11:
-			ret = "11_"; //$NON-NLS-1$
-			break;
-		case 12:
-			ret = "12_"; //$NON-NLS-1$
-			break;
-		case 13:
-			ret = "13_"; //$NON-NLS-1$
-			break;
-		case 14:
-			ret = "1_"; //$NON-NLS-1$
-			break;
-		default:
+//		switch (value) {
+//		case 2:
+//			ret = "2_"; //$NON-NLS-1$
+//			break;
+//		case 3:
+//			ret = "3_"; //$NON-NLS-1$
+//			break;
+//		case 4:
+//			ret = "4_"; //$NON-NLS-1$
+//			break;
+//		case 5:
+//			ret = "5_"; //$NON-NLS-1$
+//			break;
+//		case 6:
+//			ret = "6_"; //$NON-NLS-1$
+//			break;
+//		case 7:
+//			ret = "7_"; //$NON-NLS-1$
+//			break;
+//		case 8:
+//			ret = "8_"; //$NON-NLS-1$
+//			break;
+//		case 9:
+//			ret = "9_"; //$NON-NLS-1$
+//			break;
+//		case 10:
+//			ret = "10_"; //$NON-NLS-1$
+//			break;
+//		case 11:
+//			ret = "11_"; //$NON-NLS-1$
+//			break;
+//		case 12:
+//			ret = "12_"; //$NON-NLS-1$
+//			break;
+//		case 13:
+//			ret = "13_"; //$NON-NLS-1$
+//			break;
+//		case 14:
+//			ret = "1_"; //$NON-NLS-1$
+//			break;
+//		default:
+//			throw new CardIllegalValueException();
+//		}
+//
+//		// Farbe der Karte hinzufügen
+//		switch (suit) {
+//		case 'D':
+//			ret = ret + "1.png"; //$NON-NLS-1$
+//			break;
+//		case 'H':
+//			ret = ret + "4.png"; //$NON-NLS-1$
+//			break;
+//		case 'C':
+//			ret = ret + "2.png"; //$NON-NLS-1$
+//			break;
+//		case 'S':
+//			ret = ret + "3.png"; //$NON-NLS-1$
+//			break;
+//		case 'B':
+//			ret = "back_red_casino.gif"; //$NON-NLS-1$
+//			break;
+//		default:
+//			throw new CardIllegalSuitException();
+//		}
+//
+//		// und Dateiendung und Pfad einfügen
+//		ret = "images/" + ret; //$NON-NLS-1$
+		
+		// passende Konstante zum Kartenwert ermitteln
+		if (suit == 'B') {
+			ret = Constants.IMG_CARD_BACK;
+		} else if (suit == 'D' && value == 2) {
+			ret = Constants.IMG_CARD_DIAMOND_TWO; 
+		} else if (suit == 'D' && value == 3) {
+			ret = Constants.IMG_CARD_DIAMOND_THREE; 
+		} else if (suit == 'D' && value == 4) {
+			ret = Constants.IMG_CARD_DIAMOND_FOUR; 
+		} else if (suit == 'D' && value == 5) {
+			ret = Constants.IMG_CARD_DIAMOND_FIVE; 
+		} else if (suit == 'D' && value == 6) {
+			ret = Constants.IMG_CARD_DIAMOND_SIX; 
+		} else if (suit == 'D' && value == 7) {
+			ret = Constants.IMG_CARD_DIAMOND_SEVEN; 
+		} else if (suit == 'D' && value == 8) {
+			ret = Constants.IMG_CARD_DIAMOND_EIGHT; 
+		} else if (suit == 'D' && value == 9) {
+			ret = Constants.IMG_CARD_DIAMOND_NINE; 
+		} else if (suit == 'D' && value == 10) {
+			ret = Constants.IMG_CARD_DIAMOND_TEN; 
+		} else if (suit == 'D' && value == 11) {
+			ret = Constants.IMG_CARD_DIAMOND_JACK; 
+		} else if (suit == 'D' && value == 12) {
+			ret = Constants.IMG_CARD_DIAMOND_QUEEN; 
+		} else if (suit == 'D' && value == 13) {
+			ret = Constants.IMG_CARD_DIAMOND_KING; 
+		} else if (suit == 'D' && value == 14) {
+			ret = Constants.IMG_CARD_DIAMOND_ASS; 
+		} else if (suit == 'H' && value == 2) {
+			ret = Constants.IMG_CARD_HART_TWO; 
+		} else if (suit == 'H' && value == 3) {
+			ret = Constants.IMG_CARD_HART_THREE; 
+		} else if (suit == 'H' && value == 4) {
+			ret = Constants.IMG_CARD_HART_FOUR; 
+		} else if (suit == 'H' && value == 5) {
+			ret = Constants.IMG_CARD_HART_FIVE; 
+		} else if (suit == 'H' && value == 6) {
+			ret = Constants.IMG_CARD_HART_SIX; 
+		} else if (suit == 'H' && value == 7) {
+			ret = Constants.IMG_CARD_HART_SEVEN; 
+		} else if (suit == 'H' && value == 8) {
+			ret = Constants.IMG_CARD_HART_EIGHT; 
+		} else if (suit == 'H' && value == 9) {
+			ret = Constants.IMG_CARD_HART_NINE; 
+		} else if (suit == 'H' && value == 10) {
+			ret = Constants.IMG_CARD_HART_TEN; 
+		} else if (suit == 'H' && value == 11) {
+			ret = Constants.IMG_CARD_HART_JACK; 
+		} else if (suit == 'H' && value == 12) {
+			ret = Constants.IMG_CARD_HART_QUEEN; 
+		} else if (suit == 'H' && value == 13) {
+			ret = Constants.IMG_CARD_HART_KING; 
+		} else if (suit == 'H' && value == 14) {
+			ret = Constants.IMG_CARD_HART_ASS; 
+		} else if (suit == 'S' && value == 2) {
+			ret = Constants.IMG_CARD_SPADE_TWO; 
+		} else if (suit == 'S' && value == 3) {
+			ret = Constants.IMG_CARD_SPADE_THREE; 
+		} else if (suit == 'S' && value == 4) {
+			ret = Constants.IMG_CARD_SPADE_FOUR; 
+		} else if (suit == 'S' && value == 5) {
+			ret = Constants.IMG_CARD_SPADE_FIVE; 
+		} else if (suit == 'S' && value == 6) {
+			ret = Constants.IMG_CARD_SPADE_SIX; 
+		} else if (suit == 'S' && value == 7) {
+			ret = Constants.IMG_CARD_SPADE_SEVEN; 
+		} else if (suit == 'S' && value == 8) {
+			ret = Constants.IMG_CARD_SPADE_EIGHT; 
+		} else if (suit == 'S' && value == 9) {
+			ret = Constants.IMG_CARD_SPADE_NINE; 
+		} else if (suit == 'S' && value == 10) {
+			ret = Constants.IMG_CARD_SPADE_TEN; 
+		} else if (suit == 'S' && value == 11) {
+			ret = Constants.IMG_CARD_SPADE_JACK; 
+		} else if (suit == 'S' && value == 12) {
+			ret = Constants.IMG_CARD_SPADE_QUEEN; 
+		} else if (suit == 'S' && value == 13) {
+			ret = Constants.IMG_CARD_SPADE_KING; 
+		} else if (suit == 'S' && value == 14) {
+			ret = Constants.IMG_CARD_SPADE_ASS; 
+		} else if (suit == 'C' && value == 2) {
+			ret = Constants.IMG_CARD_CLUB_TWO; 
+		} else if (suit == 'C' && value == 3) {
+			ret = Constants.IMG_CARD_CLUB_THREE; 
+		} else if (suit == 'C' && value == 4) {
+			ret = Constants.IMG_CARD_CLUB_FOUR; 
+		} else if (suit == 'C' && value == 5) {
+			ret = Constants.IMG_CARD_CLUB_FIVE; 
+		} else if (suit == 'C' && value == 6) {
+			ret = Constants.IMG_CARD_CLUB_SIX; 
+		} else if (suit == 'C' && value == 7) {
+			ret = Constants.IMG_CARD_CLUB_SEVEN; 
+		} else if (suit == 'C' && value == 8) {
+			ret = Constants.IMG_CARD_CLUB_EIGHT; 
+		} else if (suit == 'C' && value == 9) {
+			ret = Constants.IMG_CARD_CLUB_NINE; 
+		} else if (suit == 'C' && value == 10) {
+			ret = Constants.IMG_CARD_CLUB_TEN; 
+		} else if (suit == 'C' && value == 11) {
+			ret = Constants.IMG_CARD_CLUB_JACK; 
+		} else if (suit == 'C' && value == 12) {
+			ret = Constants.IMG_CARD_CLUB_QUEEN; 
+		} else if (suit == 'C' && value == 13) {
+			ret = Constants.IMG_CARD_CLUB_KING; 
+		} else if (suit == 'C' && value == 14) {
+			ret = Constants.IMG_CARD_CLUB_ASS; 
+		} else {
 			throw new CardIllegalValueException();
 		}
-
-		// Farbe der Karte hinzufügen
-		switch (suit) {
-		case 'D':
-			ret = ret + "1.png"; //$NON-NLS-1$
-			break;
-		case 'H':
-			ret = ret + "4.png"; //$NON-NLS-1$
-			break;
-		case 'C':
-			ret = ret + "2.png"; //$NON-NLS-1$
-			break;
-		case 'S':
-			ret = ret + "3.png"; //$NON-NLS-1$
-			break;
-		case 'B':
-			ret = "back_red_casino.gif"; //$NON-NLS-1$
-			break;
-		default:
-			throw new CardIllegalSuitException();
-		}
-
-		// und Dateiendung und Pfad einfügen
-		ret = "images/" + ret; //$NON-NLS-1$
-
-		ImageData imgData = new ImageData(View.class.getClassLoader().getResourceAsStream(ret));
+		
+//		ImageData imgData = new ImageData(View.class.getClassLoader().getResourceAsStream(ret));
+		ImageData imgData = ApplicationWorkbenchAdvisor.getImageStore().get(ret).getImageData();
 		Image image = new Image(Display.getCurrent(), imgData);
 		return image;
 	}
@@ -421,7 +535,7 @@ public class Card {
 	}
 	
 	public static Image getImageBack() {
-		ImageData imgData = new ImageData(View.class.getClassLoader().getResourceAsStream("images/back_red_casino.gif"));
+		ImageData imgData = new ImageData(ViewTable.class.getClassLoader().getResourceAsStream("images/back_red_casino.gif"));
 		Image image = new Image(Display.getCurrent(), imgData);
 		return image;
 	}

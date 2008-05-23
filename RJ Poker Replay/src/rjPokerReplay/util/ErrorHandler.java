@@ -10,7 +10,7 @@
  * if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA
  *
  */
-package rjPokerReplay;
+package rjPokerReplay.util;
 
 /**
  * @author Ralf Joswig

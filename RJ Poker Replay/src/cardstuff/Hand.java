@@ -51,6 +51,9 @@ public class Hand extends Table {
 	 **************************************************************************/
 	// Array mit den einzelnen Aktionen
 	private ArrayList<Action> actionlist = new ArrayList<Action>();
+	
+	// Array mit den original Zeilen der Handhistorie
+	private ArrayList<String> FileLines = new ArrayList<String>();
 
 	/***************************************************************************
 	 * Konstruktoren
@@ -187,5 +190,23 @@ public class Hand extends Table {
 	 */
 	public int getCountOfActions() {
 		return actionlist.size();
+	}
+	
+	/**
+	 * Gibt eine ArrayListe mit den gespeicherten original Zeilen der Handhistorie zurück
+	 * 
+	 * @return Eine String-Array-Liste mit den Zeilen der Handhistorie
+	 */
+	public ArrayList<String> getFileLines() {
+		return FileLines;
+	}
+	
+	/**
+	 * Hängt eine Zeile an die Liste der Zeilen aus der Handhistorie an
+	 * 
+	 * @param line Die anzuhängende Zeile
+	 */
+	public void addLineToFileLines(String line) {
+		FileLines.add(line);
 	}
 }

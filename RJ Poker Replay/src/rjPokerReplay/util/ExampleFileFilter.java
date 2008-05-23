@@ -38,7 +38,7 @@
  * @(#)ExampleFileFilter.java	1.16 04/07/26
  */
 
-package rjPokerReplay;
+package rjPokerReplay.util;
 
 import java.io.File;
 import java.util.Enumeration;

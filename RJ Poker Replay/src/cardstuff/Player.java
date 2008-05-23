@@ -12,7 +12,7 @@
  */
 package cardstuff;
 
-import rjPokerReplay.ErrorHandler;
+import rjPokerReplay.util.ErrorHandler;
 import cardstuffExceptions.PlayerDoubleCardException;
 import cardstuffExceptions.PlayerException;
 import cardstuffExceptions.PlayerIllegalChipsException;
@@ -368,5 +368,24 @@ public class Player {
 		}
 		
 		return ret;
+	}
+	
+	/**
+	 * Tauscht die aktuellen Pocketkarten gegen zwei neue.
+	 * Darf eigendlich nur verwendet werden um anonyme Karten gegen die tatsächliche zu tauschen
+	 * 
+	 * @param card1 Die erste neue Karte
+	 * @param card2 Die zwiete neue Karte
+	 * @throws PlayerToMuchPocketCards
+	 * @throws PlayerDoubleCardException
+	 */
+	public void replacePoketCards(Card card1, Card card2) throws PlayerToMuchPocketCards, PlayerDoubleCardException {
+		// alte Karten entfernen
+		pocketCards[0] = null;
+		pocketCards[1] = null;
+		
+		// neue Karten hinzufügen
+		addPocketCard(card1);
+		addPocketCard(card2);
 	}
 }

@@ -17,7 +17,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import rjPokerReplay.FileUtil;
+import rjPokerReplay.util.ErrorHandler;
+import rjPokerReplay.util.FileUtil;
 
 import cardstuffExceptions.HandhistoryException;
 
@@ -50,29 +51,33 @@ public abstract class Handhistory {
 	 * @throws IOException 
 	 */
 	public static int getKind(String path) throws IOException {
-		BufferedReader inputFile;
+		BufferedReader inputFile = null;
 		int fileType = -1;
-		// pr�fen ob die Datei existiert
+		// prüfen ob die Datei existiert
 		if (!FileUtil.checkFileExists(path))
 		{
-			// nein, 
-			throw new FileNotFoundException();
+			// nein 
+			ErrorHandler.handleError(new FileNotFoundException(), "File not exist", false);
 		}
 		
-		try
-		{
-			inputFile = new BufferedReader( new FileReader(path) );
-		} catch (IOException e){
-			throw new IOException();
-		}
-		String line = "";
-		while ("".equals(line)) {
-			line = inputFile.readLine();
-		}
-		if (line.startsWith("PokerStars")) { 
-			fileType = POKERSTARS;
-		} else {
-			fileType = UNKNOWN;
+		// beinhaltet der Pfad einen Dateinamen
+		if (!path.endsWith(System.getProperty("file.separator"))) {
+			// ja, dann prüfen zu welchem Typ die Kennung passt
+			try
+			{
+				inputFile = new BufferedReader( new FileReader(path) );
+			} catch (IOException e){
+				ErrorHandler.handleError(new FileNotFoundException(), "File not exist", false);
+			}
+			String line = "";
+			while ("".equals(line)) {
+				line = inputFile.readLine();
+			}
+			if (line.startsWith("PokerStars")) { 
+				fileType = POKERSTARS;
+			} else {
+				fileType = UNKNOWN;
+			}
 		}
 		return fileType;
 	}

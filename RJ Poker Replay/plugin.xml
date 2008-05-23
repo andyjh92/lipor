@@ -22,9 +22,22 @@
    <extension
          point="org.eclipse.ui.views">
       <view
-            class="rjPokerReplay.View"
-            id="RjPokerReplay.view"
-            name="View">
+            allowMultiple="false"
+            class="rjPokerReplay.views.ViewTable"
+            id="RjPokerReplay.ViewTable"
+            name="TableView">
+      </view>
+      <view
+            allowMultiple="false"
+            class="rjPokerReplay.views.ViewHandhistory"
+            id="RJPoker Replay.Handhistory"
+            name="Handhistory">
+      </view>
+      <view
+            allowMultiple="false"
+            class="rjPokerReplay.views.ViewTableinfo"
+            id="RJPoker Replay.ViewTableinfo"
+            name="TableinfoView">
       </view>
    </extension>
    <extension
@@ -38,10 +51,105 @@
                value="icons/alt_window_16.gif,icons/alt_window_32.gif">
          </property>
          <property
-               name="appName"
+               name="Rj Poker Replay"
                value="RJ Poker Replay">
          </property>
       </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="RJ Poker Replay.HandAction"
+            label="HandAction"
+            visible="true">
+         <action
+               allowLabelUpdate="false"
+               class="rjPokerReplay.actions.HandActionHandBack"
+               icon="icons/player_start.png"
+               id="RJ Poker Replay.HandStart"
+               label="Back to start of hand"
+               style="push"
+               toolbarPath="handActions\1"
+               tooltip="go back to the beginninf of the hand">
+         </action>
+         <action
+               allowLabelUpdate="false"
+               class="rjPokerReplay.actions.HandActionStepBack"
+               icon="icons/player_rew.png"
+               id="RJ Poker Replay.StepBack"
+               label="One step back"
+               style="push"
+               toolbarPath="handActions\2"
+               tooltip="go one step back in hand">
+         </action>
+         <action
+               allowLabelUpdate="false"
+               class="rjPokerReplay.actions.HandActionNextStep"
+               icon="icons/player_fwd.png"
+               id="RJ Poker Replay.StepForward"
+               label="One step forward"
+               style="push"
+               toolbarPath="handActions\3"
+               tooltip="go one step forward in hand">
+         </action>
+         <action
+               allowLabelUpdate="false"
+               class="rjPokerReplay.actions.HandActionNextHand"
+               icon="icons/player_end.png"
+               id="RJ Poker Replay.HandNext"
+               label="Forward to next hand"
+               style="push"
+               toolbarPath="handActions\4"
+               tooltip="go to next hand">
+         </action>
+         <action
+               allowLabelUpdate="false"
+               class="rjPokerReplay.actions.HandActionNextOwnAction"
+               icon="icons/player_eject.png"
+               id="RJ Poker Replay.OwnAction"
+               label="next own action"
+               style="push"
+               toolbarPath="handActions\5"
+               tooltip="next action of the player">
+         </action>
+         <action
+               allowLabelUpdate="true"
+               class="rjPokerReplay.actions.HandActionAutoplay"
+               icon="icons/player_play.png"
+               id="RJ Poker Replay.Autoplay"
+               label="autoplay"
+               style="push"
+               toolbarPath="handActions\6"
+               tooltip="play alle steps autom.">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="rjPokerReplay.preferences.PreferencePagePokerstars"
+            id="rjpokerreplay.preferences.PreferencePagePokerstars"
+            name="Pokerstars">
+      </page>
+      <page
+            class="rjPokerReplay.preferences.PreferenceGeneral"
+            id="RJ Poker Replay.General"
+            name="General">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="rjPokerReplay.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <wizard
+            class="rjPokerReplay.wizard.Pokerstars"
+            id="RJ Poker Replay.pokerstars"
+            name="Pokerstars">
+      </wizard>
    </extension>
 
 </plugin>

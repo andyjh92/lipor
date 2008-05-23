@@ -14,7 +14,7 @@ package cardstuff;
 
 import java.util.Calendar;
 
-import rjPokerReplay.ErrorHandler;
+import rjPokerReplay.util.ErrorHandler;
 
 import cardstuffExceptions.CardException;
 import cardstuffExceptions.HandException;
@@ -412,7 +412,7 @@ public class Table {
 		}
 
 		// wurde die geforderte Anzahl an Karten übergeben
-		if (cardCount < 3 || cardCount > 5) {
+		if (cardCount != 0 && cardCount != 3 && cardCount != 4 && cardCount != 5) {
 			throw new HandIllegalCardCountException(
 					"Dem Board müssen 3, 4 oder 5 Katen hinzugefügt werden.");
 		}

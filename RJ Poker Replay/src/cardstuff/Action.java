@@ -78,6 +78,9 @@ public class Action {
 	// Showdown
 	public static final int SHOWDOWN = 17;
 	
+	// Ante
+	public static final int ANTE = 18;
+	
 	/***************************************************************************
 	 * Instanz Eigenschaften
 	 **************************************************************************/
@@ -177,7 +180,8 @@ public class Action {
 		      action != MUCK &&
 		      action != SAY &&
 		      action != SMALL_AND_BIGBLIND &&
-		      action != SHOWDOWN) {
+		      action != SHOWDOWN &&
+		      action != ANTE) {
 			throw new ActionIllegalActionException();
 		}
 
@@ -221,6 +225,9 @@ public class Action {
 		case BIGBLIND:
 			ret = player.getName() + ": posts big blind " + String.valueOf(value); 
 			break;
+		case ANTE:
+			ret = player.getName() + ": posts ante " + String.valueOf(value); 
+			break;			
 		case SMALL_AND_BIGBLIND:
 			ret = player.getName() + " small & big blinds " + String.valueOf(value);
 			break;
@@ -234,7 +241,7 @@ public class Action {
 			ret = player.getName() + ": calls " + String.valueOf(value); 
 			break;			
 		case RAISE:
-			ret = player.getName() + ": raise " + String.valueOf(value); 
+			ret = player.getName() + ": raise to " + String.valueOf(value); 
 			break;
 		case DEAL:
 			ret = player.getName() + ": get Card " + value.toString(); 
@@ -291,6 +298,7 @@ public class Action {
 		case SMALLBLIND:
 		case BIGBLIND:
 		case COLLECT:
+		case ANTE:
 			if (player == null || value == null || !(value instanceof Double)) {
 				throw new ActionMissingParameterException();
 			}

@@ -30,8 +30,7 @@ import java.util.GregorianCalendar;
 import java.util.StringTokenizer;
 import java.util.TimeZone;
 
-import rjPokerReplay.ErrorHandler;
-
+import rjPokerReplay.util.ErrorHandler;
 import cardstuffExceptions.ActionException;
 import cardstuffExceptions.ActionIllegalActionException;
 import cardstuffExceptions.ActionIllegalValueException;
@@ -90,8 +89,6 @@ public class HandhistoryPokerstars extends Handhistory {
 			// Datei öffen
 			inputFile = new BufferedReader( new FileReader(path) );
 			
-//String[] ssIDs = TimeZone.getAvailableIDs();
-//for( int i=0; i<ssIDs.length; i++ )  System.out.println( ssIDs[i] );			
 			// Eingabedatei Zeile fuer Zeile lesen
 	        while ( (input = inputFile.readLine()) != null) {
 	        	// leere Zeilen überlesen
@@ -109,10 +106,8 @@ public class HandhistoryPokerstars extends Handhistory {
 	        		convertSeat(input, hand);
 	        	} else if (input.startsWith("Seat")) { //$NON-NLS-1$
 	        		// Nix zu tun, nur Texthinweis zum Schowdown
-	        	} else if (input.startsWith("*** HOLE CARDS ***")) { //$NON-NLS-1$
-	        		// Nix zu tun, nur Texthinweis
-	        	} else if (input.startsWith("*** SUMMARY ***")) { //$NON-NLS-1$
-	        		// Nix zu tun, nur Texthinweis
+	        	} else if (input.startsWith("***")) { //$NON-NLS-1$
+	        		convertSektionInfo(input, hand);
 	        	} else if (input.startsWith("Board")) { //$NON-NLS-1$
 	        		// Nix zu tun, nur Texthinweis
 	        	} else if (input.startsWith("Total pot ")) { //$NON-NLS-1$
@@ -124,8 +119,12 @@ public class HandhistoryPokerstars extends Handhistory {
 	        	} else if (!skip) {
 	        		convertAction(input, hand);
 	        	} else {
-	        		System.out.println(input);
+	        		System.out.println("Unbekannt (haupt): " + input);
 	        	}
+	        	
+
+	        	// Zeile an Liste der original Zeilen anfügen
+	        	hand.addLineToFileLines(input);
         	}
 		}
 		catch (IOException e) {
@@ -178,6 +177,9 @@ public class HandhistoryPokerstars extends Handhistory {
 		text = tokenizer.nextToken();
 		if (text.startsWith("$")) { //$NON-NLS-1$
 			text = text.substring(1, text.length());
+		}
+		if (text.endsWith(".")) {
+			text = text.substring(0, text.length() - 1);
 		}
 		hand.setRake(Double.valueOf(text));
 	}
@@ -237,27 +239,48 @@ public class HandhistoryPokerstars extends Handhistory {
 	 */
 	private void convertAction(String input, Hand hand) throws PlayerMissingNameException, HandhistoryIllegalFormatException, ActionIllegalActionException, PlayerMissingException, ActionIllegalValueException, HandIllegalCardCountException, CardException, PlayerToMuchPocketCards, PlayerDoubleCardException, PlayerIllegalStateException {
 		StringTokenizer tokenizer = new StringTokenizer(input);
-		
+
 		// Spieler ermitteln
-		String name = tokenizer.nextToken();
-		while (!name.endsWith(":") && !"***".equals(name) && tokenizer.hasMoreTokens()) { //$NON-NLS-1$
-			name = name + " " + tokenizer.nextToken();
+		String text = tokenizer.nextToken();
+		String name = "";
+		while (!text.equals("calls") &&
+				!text.equals("folds") &&
+				!text.equals("raises") &&
+				!text.equals("posts") &&
+				!text.equals("bets") &&
+				!text.equals("checks") &&
+				!text.equals("is") &&
+				!text.equals("collected") &&
+				!text.equals("doesn't") &&
+				!text.equals("shows") &&
+				!text.equals("mucks") &&
+				!text.equals("joins") &&
+				!text.equals("said,") &&
+				!text.equals("has") &&
+				!text.equals("leaves") &&
+				!text.equals("sits") &&
+				!text.equals("was") &&
+				tokenizer.hasMoreTokens()) {
+			name = name + " " + text;
+			text = tokenizer.nextToken();
 		}
-		if (!tokenizer.hasMoreElements()) {
-			tokenizer = new StringTokenizer(input);
-			name = tokenizer.nextToken();	
+		name = name.trim();
+		if ("is".equals(text)) {
+			text = tokenizer.nextToken();
+			if (!"disconnected".equals(text) && !"connected".equals(text) && !"capped".equals(text)) {
+				text = text + tokenizer.nextToken();
+			}
 		}
 
 		if (name.endsWith(":")) { //$NON-NLS-1$
 			name = name.substring(0, name.length() - 1);
 		}
-		Player player = hand.getPlayerByName(name);
+		Player player = null;
+		if (name != null && !"".equals(name)) {
+			player = hand.getPlayerByName(name);
+		}
 		
 		// macht was
-		String text = ""; //$NON-NLS-1$
-		if (tokenizer.hasMoreTokens()) {
-			text = tokenizer.nextToken();
-		}
 		int action = 0;
 		if ("calls".equals(text)) { //$NON-NLS-1$
 			action = Action.CALL;
@@ -265,20 +288,25 @@ public class HandhistoryPokerstars extends Handhistory {
 			action = Action.FOLD;
 		} else if ("raises".equals(text)) { //$NON-NLS-1$
 			action = Action.RAISE;
+			// den Wert um wieviel erhöht wird überlesen
+			text = tokenizer.nextToken();
+			// das Wort "to" überlesen
+			text = tokenizer.nextToken();
 		} else if ("posts".equals(text)) { //$NON-NLS-1$
 			// Art des Blinds ermitteln
 			String blindtype = tokenizer.nextToken();
-			// nachtes Wort ist entweder "blind" oder "&" 
+			// nachtes Wort ist entweder "blind" oder "&" oder "ante" 
 			text = tokenizer.nextToken();
 			if ("small".equals(blindtype) && "&".equals(text)) { //$NON-NLS-1$
 				action = Action.SMALL_AND_BIGBLIND;
 				text = tokenizer.nextToken();
 				text = tokenizer.nextToken();
-			}
-			else  if ("small".equals(blindtype)) { //$NON-NLS-1$
+			} else  if ("small".equals(blindtype)) { //$NON-NLS-1$
 				action = Action.SMALLBLIND;
 			} else if ("big".equals(blindtype)) { //$NON-NLS-1$
 				action = Action.BIGBLIND;
+			} else if ("the".equals(blindtype) && "ante".equals(text)) { //$NON-NLS-1$
+				action = Action.ANTE;
 			} else {
 				throw new HandhistoryIllegalFormatException();
 			}
@@ -286,17 +314,6 @@ public class HandhistoryPokerstars extends Handhistory {
 			action = Action.BET;
 		} else if ("collected".equals(text)) { //$NON-NLS-1$
 			action = Action.COLLECT;
-		} else if ("FLOP".equals(text)) { //$NON-NLS-1$
-			action = Action.FLOP;
-			addBoard(input, hand);
-		} else if ("TURN".equals(text)) { //$NON-NLS-1$
-			action = Action.TURN;
-			addBoard(input, hand);
-		} else if ("RIVER".equals(text)) { //$NON-NLS-1$
-			action = Action.RIVER;
-			addBoard(input, hand);
-		} else if ("SHOW".equals(text)) { //$NON-NLS-1$
-				action = Action.SHOWDOWN;
 		} else if ("doesn't".equals(text)) { //$NON-NLS-1$
 			// Nix zu tun, einer tut einfach was nicht
 		} else if ("checks".equals(text)) { //$NON-NLS-1$
@@ -325,18 +342,9 @@ public class HandhistoryPokerstars extends Handhistory {
 					ErrorHandler.handleError(e, "Fehler beim Hinzufügen der gezeigten Karten", false);
 				}
 			}
-		} else if ("is".equals(text)){ //$NON-NLS-1$
-			if (tokenizer.hasMoreTokens()) {
-				text = text + tokenizer.nextToken();
-			} else {
-				System.out.println("Unbekannt 2: " + input);
-			}
-			if (tokenizer.hasMoreTokens()) {
-				text = text + tokenizer.nextToken();
-			} else {
-				System.out.println("Unbekannt 2: " + input);
-			}
-			if ("issittingout".equals(text)) { //$NON-NLS-1$
+		} else if ("sittingout".equals(text) || "sits".equals(text)) { //$NON-NLS-1$
+			if (player != null) {
+				// nur wenn der Spieler bereits am Tisch sitzt, muss wir ihn aussetzen lassen
 				hand.getPlayerByName(name).setState(Player.SITTINGOUT);
 			}
 		} else if ("mucks".equals(text)) { //$NON-NLS-1$
@@ -348,8 +356,26 @@ public class HandhistoryPokerstars extends Handhistory {
 			}
 		} else if ("said,".equals(text)) {  //$NON-NLS-1$
 			action = Action.SAY;
+		} else if ("joins".equals(text)) {  //$NON-NLS-1$
+			// Spieler setzt sich an den Tisch, wird erst mit der nächsten Hand interessant
+		} else if (input.endsWith("will be allowed to play after the button")) {  //$NON-NLS-1$
+			// Neuer Spieler darf erst nach dem Button spielen, also nix für diese Hand
+		} else if (input.endsWith("has timed out")) {  //$NON-NLS-1$
+			// Zeitüberschreitung für Spieler, danach kommt Meldung über Fold, deshalb ist die hier ohne Bedeutung
+		} else if (input.endsWith("has timed out while being disconnected")) {  //$NON-NLS-1$
+			// Zeitüberschreitung für Spieler, danach kommt Meldung über Fold, deshalb ist die hier ohne Bedeutung
+		} else if (input.endsWith("is connected ")) {  //$NON-NLS-1$
+			// Spieler hat die Verbindung wieder aufgenommen, reine Info-Meldung
+		} else if (input.endsWith("is disconnected ")) {  //$NON-NLS-1$
+			// Spieler hat die Verbindung verlohren, reine Info-Meldung
+		} else if (input.endsWith("leaves the table")) {  //$NON-NLS-1$
+			// Spieler verläßt den Tisch
+		} else if (input.endsWith("was removed from the table for failing to post")) {  //$NON-NLS-1$
+			// Spieler wurde vom Tisch entfernt, da er nicht gezahlt hat
+		} else if (input.endsWith("is capped")) {  //$NON-NLS-1$
+			// Spieler hat beim Limit Holdem die max. Anzahl an Erhöhungen erreicht 
 		} else {
-			System.out.println("UNBEKANNT: " + input);
+			System.out.println("Unbekannte Aktion: " + input);
 		}
 		
 		// bei einigen Aktionen brauchen wir den Wert
@@ -360,14 +386,22 @@ public class HandhistoryPokerstars extends Handhistory {
 			  action == Action.SMALLBLIND ||
 			  action == Action.BIGBLIND ||
 			  action == Action.COLLECT ||
-			  action == Action.SMALL_AND_BIGBLIND) {
+			  action == Action.SMALL_AND_BIGBLIND ||
+			  action == Action.ANTE) {
 			text = tokenizer.nextToken();
 			if (text.startsWith("$")) { //$NON-NLS-1$
 				text = text.substring(1, text.length());
 			}
 			value = Double.valueOf(text);
 		} else if (action == Action.SAY) {
-			value = tokenizer.nextToken();
+			value = input.substring(name.length() + 8, input.length()- 1).trim();
+
+		}
+		
+		// wenn die Aktion gleich Says und kein Spieler gefunden, dann hat wohl ein Zusauer was gesagt.
+		// Dann merken wir uns die Aktionnicht.
+		if (action == Action.SAY && player == null) {
+			action = 0;
 		}
 		
 		// und Aktion übernehmen
@@ -648,4 +682,50 @@ public class HandhistoryPokerstars extends Handhistory {
 		return hand;
 	}
 
+	/**
+	 * Wandelt die Zeile um die zwischen den Spielabschnitten steht
+	 * 
+	 * @param input Die Eingabezeile
+	 * @param hand Die aktuelle Hand
+	 */
+	private void convertSektionInfo(String input, Hand hand) {
+		// um welchen Spielabschnitt handelt es sich?
+		StringTokenizer tokenizer = new StringTokenizer(input);
+		String text = tokenizer.nextToken();
+		text = tokenizer.nextToken();
+		
+		int action = 0;
+		try {
+			if ("FLOP".equals(text)) { //$NON-NLS-1$
+				action = Action.FLOP;
+				addBoard(input, hand);
+			} else if ("TURN".equals(text)) { //$NON-NLS-1$
+				action = Action.TURN;
+				addBoard(input, hand);
+			} else if ("RIVER".equals(text)) { //$NON-NLS-1$
+				action = Action.RIVER;
+				addBoard(input, hand);
+			} else if ("SHOW".equals(text)) { //$NON-NLS-1$
+				action = Action.SHOWDOWN;
+			} else if ("HOLE".equals(text)) { //$NON-NLS-1$
+				// Hat für uns keine Bedeutung, einfach überlesen
+			} else if ("SUMMARY".equals(text)) { //$NON-NLS-1$
+				// Hat für uns keine Bedeutung, einfach überlesen
+			} else {
+				System.out.println("Unbekannte Abschnittsinfo: " + input);
+			}
+		} catch (HandIllegalCardCountException e) {
+			ErrorHandler.handleError(e, "Fehler beim Einfügen von Flop, Turn oder River", false);
+		} catch (CardException e) {
+			ErrorHandler.handleError(e, "Fehler beim Einfügen von Flop, Turn oder River", false);
+		}
+		
+		if (action != 0) {
+			try {
+				hand.addAction(new Action(action, null, null));
+			} catch (ActionException e) {
+				ErrorHandler.handleError(e, "Fehler bei Abschnittsinfo", false);
+			}
+		}
+	}
 }
