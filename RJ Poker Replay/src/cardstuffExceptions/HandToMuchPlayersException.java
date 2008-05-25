@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 /**
  * @author Ralf Joswig
  */
@@ -19,7 +21,7 @@ public class HandToMuchPlayersException extends HandException {
 	 * Standartkonstuktor
 	 */
 	public HandToMuchPlayersException() {
-		super("Es sind nicht genug Plätze für die Spieler vorhanden.");
+		super(Messages.HandToMuchPlayersException_0);
 	}
 
 	/**

@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Iterator;
 
+import language.Messages;
+
 import cardstuffExceptions.ActionIllegalActionException;
 import cardstuffExceptions.HandIllegalBigblindException;
 import cardstuffExceptions.HandIllegalButtonPositionException;
@@ -37,7 +39,7 @@ import cardstuffExceptions.HandToMuchPlayersException;
  * 
  * Klasse zur Darstellung und Handhabung einer Hand beim Pokern
  * Erweitert die Klasse Table um die Aktionen die an einem Tisch stattfinden 
- * können.
+ * koennen.
  */
 
 public class Hand extends Table {
@@ -66,26 +68,26 @@ public class Hand extends Table {
 	}
 
 	/**
-	 * Vollständiger Konstruktor
+	 * Vollstaendiger Konstruktor
 	 * 
 	 * @param titel
 	 *            Bezeichnung der Hand
 	 * @param buttonPos
 	 *            Position des Buttons
 	 * @param countSeats
-	 *            Anzahl der Plätze am Tisch
+	 *            Anzahl der Plaetze am Tisch
 	 * @param players
 	 *            Array mit den Spielern
 	 * @param board
 	 *            Array mit den Boardkarten
 	 * @param pokerroom
-	 *            Der Pokerraum, definiert über Konstanten
+	 *            Der Pokerraum, definiert ueber Konstanten
 	 * @param game
 	 *            Nummer des Spiels
 	 * @param smallblind
-	 *            Höhe des Smallblinds
+	 *            Hoehe des Smallblinds
 	 * @param bigblind
-	 *            Höhe des Bigblinds
+	 *            Hoehe des Bigblinds
 	 * @param date
 	 *            Datum an dem das Spiel gespielt wurde
 	 * @param gametype
@@ -123,7 +125,7 @@ public class Hand extends Table {
 		setDate(date);
 		setGametype(gametype);
 		setTabletype(tabletype);
-		setPot(pot);
+		setPotExtern(pot);
 		setRake(rake);
 		setCountOfPlayers();
 	}
@@ -137,13 +139,13 @@ public class Hand extends Table {
 	 * @return Die Handinformationen
 	 */
 	public String toString() {
-		String ret = "";
+		String ret = ""; //$NON-NLS-1$
 		
 		// Die einzelnen Aktionen anlisten
 		Iterator<Action> iter = actionlist.iterator();
 		while(iter.hasNext()) {
 			Action next = iter.next();
-			ret = ret + next.toString() +  "\n";
+			ret = ret + next.toString() +  "\n";  //$NON-NLS-1$
 		}
 
 		
@@ -151,40 +153,40 @@ public class Hand extends Table {
 	}
 	
 	/**
-	 * Fügt eine Aktion am Ende der Aktionsliste an
+	 * Fuegt eine Aktion am Ende der Aktionsliste an
 	 * 
-	 * @param action Die anzufügende Aktion
+	 * @param action Die anzufuegende Aktion
 	 * @throws ActionIllegalActionException
 	 */
 	public void addAction(Action action) throws ActionIllegalActionException {
-		// ist die Aktion vollständig?
+		// ist die Aktion vollstaendig?
 		if (!action.isActionValid()) {
-			throw new ActionIllegalActionException("Die Aktion ist ungültig / unvollständig.");
+			throw new ActionIllegalActionException(Messages.Hand_0);
 		}
 		
-		// alles passt, dann Aktion in der Liste anhängen
+		// alles passt, dann Aktion in der Liste anhaengen
 		actionlist.add(action);
 	}
 	
 	/**
-	 * Gibt eine bestimmte Akton aus der Hand zurück
+	 * Gibt eine bestimmte Akton aus der Hand zurueck
 	 * 
 	 * @param actionNumber Die Nummer Aktion in der Hand
-	 * @return Die gewünschte Aktion
+	 * @return Die gewuenschte Aktion
 	 * @throws ActionIllegalActionException 
 	 */
 	public Action getAction(int actionNumber) throws ActionIllegalActionException {
-		// prüfen ob es eine Aktion unter der Nummer gibt
+		// pruefen ob es eine Aktion unter der Nummer gibt
 		if (actionNumber < 0 || actionNumber >= actionlist.size()) {
-			throw new ActionIllegalActionException("Aktion mit dieser Nummer nicht vorhanden");
+			throw new ActionIllegalActionException(Messages.Hand_1);
 		}
 		
-		// Aktion zurückgeeben
+		// Aktion zurueckgeeben
 		return actionlist.get(actionNumber);
 	}
 	
 	/**
-	 * Gibt die aktuelle Anzahl an Aktionen der Hand zurück
+	 * Gibt die aktuelle Anzahl an Aktionen der Hand zurueck
 	 * 
 	 * @return Die Anzahl der Aktionen
 	 */
@@ -193,7 +195,7 @@ public class Hand extends Table {
 	}
 	
 	/**
-	 * Gibt eine ArrayListe mit den gespeicherten original Zeilen der Handhistorie zurück
+	 * Gibt eine ArrayListe mit den gespeicherten original Zeilen der Handhistorie zurueck
 	 * 
 	 * @return Eine String-Array-Liste mit den Zeilen der Handhistorie
 	 */
@@ -202,9 +204,9 @@ public class Hand extends Table {
 	}
 	
 	/**
-	 * Hängt eine Zeile an die Liste der Zeilen aus der Handhistorie an
+	 * Haengt eine Zeile an die Liste der Zeilen aus der Handhistorie an
 	 * 
-	 * @param line Die anzuhängende Zeile
+	 * @param line Die anzuhaengende Zeile
 	 */
 	public void addLineToFileLines(String line) {
 		FileLines.add(line);

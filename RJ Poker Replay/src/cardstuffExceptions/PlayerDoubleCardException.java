@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 /**
  * @author Ralf Joswig
  */
@@ -17,7 +19,7 @@ public class PlayerDoubleCardException extends PlayerException {
 	 * Standartkonstuktor
 	 */
 	public PlayerDoubleCardException() {
-		super("Der Spieler hat diese Karte bereits.");
+		super(Messages.PlayerDoubleCardException_0);
 	}
 
 	/**

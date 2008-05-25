@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für eine nicht erlaubte Anzahl an Sitzplätzen
+ * Fehlerklasse fuer eine nicht erlaubte Anzahl an Sitzplätzen
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -17,7 +19,7 @@ public class HandIllegalSeatCountException extends HandException{
 	 * Standartkonstuktor
 	 */
 	public HandIllegalSeatCountException() {
-		super("Die Anzahl der Plätze muss zwischen 2 und 10 liegen.");
+		super(Messages.HandIllegalSeatCountException_0);
 	}
 
 	/**

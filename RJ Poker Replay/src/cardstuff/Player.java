@@ -12,6 +12,7 @@
  */
 package cardstuff;
 
+import language.Messages;
 import rjPokerReplay.util.ErrorHandler;
 import cardstuffExceptions.PlayerDoubleCardException;
 import cardstuffExceptions.PlayerException;
@@ -46,9 +47,6 @@ public class Player {
 	// Pocket-Karten des Spielers
 	private Card pocketCards[] = new Card[2];
 	
-	// Hand-Karten des Spielers
-//	private Card handCards[] = new Card[5];
-	
 	// Geld des Spielers
 	private double chips = 0.0;
 	
@@ -68,7 +66,7 @@ public class Player {
 	 * @throws PlayerMissingNameException
 	 */
 	public Player(String name) throws PlayerMissingNameException {
-		// prüfen ob der Name gefüllt ist
+		// pruefen ob der Name gefuellt ist
 		if (name == null || name.equals("")) { //$NON-NLS-1$
 			throw new PlayerMissingNameException();
 		}
@@ -86,12 +84,12 @@ public class Player {
 	 * @throws PlayerIllegalChipsException 
 	 */
 	public Player(String name, double chips) throws PlayerMissingNameException, PlayerIllegalChipsException {
-		// prüfen ob der Name gefüllt ist
+		// pruefen ob der Name gefuellt ist
 		if (name == null || name.equals("")) { //$NON-NLS-1$
 			throw new PlayerMissingNameException();
 		}
 		
-		// prüfen ob der Chipsberag erlaubt, wenn nein gehtes mit einer Exception direkt raus
+		// pruefen ob der Chipsberag erlaubt, wenn nein gehtes mit einer Exception direkt raus
 		checkMoneyValue(chips);
 		
 		// Felder belegen, handCards und pocketCars mit Defaultwerten
@@ -100,7 +98,7 @@ public class Player {
 	}
 	
 	/**
-	 * Vollständiger Konstruktor
+	 * Vollstaendiger Konstruktor
 	 * 
 	 * @param name Name des Spielers
 	 * @param chips Anzahl Chips des Spielers
@@ -109,12 +107,12 @@ public class Player {
 	 * @throws PlayerIllegalStateException 
 	 */
 	public Player(String name, double chips, int state) throws PlayerMissingNameException, PlayerIllegalChipsException, PlayerIllegalStateException {
-		// prüfen ob der Name gefüllt ist
+		// pruefen ob der Name gefuellt ist
 		if (name == null || name.equals("")) { //$NON-NLS-1$
 			throw new PlayerMissingNameException();
 		}
 		
-		// prüfen ob der Chipsberag erlaubt, wenn nein gehtes mit einer Exception direkt raus
+		// pruefen ob der Chipsberag erlaubt, wenn nein geht es mit einer Exception direkt raus
 		checkMoneyValue(chips);
 		
 		// Felder belegen, handCards und pocketCars mit Defaultwerten
@@ -126,7 +124,7 @@ public class Player {
 	 * Getter
 	 **************************************************************************/
 	/**
-	 * Gibt die Pocketcards zurück
+	 * Gibt die Pocketcards zurueck
 	 * 
 	 * @return Die Pocketcards des Spielers
 	 */
@@ -135,16 +133,7 @@ public class Player {
 	}
 
 	/**
-	 * Gibt die Handkarten zurück
-	 * 
-	 * @return Die Handkarten des Spielers
-	 */
-//	public Card[] getHandCards() {
-//		return handCards;
-//	}
-
-	/**
-	 * Gibt die Anzahl an Chips zurück
+	 * Gibt die Anzahl an Chips zurueck
 	 * 
 	 * @return Die Anzahl an Chips die der Spieler hat
 	 */
@@ -153,7 +142,7 @@ public class Player {
 	}
 
 	/**
-	 * Gibt den Namen zurück
+	 * Gibt den Namen zurueck
 	 * 
 	 * @return Der Name des Spielers
 	 */
@@ -163,7 +152,7 @@ public class Player {
 	
 
 	/**
-	 * Gibt den aktuellen status des Spielers zurück
+	 * Gibt den aktuellen status des Spielers zurueck
 	 * 
 	 * @return Der Status des Spielers
 	 */
@@ -176,7 +165,7 @@ public class Player {
      ***************************************************************************/
 	/**
 	 * Setzt den Satus des Spielers
-	 * Die Möglichen Sati sind als Konstanten definiert
+	 * Die Moeglichen Sati sind als Konstanten definiert
 	 * 
 	 * @param state the state to set
 	 * @throws PlayerIllegalStateException 
@@ -222,7 +211,7 @@ public class Player {
 		// Der gezahlte Betrag
 		double paid = 0;
 		
-		// prüfen ob der Betrag erlaubt ist
+		// pruefen ob der Betrag erlaubt ist
 		try {
 			checkMoneyValue(payment);
 		} catch (PlayerIllegalChipsException e) {
@@ -242,7 +231,7 @@ public class Player {
 		// den gezahlten Betrag vom Konto abziehen
 		chips = chips - paid;
 		
-		// den gezahlten Betrag zurückmelden
+		// den gezahlten Betrag zurueckmelden
 		return paid;
 	}
 	
@@ -255,29 +244,29 @@ public class Player {
 	 */
 	public double deposit(double deposite) throws PlayerIllegalChipsException {
 		
-		// prüfen ob der Betrag im erlauten Bereich liegt
+		// pruefen ob der Betrag im erlauten Bereich liegt
 		checkMoneyValue(deposite);
 		
 		// Wenn die Einzahlung i.O. ist, zum Kontostand addieren
 		chips = chips + deposite;
 		
-		// und den neuen Kontostand zurück melden
+		// und den neuen Kontostand zurueck melden
 		return chips;
 	}
 	
 	/**
-	 * Prüft ob ein Betrag erlaubt ist
+	 * Prueft ob ein Betrag erlaubt ist
 	 * 
-	 * @param value Der zuprüfende Betrag
+	 * @param value Der zupruefende Betrag
 	 * @throws PlayerIllegalChipsException
 	 */
 	private void checkMoneyValue(double value) throws PlayerIllegalChipsException {
-		// prüfen ob der Betrag kleiner Null ist
+		// pruefen ob der Betrag kleiner Null ist
 		if (value < 0) {
-			throw new PlayerIllegalChipsException("Die Menge an Chips muss größer 0 sein.");
+			throw new PlayerIllegalChipsException(Messages.Player_0);
 		}
 		
-		// prüfen ob der Betrag ein Vielfaches von 0.01 ist
+		// pruefen ob der Betrag ein Vielfaches von 0.01 ist
 		int tmpValue = (int)(value * 100);
 		if ((value - (double)tmpValue / 100.0) != 0) {
 //			throw new PlayerIllegalChipsException("Die Menge an Chips muss ein Vielfaches von 0,01 sein.");
@@ -285,19 +274,19 @@ public class Player {
 	}
 	
 	/**
-	 * Fügt dem Spieler eine Pocketkarte hinzu
+	 * Fuegt dem Spieler eine Pocketkarte hinzu
 	 * 
 	 * @param card
 	 * @throws PlayerToMuchPocketCards 
 	 * @throws PlayerDoubleCardException 
 	 */
 	public void addPocketCard(Card card) throws PlayerToMuchPocketCards, PlayerDoubleCardException {
-		// prüfen ob noch Platz für eine Pocketkarte ist
+		// pruefen ob noch Platz fuer eine Pocketkarte ist
 		if (pocketCards.length > 2) {
 			throw new PlayerToMuchPocketCards();
 		}
 		
-		// Wenn bereits Karten vorhanden, prüfen ob doppelt
+		// Wenn bereits Karten vorhanden, pruefen ob doppelt
 		int i = 0;
 		while (pocketCards[i] != null) {
 			if (card.getSuit() != Card.BACK && pocketCards[i].equal(card)) {
@@ -306,12 +295,12 @@ public class Player {
 			i++;
 		}
 		
-		// alle Prüfungen verliefen gut, dann Karte einfügen
+		// alle Pruefungen verliefen gut, dann Karte einfuegen
 		pocketCards[i] = card;
 	}
 	
 	/**
-	 * Gibt eine String zum Spieler zurück
+	 * Gibt eine String zum Spieler zurueck
 	 * 
 	 * @return Ein String mit dem Namen und dem Stack
 	 */
@@ -321,14 +310,14 @@ public class Player {
 		// der Name
 		ret = name;
 		
-		// den Stack hinzufügen
-		ret = ret + " mit " + String.valueOf(chips) + " Chips.";
+		// den Stack hinzufuegen
+		ret = ret + Messages.Player_1 + String.valueOf(chips) + Messages.Player_2;
 		
 		return ret;
 	}
 	
 	/**
-	 * Prüft ob ein zweiter Spieler gleich diesem ist. Dabei reicht es wenn die Namen
+	 * Prueft ob ein zweiter Spieler gleich diesem ist. Dabei reicht es wenn die Namen
 	 * gleich sind.
 	 * 
 	 * @param player Der zu vergleichende Spieler
@@ -346,7 +335,13 @@ public class Player {
 	 * Spieler folded, legt also die Pocketcards ab
 	 */
 	public void fold() {
+		// Karten ablegen
 		pocketCards = null;
+		
+		// Status aendern wenn der Spieler nicht aussetzt
+		if (state != SITTINGOUT) {
+			state = FOLDED;
+		}
 	}
 	
 	/**
@@ -355,16 +350,16 @@ public class Player {
 	 * @return Die Kopie des Spielers
 	 */
 	public Player copy() {
-		// einen neuen Spieler für die Kopie
+		// einen neuen Spieler fuer die Kopie
 		Player ret = null;
 		
 		try {
-			// Spieler anlegen und Werte übertragen
+			// Spieler anlegen und Werte uebertragen
 			ret = new Player(name, chips, state);
 			ret.addPocketCard(pocketCards[0]);
 			ret.addPocketCard(pocketCards[1]);
 		} catch (PlayerException e) {
-			ErrorHandler.handleError(e, "Fehler beim Kopieren eines Spielers", false);
+			ErrorHandler.handleError(e, Messages.Player_3, false);
 		}
 		
 		return ret;
@@ -372,7 +367,7 @@ public class Player {
 	
 	/**
 	 * Tauscht die aktuellen Pocketkarten gegen zwei neue.
-	 * Darf eigendlich nur verwendet werden um anonyme Karten gegen die tatsächliche zu tauschen
+	 * Darf eigendlich nur verwendet werden um anonyme Karten gegen die tatsaechliche zu tauschen
 	 * 
 	 * @param card1 Die erste neue Karte
 	 * @param card2 Die zwiete neue Karte
@@ -384,7 +379,7 @@ public class Player {
 		pocketCards[0] = null;
 		pocketCards[1] = null;
 		
-		// neue Karten hinzufügen
+		// neue Karten hinzufuegen
 		addPocketCard(card1);
 		addPocketCard(card2);
 	}

@@ -1,5 +1,7 @@
 package rjPokerReplay.preferences;
 
+import language.Messages;
+
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.IntegerFieldEditor;
 import org.eclipse.ui.IWorkbench;
@@ -13,7 +15,7 @@ import rjPokerReplay.Activator;
 	public PreferenceGeneral() {
 		super(GRID);
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
-		setDescription("General");
+		setDescription(Messages.PreferenceGeneral_0);
 	}
 
 	public void init(IWorkbench workbench) {
@@ -22,7 +24,7 @@ import rjPokerReplay.Activator;
 	@Override
 	protected void createFieldEditors() {
 		addField(
-				new IntegerFieldEditor(PreferenceConstants.P_GENERAL_TIME_DELAY, "Timedelay for autoplay:", getFieldEditorParent()));
+				new IntegerFieldEditor(PreferenceConstants.P_GENERAL_TIME_DELAY, Messages.PreferenceGeneral_1, getFieldEditorParent()));
 		
 	}
 

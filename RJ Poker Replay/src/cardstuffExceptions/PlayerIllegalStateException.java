@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 /**
  * @author Ralf Joswig
  */
@@ -17,7 +19,7 @@ public class PlayerIllegalStateException extends PlayerException {
 	 * Standartkonstuktor
 	 */
 	public PlayerIllegalStateException() {
-		super("Der Status ist nicht definiert.");
+		super(Messages.PlayerIllegalStateException_0);
 	}
 
 	/**

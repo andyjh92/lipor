@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 /**
  * @author Ralf Joswig
  */
@@ -18,7 +20,7 @@ public class HandPositionEmptyException extends HandException{
 	 * Standartkonstuktor
 	 */
 	public HandPositionEmptyException() {
-		super("Sitzplatz ist leer.");
+		super(Messages.HandPositionEmptyException_0);
 	}
 
 	/**

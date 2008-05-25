@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 
 /**
  * @author Ralf Joswig
@@ -19,7 +21,7 @@ public class HandIllegalGametypeException extends HandException {
 	 * Standartkonstuktor
 	 */
 	public HandIllegalGametypeException() {
-		super("Der Spieltyp ist nicht zulässig.");
+		super(Messages.HandIllegalGametypeException_0);
 	}
 
 	/**

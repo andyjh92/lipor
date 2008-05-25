@@ -26,7 +26,7 @@ import cardstuff.Hand;
 
 public class ViewHandhistory extends ViewPart {
 	
-	public static final String ID = "RJPoker Replay.Handhistory";
+	public static final String ID = "RJPoker Replay.Handhistory"; //$NON-NLS-1$
 	
 	private Text text;
 
@@ -47,7 +47,7 @@ public class ViewHandhistory extends ViewPart {
 	}
 	
 	public void showHand(Hand hand) {
-		text.setText("");
+		text.setText(""); //$NON-NLS-1$
 		if (hand != null) {
 			Iterator<String> iter = hand.getFileLines().iterator();
 			while (iter.hasNext()) {

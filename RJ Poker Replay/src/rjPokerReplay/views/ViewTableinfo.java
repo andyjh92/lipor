@@ -15,6 +15,8 @@ package rjPokerReplay.views;
 
 import java.text.SimpleDateFormat;
 
+import language.Messages;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
@@ -29,7 +31,7 @@ import cardstuffExceptions.ActionIllegalActionException;
 
 public class ViewTableinfo extends ViewPart {
 	
-	public static final String ID = "RJPoker Replay.ViewTableinfo";
+	public static final String ID = "RJPoker Replay.ViewTableinfo"; //$NON-NLS-1$
 	
 	private Text text;
 
@@ -49,26 +51,30 @@ public class ViewTableinfo extends ViewPart {
 	
 	public void showInfo() {
 		Table table = ApplicationWorkbenchAdvisor.getTable();
-		// Prüfen ob der Tisch Daten enthält
+		// Pruefen ob der Tisch Daten enthaelt
 		if (table != null && table.getPokerroom() != 0) {
         	// ja, dann Tisch anzeigen
 			
-			// alten Inhalt löschen
-			text.setText("");
+			// alten Inhalt loeschen
+			text.setText(""); //$NON-NLS-1$
 			
         	// Tischinformation wie Name, Spielnummer und Datum
-        	text.append("Pokerroom: " + table.getPokerroomText() + " ");
-        	text.append(table.getGame() + " ");
-        	text.append(table.getGameTypeText() + " ");
+        	text.append(Messages.ViewTableinfo_0 +
+        			table.getPokerroomText() + " "); //$NON-NLS-1$
+        	text.append(table.getGame() + " "); //$NON-NLS-1$
+        	text.append(table.getGameTypeText() + " "); //$NON-NLS-1$
         	text.append(table.getTabletypeText() + Text.DELIMITER);
         	
-        	text.append("Blinds: " + table.getSmallblind() + "/" + table.getBigblind()+ " ");
-        	text.append(table.getCountSeats() + "-max" + Text.DELIMITER);
+        	text.append(Messages.ViewTableinfo_1 + table.getSmallblind() +
+        			"/" + //$NON-NLS-1$ 
+        			table.getBigblind()+ " "); //$NON-NLS-1$
+        	text.append(table.getCountSeats() + "-max" + Text.DELIMITER); //$NON-NLS-1$
 
-        	text.append("Table: " + table.getTitel() + " ");
-        	SimpleDateFormat df = new SimpleDateFormat( "dd.MM.yyyy - HH:mm:ss" );
-        	text.append(df.format(table.getDate().getTime()) + " ");
-        	text.append("Rake: " + String.valueOf(table.getRake()) + Text.DELIMITER);
+        	text.append(Messages.ViewTableinfo_2 + table.getTitel() +
+        			" "); //$NON-NLS-1$
+        	SimpleDateFormat df = new SimpleDateFormat( "dd.MM.yyyy - HH:mm:ss" ); //$NON-NLS-1$
+        	text.append(df.format(table.getDate().getTime()) + " "); //$NON-NLS-1$
+        	text.append(Messages.ViewTableinfo_3 + String.valueOf(table.getRake()) + Text.DELIMITER);
         	
         	// letzte Aktion
 			try {
@@ -80,5 +86,4 @@ public class ViewTableinfo extends ViewPart {
 			}
 		}
 	}
-
 }

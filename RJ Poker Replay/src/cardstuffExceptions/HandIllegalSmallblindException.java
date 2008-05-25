@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 
 /**
  * @author Ralf Joswig
@@ -19,7 +21,7 @@ public class HandIllegalSmallblindException extends HandException {
 	 * Standartkonstuktor
 	 */
 	public HandIllegalSmallblindException() {
-		super("Der Smallblind ist in dieser Höhe nicht zulässig.");
+		super(Messages.HandIllegalSmallblindException_0);
 	}
 
 	/**

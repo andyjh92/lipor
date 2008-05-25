@@ -17,6 +17,10 @@ Alpha 2
   - now autolay can stopped and restarted
   - FileOpen-Dialog replaced by Import-Dialog
   - fix error when player raise afther bet
+  - fix a problem when press autoplay a second time
+  - better handling of All-In and sidepots
+  - correct position of players at table
+  - don't try to import handhistory when press finish button without file selected
   
   
 TODO

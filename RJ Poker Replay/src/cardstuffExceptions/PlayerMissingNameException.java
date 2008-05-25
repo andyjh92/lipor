@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für fehlenden Spielernamen
+ * Fehlerklasse fuer fehlenden Spielernamen
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 public class PlayerMissingNameException extends PlayerException {
 
@@ -14,7 +16,7 @@ public class PlayerMissingNameException extends PlayerException {
 	 * Standartkonstuktor
 	 */
 	public PlayerMissingNameException() {
-		super("Spielername fehlt.");
+		super(Messages.PlayerMissingNameException_0);
 	}
 
 	/**

@@ -18,7 +18,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 
 	private static final String PERSPECTIVE_ID = "RjPokerReplay.perspective";  //$NON-NLS-1$
 	
-	// ArrayListe mit den aktuellen Händen
+	// ArrayListe mit den aktuellen Haenden
 	private static ArrayList<Hand> hands;
 	
 	// die gerade gezeigte Hand
@@ -30,10 +30,10 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	// Der aktuelle tisch
 	private static Table table;
 	
-	// Ein Sammler für Grafiken
+	// Ein Sammler fuer Grafiken
 	private static ImageRegistry imageReg;
 	
-	// Kennzeichen ob am Tisch eine Hand per Autoplay läuft
+	// Kennzeichen ob am Tisch eine Hand per Autoplay laeuft
 	private static boolean autoplay = false;
 	
     public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(
@@ -46,18 +46,18 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	}
 	
 	/**
-	 * Gibt eine Liste der Hände zurück
+	 * Gibt eine Liste der Haende zurueck
 	 * 
-	 * @return Die Liste der Hände
+	 * @return Die Liste der Haende
 	 */
 	public static ArrayList<Hand> getHands() {
 		return hands;
 	}
 	
 	/**
-	 * Setzt die aktuelle Liste der Hände
+	 * Setzt die aktuelle Liste der Haende
 	 * 
-	 * @param handsList Die Hände die gesetzt werden sollen
+	 * @param handsList Die Haende die gesetzt werden sollen
 	 */
 	public static void setHands(ArrayList<Hand> handsList) {
 		hands = handsList;
@@ -65,7 +65,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	
 	/**
 	 * Setzt die aktive Hand
-	 * Soll eine größer als die höchste Hand gesetzt werde, wird die höchste Hand genommen
+	 * Soll eine groesser als die hoechste Hand gesetzt werde, wird die hoechste Hand genommen
 	 * 
 	 * @param handNumber Die Nummer der Hand die gesetzt werden soll
 	 */
@@ -73,13 +73,13 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 		// Nummer der letzte Hand ermitteln
 		int handmax = hands.size();
 		
-		// Hände kleiner Null gibt es nicht
+		// Haende kleiner Null gibt es nicht
 		if (handNumber < 0) {
 			// dann auf die erste Handsetzen
 			handNumber = 0;
 		}
 		
-		// liegt die gewüschte Hand vor der letzen ?
+		// liegt die gewueschte Hand vor der letzen ?
 		if (handNumber <= handmax) {
 			// ja, dann merken
 			activeHand = handNumber;
@@ -93,7 +93,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	}
 	
 	/**
-	 * Gibt die Nummer der aktiven hand zurück
+	 * Gibt die Nummer der aktiven hand zurueck
 	 * 
 	 * @return Die Nummer der aktiven Hand
 	 */
@@ -104,7 +104,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	/**
 	 * Setzt die aktuelle Aktion in der Hand
 	 * 
-	 * @param step Die Nummer der gewünschten Aktion
+	 * @param step Die Nummer der gewuenschten Aktion
 	 */
 	public static void setHandStep(int step) {
 		// Es gibt keine Aktion kleiner Null
@@ -115,18 +115,18 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 		// letzte Aktion der Hand ermitteln
 		int lastStep = hands.get(activeHand).getCountOfActions();
 		
-		// liegt die gewüschte Aktion hinter der letzen?
+		// liegt die gewueschte Aktion hinter der letzen?
 		if (step > lastStep) {
 			// ja, dann auf die letze Aktion setzen
 			handStep = lastStep;
 		} else {
-			// nein, dann auf die gewünschte Aktion setzen
+			// nein, dann auf die gewuenschte Aktion setzen
 			handStep = step;
 		}
 	}
 	
 	/**
-	 * Gibt die Nummer der aktuellen Ation der aktuellen Hand zurück
+	 * Gibt die Nummer der aktuellen Ation der aktuellen Hand zurueck
 	 * 
 	 * @return Die Nummer der Aktion
 	 */
@@ -135,7 +135,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	}
 	
 	/**
-	 * Setzt den Zeiger für die aktuelle Atkion der Hand um eins weiter
+	 * Setzt den Zeiger fuer die aktuelle Atkion der Hand um eins weiter
 	 */
 	public static void nextHandStep() {
 		// letzte Aktion der Hand ermitteln
@@ -157,7 +157,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	}
 	
 	/**
-	 * Gibt den Tisch zurück
+	 * Gibt den Tisch zurueck
 	 * 
 	 * @return Der aktuelle Tisch
 	 */
@@ -166,7 +166,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	}
 	
 	/**
-	 * Setzt den Zeiger auf die nächste Hand
+	 * Setzt den Zeiger auf die naechste Hand
 	 */
 	public static void nextHand() {
 		setActiveHand(activeHand + 1);
@@ -174,7 +174,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	}
 	
 	/**
-	 * Beschaft die für den Start notwendigen Daten
+	 * Beschaft die fuer den Start notwendigen Daten
 	 */
 	public void initialize(IWorkbenchConfigurer configurer) {
 		initImageStore();
@@ -187,22 +187,22 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	 */
 	private void initImageStore() {
 		// Grundpfad zu den Bildern
-		String imagesPath = "../../../images/";
+		String imagesPath = "../../../images/"; //$NON-NLS-1$
 		
 		// Grundpfad zu den Icons
-		String iconsPath = "../../../icons/";
+		String iconsPath = "../../../icons/"; //$NON-NLS-1$
 		
-		// Speicher für die Bilder anlegen und befüllen
+		// Speicher fuer die Bilder anlegen und befuellen
 		imageReg = new ImageRegistry();
-		imageReg.put(Constants.IMG_BACKGROUND, ImageDescriptor.createFromFile(ViewTable.class, imagesPath + "table.jpg"));
-		imageReg.put(Constants.IMG_BUTTON_BUTTON, ImageDescriptor.createFromFile(ViewTable.class, imagesPath + "button_dealer.gif"));
-		imageReg.put(Constants.IMG_BUTTON_START, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_start.png"));
-		imageReg.put(Constants.IMG_BUTTON_REW, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_rew.png"));
-		imageReg.put(Constants.IMG_BUTTON_FWD, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_fwd.png"));
-		imageReg.put(Constants.IMG_BUTTON_END, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_end.png"));
-		imageReg.put(Constants.IMG_BUTTON_EJECT, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_eject.png"));
-		imageReg.put(Constants.IMG_BUTTON_PLAY, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_play.png"));
-		imageReg.put(Constants.IMG_CHECKED, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "haken.png"));
+		imageReg.put(Constants.IMG_BACKGROUND, ImageDescriptor.createFromFile(ViewTable.class, imagesPath + "table.jpg")); //$NON-NLS-1$
+		imageReg.put(Constants.IMG_BUTTON_BUTTON, ImageDescriptor.createFromFile(ViewTable.class, imagesPath + "button_dealer.gif")); //$NON-NLS-1$
+		imageReg.put(Constants.IMG_BUTTON_START, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_start.png")); //$NON-NLS-1$
+		imageReg.put(Constants.IMG_BUTTON_REW, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_rew.png")); //$NON-NLS-1$
+		imageReg.put(Constants.IMG_BUTTON_FWD, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_fwd.png")); //$NON-NLS-1$
+		imageReg.put(Constants.IMG_BUTTON_END, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_end.png")); //$NON-NLS-1$
+		imageReg.put(Constants.IMG_BUTTON_EJECT, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_eject.png")); //$NON-NLS-1$
+		imageReg.put(Constants.IMG_BUTTON_PLAY, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "player_play.png")); //$NON-NLS-1$
+		imageReg.put(Constants.IMG_CHECKED, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "haken.png")); //$NON-NLS-1$
 		imageReg.put(Constants.IMG_CARD_BACK, ImageDescriptor.createFromFile(ViewTable.class, imagesPath + Constants.IMG_CARD_BACK));
 		imageReg.put(Constants.IMG_CARD_CLUB_TWO, ImageDescriptor.createFromFile(ViewTable.class, imagesPath + Constants.IMG_CARD_CLUB_TWO));
 		imageReg.put(Constants.IMG_CARD_CLUB_THREE, ImageDescriptor.createFromFile(ViewTable.class, imagesPath + Constants.IMG_CARD_CLUB_THREE));
@@ -256,7 +256,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 		imageReg.put(Constants.IMG_CARD_SPADE_QUEEN, ImageDescriptor.createFromFile(ViewTable.class, imagesPath + Constants.IMG_CARD_SPADE_QUEEN));
 		imageReg.put(Constants.IMG_CARD_SPADE_KING, ImageDescriptor.createFromFile(ViewTable.class, imagesPath + Constants.IMG_CARD_SPADE_KING));
 		imageReg.put(Constants.IMG_CARD_SPADE_ASS, ImageDescriptor.createFromFile(ViewTable.class, imagesPath + Constants.IMG_CARD_SPADE_ASS));
-		imageReg.put(Constants.IMG_OPEN_FOLDER, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "openFolder.gif"));
+		imageReg.put(Constants.IMG_OPEN_FOLDER, ImageDescriptor.createFromFile(ViewTable.class, iconsPath + "openFolder.gif")); //$NON-NLS-1$
 	}
 	
 	/**
@@ -269,9 +269,9 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	}
 	
 	/**
-	 * Gibt den Status zurück ob gerade eine Hand per Autoplay abgespielt wird.
+	 * Gibt den Status zurueck ob gerade eine Hand per Autoplay abgespielt wird.
 	 * 
-	 * @return True wenn ein Autoplay läuft
+	 * @return True wenn ein Autoplay laeuft
 	 */
 	public static boolean isAutoplay() {
 		return autoplay;

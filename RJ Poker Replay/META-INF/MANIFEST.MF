@@ -7,6 +7,15 @@ Bundle-Activator: rjPokerReplay.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
 Eclipse-LazyStart: true
-Export-Package: cardstuff,
+Export-Package: cardstuff;uses:="org.eclipse.swt.graphics",
  cardstuffExceptions,
- rjPokerReplay
+ rjPokerReplay;
+  uses:="org.eclipse.equinox.app,
+   org.eclipse.ui.application,
+   org.osgi.framework,
+   org.eclipse.ui.plugin,
+   org.eclipse.jface.action,
+   org.eclipse.jface.resource,
+   cardstuff,
+   org.eclipse.ui"
+Bundle-Localization: plugin

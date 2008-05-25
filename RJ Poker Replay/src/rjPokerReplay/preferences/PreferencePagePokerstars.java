@@ -1,5 +1,7 @@
 package rjPokerReplay.preferences;
 
+import language.Messages;
+
 import org.eclipse.jface.preference.*;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.ui.IWorkbench;
@@ -26,7 +28,7 @@ public class PreferencePagePokerstars
 	public PreferencePagePokerstars() {
 		super(GRID);
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
-		setDescription("Preferences for Pokerstars");
+		setDescription(Messages.PreferencePagePokerstars_0);
 	}
 	
 	/**
@@ -37,7 +39,7 @@ public class PreferencePagePokerstars
 	 */
 	public void createFieldEditors() {
 		addField(new DirectoryFieldEditor(PreferenceConstants.P_POKERSTARS_PATH, 
-				"&Directory for Historyfiles:", getFieldEditorParent()));
+				Messages.PreferencePagePokerstars_1, getFieldEditorParent()));
 //		addField(
 //			new BooleanFieldEditor(
 //				PreferenceConstants.P_BOOLEAN,
@@ -52,7 +54,7 @@ public class PreferencePagePokerstars
 //				"C&hoice 2", "choice2" }
 //		}, getFieldEditorParent()));
 		addField(
-			new StringFieldEditor(PreferenceConstants.P_POKERSTARS_PLAYER, "Players nikname at Pokerstars:", getFieldEditorParent()));
+			new StringFieldEditor(PreferenceConstants.P_POKERSTARS_PLAYER, Messages.PreferencePagePokerstars_2, getFieldEditorParent()));
 	}
 
 	/* (non-Javadoc)

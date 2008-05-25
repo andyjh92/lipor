@@ -10,7 +10,7 @@ package rjPokerReplay;
 public class Constants {
 	
 	/* Bezeichnungen der Grafiken in der ImageRegistry */
-	// Grafiken für den Tisch
+	// Grafiken fuer den Tisch
 	public final static String IMG_BACKGROUND = "background"; //$NON-NLS-1$
 	public final static String IMG_BUTTON_BUTTON = "dealerbutton"; //$NON-NLS-1$
 	public final static String IMG_BUTTON_START = "start"; //$NON-NLS-1$
@@ -75,7 +75,7 @@ public class Constants {
 	public final static String IMG_CARD_CLUB_ASS = "1_2.png"; //$NON-NLS-1$
 	public final static String IMG_CARD_BACK = "back_red_casino.gif"; //$NON-NLS-1$
 	
-	// Grafiken für das Menü
+	// Grafiken fuer das Menue
 	public final static String IMG_CHECKED = "menu_checked"; //$NON-NLS-1$
 	
 	// sonstige Grafiken

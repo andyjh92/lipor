@@ -1,5 +1,7 @@
 package rjPokerReplay;
 
+import language.Messages;
+
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchActionConstants;
@@ -59,29 +61,29 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		preferenceAction = ActionFactory.PREFERENCES.create(window);
 		register(preferenceAction);
 		
-		showHandhistoryViewAction = new ShowViewAction(window, "Handhistory", ViewHandhistory.ID);
+		showHandhistoryViewAction = new ShowViewAction(window, Messages.ApplicationActionBarAdvisor_0, ViewHandhistory.ID);
 		showHandhistoryViewAction.show(false);
 		register(showHandhistoryViewAction);
 		
-		showTableinfoViewAction = new ShowViewAction(window, "Tischinformations", ViewTableinfo.ID);
+		showTableinfoViewAction = new ShowViewAction(window, Messages.ApplicationActionBarAdvisor_1, ViewTableinfo.ID);
 		showTableinfoViewAction.show(true);
 		register(showTableinfoViewAction);
 	}
 
 	protected void fillMenuBar(IMenuManager menuBar) {
-		MenuManager fileMenu = new MenuManager("&File",  
+		MenuManager fileMenu = new MenuManager(Messages.ApplicationActionBarAdvisor_2,  
 				IWorkbenchActionConstants.M_FILE);
 		menuBar.add(fileMenu);
 		fileMenu.add(importAction);
 		fileMenu.add(exitAction);
 		
-		MenuManager windowMenu = new MenuManager("&Window", IWorkbenchActionConstants.M_WINDOW);
+		MenuManager windowMenu = new MenuManager(Messages.ApplicationActionBarAdvisor_3, IWorkbenchActionConstants.M_WINDOW);
 		windowMenu.add(showHandhistoryViewAction);
 		windowMenu.add(showTableinfoViewAction);
 		windowMenu.add(preferenceAction);
 		menuBar.add(windowMenu);
 		
-		MenuManager helpMenu = new MenuManager("&Help",  
+		MenuManager helpMenu = new MenuManager(Messages.ApplicationActionBarAdvisor_4,  
 				IWorkbenchActionConstants.M_HELP);
 		menuBar.add(helpMenu);
 		helpMenu.add(helpAction);

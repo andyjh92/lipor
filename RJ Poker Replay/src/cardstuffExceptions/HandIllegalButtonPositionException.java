@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 
 /**
  * @author Ralf Joswig
@@ -19,7 +21,7 @@ public class HandIllegalButtonPositionException extends HandException {
 	 * Standartkonstuktor
 	 */
 	public HandIllegalButtonPositionException() {
-		super("Button ist an dieser Position nicht möglich.");
+		super(Messages.HandIllegalButtonPositionException_0);
 	}
 
 	/**

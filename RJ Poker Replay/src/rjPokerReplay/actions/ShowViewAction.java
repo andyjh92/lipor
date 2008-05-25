@@ -11,6 +11,8 @@
  */
 package rjPokerReplay.actions;
 
+import language.Messages;
+
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -27,17 +29,17 @@ import rjPokerReplay.views.ViewTable;
  */
 public class ShowViewAction extends Action {
 	
-	private final String actionId = "ShowViewAction";
+	private final String actionId = "ShowViewAction";  //$NON-NLS-1$
 	private IWorkbenchWindow window;
-	private String text = "";
+	private String text = ""; //$NON-NLS-1$
 	private boolean show = false;
-	private String id = "";
+	private String id = ""; //$NON-NLS-1$
 	
 	/**
-	 * Konstruktor, die nötigen Daten speichern
+	 * Konstruktor, die noetigen Daten speichern
 	 * 
-	 * @param window Das übergeordnete Fenster
-	 * @param text Text für den Reiter
+	 * @param window Das uebergeordnete Fenster
+	 * @param text Text fuer den Reiter
 	 * @param id Die Id des verwendeten Views
 	 */
 	public ShowViewAction(IWorkbenchWindow window, String text, String id) {
@@ -50,14 +52,14 @@ public class ShowViewAction extends Action {
 	}
 
 	/**
-	 * Gibt die ID des View zurück
+	 * Gibt die ID des View zurueck
 	 */
 	public String getId() {
         return actionId;
     }
 	
 	/**
-	 * Gibt den Text mit der Bezeichnung des Views zurück
+	 * Gibt den Text mit der Bezeichnung des Views zurueck
 	 */
 	public String getText() {
 		return text;
@@ -71,7 +73,7 @@ public class ShowViewAction extends Action {
 	}
 	
 	/**
-	 * Die Aktion die ausgeführt wird wenn der Menüpunkt ausgewählt wird.
+	 * Die Aktion die ausgefuehrt wird wenn der Menuepunkt ausgewaehlt wird.
 	 * Hier das Umschalten zwischen Anzeigen und Verbergen des Views
 	 */
 	public void run() {
@@ -87,35 +89,35 @@ public class ShowViewAction extends Action {
 	}
 	
 	/**
-	 * Die Routine die das eigendliche Anzeigen oder Verbergen des Views übernimmt.
+	 * Die Routine die das eigendliche Anzeigen oder Verbergen des Views uebernimmt.
 	 * 
 	 * @param show True wenn der View angezeigt weden soll, sonst false
 	 */
 	public void show(boolean show) {
-		// den Wert ob angezeigt wird oder nicht merken, wichtig für externe Aufrufe
+		// den Wert ob angezeigt wird oder nicht merken, wichtig fuer externe Aufrufe
 		this.show = show;
 		
 		if (show) {
 			// View soll anzgezeigt werden.
-			// Vor den Menüpunkt einen Haken setzen
+			// Vor den Menuepunkt einen Haken setzen
 			setImageDescriptor(ImageDescriptor.createFromImage((ApplicationWorkbenchAdvisor.getImageStore().get(Constants.IMG_CHECKED))));
 			
-			// Wenn Views bereits angelegt wurden, den gewünschten View anzeigen
+			// Wenn Views bereits angelegt wurden, den gewuenschten View anzeigen
 			try {
 				window.getPages()[0].showView(id);
 			} catch (PartInitException e) {
-				ErrorHandler.handleError(e, "View kann nicht angezeigt werden.", false);
+				ErrorHandler.handleError(e, Messages.ShowViewAction_0, false);
 			} catch (ArrayIndexOutOfBoundsException e) {
 				// Es wurden noch keine Views angelegt, also kann hier noch nichts geschehen
 			}
 			
-			// Tisch neu zeichnen, da jetzt weniger Platz für die Anzeige
+			// Tisch neu zeichnen, da jetzt weniger Platz fuer die Anzeige
 			if (window.getActivePage() != null) {
 				((ViewTable)(window.getActivePage().findView(ViewTable.ID))).drawTable();
 			}
 				
 		} else {
-			// Den Haken vor dem Menüpunkt entfernen
+			// Den Haken vor dem Menuepunkt entfernen
 			setImageDescriptor(null);
 			
 			// Wenn Views bereits angelegt wurden, den passenden finden und verbergen
@@ -123,7 +125,7 @@ public class ShowViewAction extends Action {
 				window.getPages()[0].hideView(window.getPages()[0].findView(id));
 				
 				if (window.getActivePage().findView(id) != null) {
-					// Tisch neu zeichnen, da jetzt weniger Platz für die Anzeige
+					// Tisch neu zeichnen, da jetzt weniger Platz fuer die Anzeige
 					((ViewTable)(window.getActivePage().findView(ViewTable.ID))).drawTable();
 				}
 			} catch (ArrayIndexOutOfBoundsException e) {

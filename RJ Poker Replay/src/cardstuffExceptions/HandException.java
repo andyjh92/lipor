@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für allg. Fehler im Zusammenhang mit einer Hand
+ * Fehlerklasse fuer allg. Fehler im Zusammenhang mit einer Hand
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -18,7 +20,7 @@ public class HandException extends Exception{
 	 * Standartkonstuktor
 	 */
 	public HandException() {
-		super("Allg. Fehler im Zusammenhang mit einer Hand.");
+		super(Messages.HandException_0);
 	}
 
 	/**

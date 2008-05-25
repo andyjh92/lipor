@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für einen nicht erlaubte Sitzplätzen
+ * Fehlerklasse fuer einen nicht erlaubte Sitzplätzen
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -17,7 +19,7 @@ public class HandIllegalSeatException extends HandException{
 	 * Standartkonstuktor
 	 */
 	public HandIllegalSeatException() {
-		super("Der Sitzplaz ist nicht vorhanden oder besetzt.");
+		super(Messages.HandIllegalSeatException_0);
 	}
 
 	/**

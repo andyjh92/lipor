@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 
 /**
  * @author Ralf Joswig
@@ -19,7 +21,7 @@ public class HandIllegalPotsizeException extends HandException {
 	 * Standartkonstuktor
 	 */
 	public HandIllegalPotsizeException() {
-		super("Ein Pot in dieser Höhe ist nicht zulässig.");
+		super(Messages.HandIllegalPotsizeException_0);
 	}
 
 	/**

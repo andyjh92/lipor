@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für einen nicht erlaubten Wert einer Handaktion
+ * Fehlerklasse fuer einen nicht erlaubten Wert einer Handaktion
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -18,7 +20,7 @@ public class ActionIllegalValueException extends ActionException{
 	 * Standartkonstuktor
 	 */
 	public ActionIllegalValueException() {
-		super("Der Wert ist nicht zulässig.");
+		super(Messages.ActionIllegalValueException_0);
 	}
 
 	/**

@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für allg. Fehler im Zusammenhang mit einer Handhistorie
+ * Fehlerklasse fuer allg. Fehler im Zusammenhang mit einer Handhistorie
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -18,7 +20,7 @@ public class HandhistoryException extends Exception{
 	 * Standartkonstuktor
 	 */
 	public HandhistoryException() {
-		super("Allg. Fehler im Zusammenhang mit einer Handhistorie.");
+		super(Messages.HandhistoryException_0);
 	}
 
 	/**

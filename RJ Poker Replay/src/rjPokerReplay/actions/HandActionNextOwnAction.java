@@ -22,7 +22,7 @@ import rjPokerReplay.views.ViewTable;
 
 public class HandActionNextOwnAction implements IWorkbenchWindowActionDelegate {
 	
-	public static final String ID = "HandActionNextOwnAction.action";
+	public static final String ID = "HandActionNextOwnAction.action"; //$NON-NLS-1$
 	
 	IWorkbenchWindow window;
 

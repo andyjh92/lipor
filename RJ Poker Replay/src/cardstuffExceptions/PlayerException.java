@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für allg. Spielerfehler
+ * Fehlerklasse fuer allg. Spielerfehler
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -17,7 +19,7 @@ public class PlayerException extends Exception {
 	 * Standartkonstuktor
 	 */
 	public PlayerException() {
-		super("Allg. Fehler bei Spielerbeitung");
+		super(Messages.PlayerException_0);
 	}
 
 	/**

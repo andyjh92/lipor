@@ -13,6 +13,8 @@
 
 package rjPokerReplay.wizard;
 
+import language.Messages;
+
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.widgets.MessageBox;
@@ -23,6 +25,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import rjPokerReplay.Activator;
 import rjPokerReplay.ApplicationWorkbenchAdvisor;
 import rjPokerReplay.util.ErrorHandler;
+import rjPokerReplay.util.FileUtil;
 import rjPokerReplay.views.ViewTable;
 import rjPokerReplay.views.ViewTableinfo;
 import cardstuff.HandhistoryPokerstars;
@@ -38,33 +41,38 @@ public class Pokerstars extends Wizard implements IImportWizard {
 	}
 
 	/**
-	 * Arbeiten die beim Betätigen der Finish-Taste ausgeführt werden
+	 * Arbeiten die beim Betaetigen der Finish-Taste ausgefuehrt werden
 	 */
 	@Override
 	public boolean performFinish() {
-		// gewählten Dateiname ermitteln
-		String file = "";
+		// gewaehlten Dateiname ermitteln
+		String file = ""; //$NON-NLS-1$
 		SelectFile t = (SelectFile)getPage("Select File");
 		if (t != null) {
-			file = t.getPath();	
+			file = t.getPath();
+		}
+		
+		// wenn kein Dateiname erfasst gehts zurueck
+		if (t == null || "".equals(file)) { //$NON-NLS-1$
+			return false;
 		}
 		
 		// Datei importieren
 		try {
 			ApplicationWorkbenchAdvisor.setHands(new HandhistoryPokerstars().importHistory(file));
 		} catch (HandhistoryException e) {
-			ErrorHandler.handleError(e, "Error during import handhistory", false);
+			ErrorHandler.handleError(e, Messages.Pokerstars_1, false);
 			return false;
 		}
 		
-		// Info mit Anzahl der importierten Hände ausgeben
+		// Info mit Anzahl der importierten Haende ausgeben
 		int anzahl = ApplicationWorkbenchAdvisor.getHands().size();
 		MessageBox msg = new MessageBox(getShell());
-		msg.setMessage(String.valueOf(anzahl) + " hand(s) imported");
-		msg.setText("Import was successful");
+		msg.setMessage(String.valueOf(anzahl) + Messages.Pokerstars_2);
+		msg.setText(Messages.Pokerstars_3);
 		msg.open();
 		
-		// Table über Änderungen informieren
+		// Table ueber Aenderungen informieren
 		if (ApplicationWorkbenchAdvisor.getHands() != null) {
         	ApplicationWorkbenchAdvisor.setActiveHand(0);
         	ApplicationWorkbenchAdvisor.setHandStep(0);
@@ -93,10 +101,10 @@ public class Pokerstars extends Wizard implements IImportWizard {
 	}
 
 	/**
-	 * Fügt weitere Seiten zum Wizard hinzu
+	 * Fuegt weitere Seiten zum Wizard hinzu
 	 */
 	public void addPages() {
 		// Seite mit Dialog zur Auswahl der Datei
-		addPage(new SelectFile("Select File"));
+		addPage(new SelectFile(Messages.Pokerstars_4));
 	}
 }

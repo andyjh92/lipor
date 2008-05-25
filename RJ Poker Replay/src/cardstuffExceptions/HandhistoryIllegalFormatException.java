@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für den unbekannten Aufbau einer Handhistorie
+ * Fehlerklasse fuer den unbekannten Aufbau einer Handhistorie
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -18,7 +20,7 @@ public class HandhistoryIllegalFormatException extends HandhistoryException{
 	 * Standartkonstuktor
 	 */
 	public HandhistoryIllegalFormatException() {
-		super("Handhistorie hat einen unbekannten Aufbau.");
+		super(Messages.HandhistoryIllegalFormatException_0);
 	}
 
 	/**

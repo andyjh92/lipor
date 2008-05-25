@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für nicht definierte Kartenfarbe
+ * Fehlerklasse fuer nicht definierte Kartenfarbe
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 
 /**
@@ -18,7 +20,7 @@ public class CardIllegalSuitException extends CardException {
 	 * Standartkonstuktor
 	 */
 	public CardIllegalSuitException() {
-		super("Unbekannte Kartenfarbe!");
+		super(Messages.CardIllegalSuitException_0);
 	}
 
 	/**

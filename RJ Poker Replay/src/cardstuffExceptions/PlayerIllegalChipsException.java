@@ -1,8 +1,10 @@
 /**
- * Fehlerklasse für fehlerhafte Chipsbeträge
+ * Fehlerklasse fuer fehlerhafte Chipsbeträge
  */
 
 package cardstuffExceptions;
+
+import language.Messages;
 
 public class PlayerIllegalChipsException extends PlayerException {
 
@@ -15,7 +17,7 @@ public class PlayerIllegalChipsException extends PlayerException {
 	 * Standartkonstuktor
 	 */
 	public PlayerIllegalChipsException() {
-		super("Nicht erlaubter Chipsbetrag.");
+		super(Messages.PlayerIllegalChipsException_0);
 	}
 
 	/**

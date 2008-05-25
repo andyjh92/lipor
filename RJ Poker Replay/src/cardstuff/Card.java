@@ -17,6 +17,8 @@ package cardstuff;
  * Klasse zur Darstellung und Handhabung einer Spielkarte
  * 
  */
+import language.Messages;
+
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.widgets.Display;
@@ -34,75 +36,75 @@ public class Card {
 	 * Konstanten
 	 **************************************************************************/
 	/*
-	 * Konstante für die Farbe Karo
+	 * Konstante fuer die Farbe Karo
 	 */
 	public static final char DIAMOND = 'D';
 	/**
-	 * Konstante für die Farbe Pik
+	 * Konstante fuer die Farbe Pik
 	 */
 	public static final char SPADE = 'S';
 	/**
-	 * Konstante für die Farbe Kreuz
+	 * Konstante fuer die Farbe Kreuz
 	 */
 	public static final char CLUB = 'C';
 	/**
-	 * Konstante für die Farbe Herz
+	 * Konstante fuer die Farbe Herz
 	 */
 	public static final char HEART = 'H';
 	/**
-	 * Konstante für eine Rückseite
+	 * Konstante fuer eine Rueckseite
 	 */
 	public static final char BACK = 'B';
 	/**
-	 * Konstante für die Karte 2
+	 * Konstante fuer die Karte 2
 	 */
 	public static final int TWO = 2;
 	/**
-	 * Konstante für die Karte 3
+	 * Konstante fuer die Karte 3
 	 */
 	public static final int THREE = 3;
 	/**
-	 * Konstante für die Karte 4
+	 * Konstante fuer die Karte 4
 	 */
 	public static final int FOUR = 4;
 	/**
-	 * Konstante für die Karte 5
+	 * Konstante fuer die Karte 5
 	 */
 	public static final int FIVE = 5;
 	/**
-	 * Konstante für die Karte 6
+	 * Konstante fuer die Karte 6
 	 */
 	public static final int SIX = 6;
 	/**
-	 * Konstante für die Karte 7
+	 * Konstante fuer die Karte 7
 	 */
 	public static final int SEVEN = 7;
 	/**
-	 * Konstante für die Karte 8
+	 * Konstante fuer die Karte 8
 	 */
 	public static final int EIGHT = 8;
 	/**
-	 * Konstante für die Karte 9
+	 * Konstante fuer die Karte 9
 	 */
 	public static final int NINE = 9;
 	/**
-	 * Konstante für die Karte 10
+	 * Konstante fuer die Karte 10
 	 */
 	public static final int TEN = 10;
 	/**
-	 * Konstante für die Karte Bube (Jack)
+	 * Konstante fuer die Karte Bube (Jack)
 	 */
 	public static final int JACK = 11;
 	/**
-	 * Konstante für die Karte Dame (Queen)
+	 * Konstante fuer die Karte Dame (Queen)
 	 */
 	public static final int QUEEN = 12;
 	/**
-	 * Konstante für die Karte König (King)
+	 * Konstante fuer die Karte König (King)
 	 */
 	public static final int KING = 13;
 	/**
-	 * Konstante für die Karte Ass
+	 * Konstante fuer die Karte Ass
 	 */
 	public static final int ACE = 14;
 
@@ -133,13 +135,13 @@ public class Card {
 	 */
 	public Card(int value, char suit) throws CardIllegalValueException,
 			CardIllegalSuitException {
-		// Wert prüfen
+		// Wert pruefen
 		checkValue(value);
 
-		// Farbe prüfen
+		// Farbe pruefen
 		checkSuit(suit);
 
-		// Alles im grünen Bereich, dann speichern
+		// Alles im gruenen Bereich, dann speichern
 		this.value = value;
 		this.suit = suit;
 
@@ -149,7 +151,7 @@ public class Card {
 	 * Getter
 	 **************************************************************************/
 	/**
-	 * Rückgabe der Eigenschaft <tt>suit</tt> Farbe
+	 * Rueckgabe der Eigenschaft <tt>suit</tt> Farbe
 	 * 
 	 * @return Die Farbe der Karte.
 	 */
@@ -158,7 +160,7 @@ public class Card {
 	}
 
 	/**
-	 * Rückgabe der Eigenschaft <tt>value</tt> Wert
+	 * Rueckgabe der Eigenschaft <tt>value</tt> Wert
 	 * 
 	 * @return Der Wert der Karte
 	 */
@@ -170,15 +172,15 @@ public class Card {
 	 * Methoden
 	 **************************************************************************/
 	/**
-	 * Prüft ob ein Kartenwert erlaubt ist
+	 * Prueft ob ein Kartenwert erlaubt ist
 	 * 
 	 * @param value
-	 *            Der zu prüfende Kartenwert
+	 *            Der zu pruefende Kartenwert
 	 */
 	public static void checkValue(int value) throws CardIllegalValueException {
 		if (value < TWO || value > ACE) {
 			throw new CardIllegalValueException(String.valueOf(value)
-					+ " ist kein erlaubter Kartenwert!");
+					+ Messages.Card_0);
 		}
 	}
 
@@ -186,7 +188,7 @@ public class Card {
 	 * Gibt den Wert der Karte als Text aus
 	 */
 	public String toString() {
-		String ret = "";
+		String ret = ""; //$NON-NLS-1$
 
 		// internen Wert der Karte umwandeln
 		switch (value) {
@@ -230,11 +232,11 @@ public class Card {
 			ret = "A"; //$NON-NLS-1$
 			break;
 		default:
-			ret = "unbekannter Wert!";
+			ret = Messages.Card_1;
 			break;
 		}
 
-		// Farbe der Karte hinzufügen
+		// Farbe der Karte hinzufuegen
 		switch (suit) {
 		case 'D':
 			ret = ret + "d"; //$NON-NLS-1$
@@ -249,7 +251,7 @@ public class Card {
 			ret = ret + "s"; //$NON-NLS-1$
 			break;
 		default:
-			ret = ret + " unbekannte Farbe!";
+			ret = ret + Messages.Card_2;
 			break;
 		}
 
@@ -257,21 +259,21 @@ public class Card {
 	}
 
 	/**
-	 * Prüft ob die Kartenfarbe erlaubt ist
+	 * Prueft ob die Kartenfarbe erlaubt ist
 	 * 
 	 * @param suit
-	 *            Die zu prüfende Farbe
+	 *            Die zu pruefende Farbe
 	 * @throws CardIllegalSuitException
 	 */
 	public static void checkSuit(char suit) throws CardIllegalSuitException {
 		if (suit != CLUB && suit != SPADE && suit != DIAMOND && suit != HEART && suit != BACK) {
 			throw new CardIllegalSuitException(suit
-					+ " ist keine definierter Kartenfarbe!");
+					+ Messages.Card_3);
 		}
 	}
 
 	/**
-	 * Gibt die der Karte entsprechende Grafik zurück
+	 * Gibt die der Karte entsprechende Grafik zurueck
 	 * 
 	 * @return Die zur Karte gehörende Gafrik
 	 * @throws CardIllegalValueException
@@ -279,77 +281,7 @@ public class Card {
 	 */
 	public Image getImage() throws CardIllegalValueException,
 			CardIllegalSuitException {
-		String ret = "";
-
-		// String mit dem Dateinamen erstellen
-		// Der Wert
-//		switch (value) {
-//		case 2:
-//			ret = "2_"; //$NON-NLS-1$
-//			break;
-//		case 3:
-//			ret = "3_"; //$NON-NLS-1$
-//			break;
-//		case 4:
-//			ret = "4_"; //$NON-NLS-1$
-//			break;
-//		case 5:
-//			ret = "5_"; //$NON-NLS-1$
-//			break;
-//		case 6:
-//			ret = "6_"; //$NON-NLS-1$
-//			break;
-//		case 7:
-//			ret = "7_"; //$NON-NLS-1$
-//			break;
-//		case 8:
-//			ret = "8_"; //$NON-NLS-1$
-//			break;
-//		case 9:
-//			ret = "9_"; //$NON-NLS-1$
-//			break;
-//		case 10:
-//			ret = "10_"; //$NON-NLS-1$
-//			break;
-//		case 11:
-//			ret = "11_"; //$NON-NLS-1$
-//			break;
-//		case 12:
-//			ret = "12_"; //$NON-NLS-1$
-//			break;
-//		case 13:
-//			ret = "13_"; //$NON-NLS-1$
-//			break;
-//		case 14:
-//			ret = "1_"; //$NON-NLS-1$
-//			break;
-//		default:
-//			throw new CardIllegalValueException();
-//		}
-//
-//		// Farbe der Karte hinzufügen
-//		switch (suit) {
-//		case 'D':
-//			ret = ret + "1.png"; //$NON-NLS-1$
-//			break;
-//		case 'H':
-//			ret = ret + "4.png"; //$NON-NLS-1$
-//			break;
-//		case 'C':
-//			ret = ret + "2.png"; //$NON-NLS-1$
-//			break;
-//		case 'S':
-//			ret = ret + "3.png"; //$NON-NLS-1$
-//			break;
-//		case 'B':
-//			ret = "back_red_casino.gif"; //$NON-NLS-1$
-//			break;
-//		default:
-//			throw new CardIllegalSuitException();
-//		}
-//
-//		// und Dateiendung und Pfad einfügen
-//		ret = "images/" + ret; //$NON-NLS-1$
+		String ret = ""; //$NON-NLS-1$
 		
 		// passende Konstante zum Kartenwert ermitteln
 		if (suit == 'B') {
@@ -469,7 +401,7 @@ public class Card {
 	}
 	
 	/**
-	 * Prüft ob zwei Karten gleich sind, also gleiche Farbe und Wert haben
+	 * Prueft ob zwei Karten gleich sind, also gleiche Farbe und Wert haben
 	 * 
 	 * @param card Die zu vegleichende Karte
 	 * @return true wenn beide Karten gleich sind
@@ -503,7 +435,7 @@ public class Card {
 			break;
 		}
 		
-		if (name1.equals("2")) {
+		if (name1.equals("2")) { //$NON-NLS-1$
 			tmpValue = TWO;
 		} else if (name1.equals("3")) { //$NON-NLS-1$
 			tmpValue = THREE;
@@ -535,7 +467,7 @@ public class Card {
 	}
 	
 	public static Image getImageBack() {
-		ImageData imgData = new ImageData(ViewTable.class.getClassLoader().getResourceAsStream("images/back_red_casino.gif"));
+		ImageData imgData = new ImageData(ViewTable.class.getClassLoader().getResourceAsStream("images/back_red_casino.gif")); //$NON-NLS-1$
 		Image image = new Image(Display.getCurrent(), imgData);
 		return image;
 	}

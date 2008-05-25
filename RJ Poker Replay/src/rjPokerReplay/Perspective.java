@@ -28,7 +28,7 @@ public class Perspective implements IPerspectiveFactory {
 		layout.setEditorAreaVisible(false);
 		layout.setFixed(true);
 	
-		IFolderLayout bottom = layout.createFolder("bottom", IPageLayout.BOTTOM, (float)(IPageLayout.RATIO_MAX * 0.8), editorArea);
+		IFolderLayout bottom = layout.createFolder("bottom", IPageLayout.BOTTOM, (float)(IPageLayout.RATIO_MAX * 0.8), editorArea); //$NON-NLS-1$
 		bottom.addPlaceholder(ViewHandhistory.ID);
 		bottom.addView(ViewTableinfo.ID);
 		layout.addStandaloneView(ViewTable.ID, false, IPageLayout.LEFT, (float)(IPageLayout.RATIO_MAX * 0.2), editorArea);

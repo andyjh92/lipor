@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 
 /**
  * @author Ralf Joswig
@@ -19,7 +21,7 @@ public class HandIllegalRakesizeException extends HandException {
 	 * Standartkonstuktor
 	 */
 	public HandIllegalRakesizeException() {
-		super("Ein Rake in dieser Höhe ist nicht zulässig.");
+		super(Messages.HandIllegalRakesizeException_0);
 	}
 
 	/**

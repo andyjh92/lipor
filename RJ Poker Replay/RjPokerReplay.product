@@ -3,6 +3,7 @@
 
 <product name="RJ Poker Replay" id="RjPokerReplay.product" application="RjPokerReplay.application" useFeatures="false">
 
+
    <configIni use="default"/>
 
    <launcherArgs>
@@ -10,6 +11,18 @@
    </launcherArgs>
 
    <windowImages i16="icons/alt_window_16.gif" i32="icons/alt_window_32.gif"/>
+
+
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
 
    <plugins>
       <plugin id="RjPokerReplay"/>
@@ -33,7 +46,8 @@
       <plugin id="org.eclipse.osgi"/>
       <plugin id="org.eclipse.osgi.services"/>
       <plugin id="org.eclipse.swt"/>
-      <plugin id="org.eclipse.swt.gtk.linux.x86" fragment="true"/>
+      <plugin id="org.eclipse.swt.gtk.linux.x86"/>
+      <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
       <plugin id="org.eclipse.ui"/>
       <plugin id="org.eclipse.ui.workbench"/>
    </plugins>

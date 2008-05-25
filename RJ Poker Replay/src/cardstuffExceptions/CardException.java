@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für llg. Kartenfehler
+ * Fehlerklasse fuer llg. Kartenfehler
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -17,7 +19,7 @@ public class CardException extends Exception {
 	 * Standartkonstuktor
 	 */
 	public CardException() {
-		super("Allg. Fehler bei Kartenbearbeitung");
+		super(Messages.CardException_0);
 	}
 
 	/**

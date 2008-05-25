@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für eine nicht definierte Handaktion
+ * Fehlerklasse fuer eine nicht definierte Handaktion
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -18,7 +20,7 @@ public class ActionIllegalActionException extends ActionException{
 	 * Standartkonstuktor
 	 */
 	public ActionIllegalActionException() {
-		super("Handaktion ist unbekannt.");
+		super(Messages.ActionIllegalActionException_0);
 	}
 
 	/**

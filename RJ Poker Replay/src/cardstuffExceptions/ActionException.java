@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für allg. Fehler im Zusammenhang mit einer Handaktion
+ * Fehlerklasse fuer allg. Fehler im Zusammenhang mit einer Handaktion
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -18,7 +20,7 @@ public class ActionException extends Exception{
 	 * Standartkonstuktor
 	 */
 	public ActionException() {
-		super("Allg. Fehler im Zusammenhang Handaktion.");
+		super(Messages.ActionException_0);
 	}
 
 	/**

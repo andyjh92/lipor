@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für fehlenden Spielnamen
+ * Fehlerklasse fuer fehlenden Spielnamen
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 public class HandMissingNameException extends HandException {
 
@@ -14,7 +16,7 @@ public class HandMissingNameException extends HandException {
 	 * Standartkonstuktor
 	 */
 	public HandMissingNameException() {
-		super("Spielename fehlt.");
+		super(Messages.HandMissingNameException_0);
 	}
 
 	/**

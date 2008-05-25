@@ -44,7 +44,7 @@ public class SelectFile extends WizardPage {
 	/**
 	 * Konstruktor
 	 * 
-	 * @param pageName Name (Überschrift) der Wizardseiten
+	 * @param pageName Name (Ueberschrift) der Wizardseiten
 	 */
 	protected SelectFile(String pageName) {
 		super(pageName);
@@ -54,10 +54,10 @@ public class SelectFile extends WizardPage {
 	}
 
 	/**
-	 * Seitenelemente hinzufügen
+	 * Seitenelemente hinzufuegen
 	 */
 	public void createControl(Composite parent) {
-		// Container für die Elemente
+		// Container fuer die Elemente
 		Composite container = new Composite(parent, SWT.NULL);
 		
 		// Das Layout festlegen
@@ -65,42 +65,42 @@ public class SelectFile extends WizardPage {
         layout.numColumns = 3;
         container.setLayout(layout);
         
-        // Label für den Dateipfad
+        // Label fuer den Dateipfad
         Label lPfad = new Label(container, SWT.NULL);
         lPfad.setText("File:");
         
-        // Ein Textfeld für den Pfad
+        // Ein Textfeld fuer den Pfad
         tPfad = new Text(container, SWT.LEFT);
         GridData gridData = new GridData();
 		gridData.widthHint = 400;
 		tPfad.setLayoutData(gridData);
 		
-		// Listener für Änderungne am Text
+		// Listener fuer Aenderungne am Text
 		tPfad.addModifyListener(new ModifyListener() {
 			public void modifyText(ModifyEvent e) {
-				// prüfen ob Eingabe vollständig und plausibel
+				// pruefen ob Eingabe vollstaendig und plausibel
 				isPageComplete();
 				getContainer().updateButtons();
 			}
 		});
 		
-		// ein Button um den Pfad zu wählen
+		// ein Button um den Pfad zu waehlen
 		Button bWaehlen = new Button(container, SWT.ICON);
 		try {
-			// dem Button ein Bild hinzufügen
+			// dem Button ein Bild hinzufuegen
 			bWaehlen.setImage(ApplicationWorkbenchAdvisor.getImageStore().get(rjPokerReplay.Constants.IMG_OPEN_FOLDER));
 		} catch (Exception e) {
-			// wenn das mit dem Bild nicht ging, einen Text wählen
+			// wenn das mit dem Bild nicht ging, einen Text waehlen
 			bWaehlen.setText("Brows");
 		}
-		// Und eine Listener für die Wahltaste
+		// Und eine Listener fuer die Wahltaste
 		bWaehlen.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				selectPfadDialog();
 				getContainer().updateButtons();
 			}
 		});
-        // Versuchen wir ein Bild die Wählentaste zu laden
+        // Versuchen wir ein Bild die Waehlentaste zu laden
         setControl(container);
 	}
 
@@ -108,10 +108,10 @@ public class SelectFile extends WizardPage {
 	 * Dialog zur Dateiauswahl anzeigen
 	 */
 	protected void selectPfadDialog() {
-		// Den Diaog öffnen
+		// Den Diaog oeffnen
 		FileDialog dia = new  FileDialog(getShell(), SWT.OPEN);
 		
-		// Pfad für vorgeinstelltes Verzeichnis setzen
+		// Pfad fuer vorgeinstelltes Verzeichnis setzen
 		dia.setFilterPath(Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.P_POKERSTARS_PATH));
 		
 		// Dialog anzeigen
@@ -119,21 +119,21 @@ public class SelectFile extends WizardPage {
 		
 		// Wenn ein Pfad eingegeben wurde ... 
 		if (pfad != null) {
-			// Den Pfad in das Textfeld übertragen
+			// Den Pfad in das Textfeld uebertragen
 			tPfad.setText(pfad);
 		}
 		
 	}
 	
 	/**
-	 * Prüft ob alle Eingaben im Dialog gemacht wurden und sinnvoll sind
+	 * Prueft ob alle Eingaben im Dialog gemacht wurden und sinnvoll sind
 	 */
 	public boolean isPageComplete() {
 		boolean ret = false;
 		
 		// wurde ein Dateinameerfasst
 		if (FileUtil.checkFileExists(tPfad.getText())) {
-			// ja, dann Fehlermeldung löschen und Rückgabewert auf vollständig setzen
+			// ja, dann Fehlermeldung loeschen und Rueckgabewert auf vollstaendig setzen
 			setErrorMessage(null);
 			ret = true;
 		} else {
@@ -141,14 +141,14 @@ public class SelectFile extends WizardPage {
 			setErrorMessage("File does not exist");
 		}
 		
-		// Prüfen ob der Daeityp eine Pokerstars-Handhistorie-Datei ist
+		// Pruefen ob der Daeityp eine Pokerstars-Handhistorie-Datei ist
 		try {
 			if (ret && Handhistory.getKind(tPfad.getText()) != Handhistory.POKERSTARS) {
-				// nein, Fehlertext setzen und Rückgabewert umsetzen 
+				// nein, Fehlertext setzen und Rueckgabewert umsetzen 
 				setErrorMessage("Wrong filetype, is not a Pokerstar handhistory.");
 				ret = false;
 			} else {
-				// Typ stimmt, dann Fehlermeldung löschen und Rückgabewert umsetzen
+				// Typ stimmt, dann Fehlermeldung loeschen und Rueckgabewert umsetzen
 				setErrorMessage(null);
 				ret = true;
 			}
@@ -160,7 +160,7 @@ public class SelectFile extends WizardPage {
 	}
 	
 	/**
-	 * Gibt den erfassten Dateipfad zurück
+	 * Gibt den erfassten Dateipfad zurueck
 	 * @return Der Dateipfad
 	 */
 	public String getPath() {

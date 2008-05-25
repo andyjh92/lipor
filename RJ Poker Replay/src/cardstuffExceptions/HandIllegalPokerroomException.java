@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 
 /**
  * @author Ralf Joswig
@@ -21,7 +23,7 @@ public class HandIllegalPokerroomException extends HandException {
 	 * Standartkonstuktor
 	 */
 	public HandIllegalPokerroomException() {
-		super("Der Pokerraum ist nicht definiert, bitte Konstanten verwenden.");
+		super(Messages.HandIllegalPokerroomException_0);
 	}
 
 	/**

@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für Fehlende Parameter bei Handaktionen
+ * Fehlerklasse fuer Fehlende Parameter bei Handaktionen
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -18,7 +20,7 @@ public class ActionMissingParameterException extends ActionException{
 	 * Standartkonstuktor
 	 */
 	public ActionMissingParameterException() {
-		super("Fehlende Paramter beim Anlegen einer Aktion.");
+		super(Messages.ActionMissingParameterException_0);
 	}
 
 	/**

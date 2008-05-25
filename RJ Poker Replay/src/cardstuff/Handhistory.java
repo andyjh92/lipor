@@ -17,6 +17,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import language.Messages;
+
 import rjPokerReplay.util.ErrorHandler;
 import rjPokerReplay.util.FileUtil;
 
@@ -26,7 +28,7 @@ import cardstuffExceptions.HandhistoryException;
 /**
  * @author ralf
  *
- * Interface um die Handhistory verschiedener Pokerräume abzubilden
+ * Interface um die Handhistory verschiedener Pokerraeume abzubilden
  */
 
 public abstract class Handhistory {
@@ -39,7 +41,7 @@ public abstract class Handhistory {
 	 * List eine Handhistorie aus einer Datei
 	 * 
 	 * @param file Die Datei mit der Handhistorie
-	 * @return Eine ArrayList mit den einzelnen Händen
+	 * @return Eine ArrayList mit den einzelnen Haenden
 	 */
 	public abstract ArrayList<Hand> importHistory(String path) throws HandhistoryException;
 	
@@ -53,27 +55,27 @@ public abstract class Handhistory {
 	public static int getKind(String path) throws IOException {
 		BufferedReader inputFile = null;
 		int fileType = -1;
-		// prüfen ob die Datei existiert
+		// pruefen ob die Datei existiert
 		if (!FileUtil.checkFileExists(path))
 		{
 			// nein 
-			ErrorHandler.handleError(new FileNotFoundException(), "File not exist", false);
+			ErrorHandler.handleError(new FileNotFoundException(), Messages.Handhistory_0, false);
 		}
 		
 		// beinhaltet der Pfad einen Dateinamen
-		if (!path.endsWith(System.getProperty("file.separator"))) {
-			// ja, dann prüfen zu welchem Typ die Kennung passt
+		if (!path.endsWith(System.getProperty("file.separator"))) {  //$NON-NLS-1$
+			// ja, dann pruefen zu welchem Typ die Kennung passt
 			try
 			{
 				inputFile = new BufferedReader( new FileReader(path) );
 			} catch (IOException e){
-				ErrorHandler.handleError(new FileNotFoundException(), "File not exist", false);
+				ErrorHandler.handleError(new FileNotFoundException(), Messages.Handhistory_0, false);
 			}
-			String line = "";
-			while ("".equals(line)) {
+			String line = ""; //$NON-NLS-1$
+			while ("".equals(line)) { //$NON-NLS-1$
 				line = inputFile.readLine();
 			}
-			if (line.startsWith("PokerStars")) { 
+			if (line.startsWith("PokerStars")) {  //$NON-NLS-1$
 				fileType = POKERSTARS;
 			} else {
 				fileType = UNKNOWN;
@@ -81,5 +83,4 @@ public abstract class Handhistory {
 		}
 		return fileType;
 	}
-
 }

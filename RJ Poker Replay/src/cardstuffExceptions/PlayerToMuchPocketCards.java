@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 public class PlayerToMuchPocketCards extends PlayerException {
 
 	/**
@@ -14,7 +16,7 @@ public class PlayerToMuchPocketCards extends PlayerException {
 	 * Standartkonstuktor
 	 */
 	public PlayerToMuchPocketCards() {
-		super("Spieler hat bereits zwei Karten");
+		super(Messages.PlayerToMuchPocketCards_0);
 	}
 
 	/**

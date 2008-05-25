@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse für eine nicht erlaubte Anzahl an Karten in einer Hand
+ * Fehlerklasse fuer eine nicht erlaubte Anzahl an Karten in einer Hand
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -18,7 +20,7 @@ public class HandIllegalCardCountException extends HandException{
 	 * Standartkonstuktor
 	 */
 	public HandIllegalCardCountException() {
-		super("Anzahl der Karten ist nicht erlaubt.");
+		super(Messages.HandIllegalCardCountException_0);
 	}
 
 	/**

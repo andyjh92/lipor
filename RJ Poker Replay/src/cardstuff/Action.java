@@ -12,6 +12,7 @@
 
 package cardstuff;
 
+import language.Messages;
 import cardstuffExceptions.ActionException;
 import cardstuffExceptions.ActionIllegalActionException;
 import cardstuffExceptions.ActionMissingParameterException;
@@ -19,7 +20,7 @@ import cardstuffExceptions.ActionMissingParameterException;
 /**
  * @author ralf
  *
- * Klasse die eine Aktion während eines Pokerspielsdarstellt
+ * Klasse die eine Aktion waehrend eines Pokerspielsdarstellt
  */
 
 public class Action {
@@ -98,11 +99,11 @@ public class Action {
 	 **************************************************************************/
 	
 	/**
-	 * vollständiger Konstuktor
+	 * vollstaendiger Konstuktor
 	 *  
-	 * @param player Spieler der die Aktion ausführt
+	 * @param player Spieler der die Aktion ausfuehrt
 	 * @param action Welche Aktion, siehe Konstanten
-	 * @param value  ggf. Wert mit der die Aktion durchgeführt wird
+	 * @param value  ggf. Wert mit der die Aktion durchgefuehrt wird
 	 * @throws ActionIllegalActionException 
 	 * @throws ActionMissingParameterException 
 	 * @throws ActionException 
@@ -118,27 +119,27 @@ public class Action {
 	 * Getter
 	 **************************************************************************/
 	/**
-	 * Gibt den Spieler der Aktion zurück
+	 * Gibt den Spieler der Aktion zurueck
 	 * 
-	 * @return Der Spieler, der die Aktion ausführt
+	 * @return Der Spieler, der die Aktion ausfuehrt
 	 */
 	public Player getPlayer() {
 		return player;
 	}
 
 	/**
-	 * Gibt die Aktion zurück
+	 * Gibt die Aktion zurueck
 	 * 
-	 * @return Die Atkion, die der Spieler ausführt
+	 * @return Die Atkion, die der Spieler ausfuehrt
 	 */
 	public int getAction() {
 		return action;
 	}
 
 	/**
-	 * Gibt den Wert der Aktion zurück
+	 * Gibt den Wert der Aktion zurueck
 	 * 
-	 * @return Der Wert zur ausgeführten Aktion
+	 * @return Der Wert zur ausgefuehrten Aktion
 	 */
 	public Object getValue() {
 		return value;
@@ -148,7 +149,7 @@ public class Action {
 	 * Setter
 	 **************************************************************************/
 	/**
-	 * Setzt den Spieler der die Aktion ausführt
+	 * Setzt den Spieler der die Aktion ausfuehrt
 	 * 
 	 * @param Der Spieler zur aktion
 	 */
@@ -157,13 +158,13 @@ public class Action {
 	}
 	
 	/**
-	 * Setzt die Aktion die ausgeführt wird
+	 * Setzt die Aktion die ausgefuehrt wird
 	 * 
-	 * @param action Die auszuführende Aktion
+	 * @param action Die auszufuehrende Aktion
 	 * @throws ActionIllegalActionException 
 	 */
 	private void setAction(int action) throws ActionIllegalActionException {
-		// Fehler wenn keine gültige Aktion 
+		// Fehler wenn keine gueltige Aktion 
 		if (action != CALL &&
 		      action != FOLD &&
 		      action != BET &&
@@ -189,7 +190,7 @@ public class Action {
 	}
 
 	/**
-	 * Setzt den Wert mit der die Aktion ausgeführt wird
+	 * Setzt den Wert mit der die Aktion ausgefuehrt wird
 	 * 
 	 * @param value Der Wert der Aktion
 	 */
@@ -201,9 +202,9 @@ public class Action {
 	 * Methoden
 	 **************************************************************************/
 	/**
-	 * Prüft ob die einzelnen Angaben der Aktion zusammen passen
+	 * Prueft ob die einzelnen Angaben der Aktion zusammen passen
 	 * 
-	 * @return True wenn die Angaben zur Aktion schlüssig sind.
+	 * @return True wenn die Angaben zur Aktion schluessig sind.
 	 */
 	public boolean isActionValid() {
 		return true;
@@ -215,74 +216,74 @@ public class Action {
 	 * @return Die Aktion als Text
 	 */
 	public String toString() {
-		String ret = "";
+		String ret = ""; //$NON-NLS-1$
 		
-		// Text in Abhänigkeit für die verschiedenen Aktionen
+		// Text in Abhaenigkeit fuer die verschiedenen Aktionen
 		switch (action) {
 		case SMALLBLIND:
-			ret = player.getName() + ": posts small blind " + String.valueOf(value); 
+			ret = player.getName() + Messages.Action_0 + String.valueOf(value); 
 			break;
 		case BIGBLIND:
-			ret = player.getName() + ": posts big blind " + String.valueOf(value); 
+			ret = player.getName() + Messages.Action_1 + String.valueOf(value); 
 			break;
 		case ANTE:
-			ret = player.getName() + ": posts ante " + String.valueOf(value); 
+			ret = player.getName() + Messages.Action_2 + String.valueOf(value); 
 			break;			
 		case SMALL_AND_BIGBLIND:
-			ret = player.getName() + " small & big blinds " + String.valueOf(value);
+			ret = player.getName() + Messages.Action_3 + String.valueOf(value);
 			break;
 		case FOLD:
-			ret = player.getName() + ": folds"; 
+			ret = player.getName() + Messages.Action_4; 
 			break;
 		case BET:
-			ret = player.getName() + ": bets " + String.valueOf(value); 
+			ret = player.getName() + Messages.Action_5 + String.valueOf(value); 
 			break;
 		case CALL:
-			ret = player.getName() + ": calls " + String.valueOf(value); 
+			ret = player.getName() + Messages.Action_6 + String.valueOf(value); 
 			break;			
 		case RAISE:
-			ret = player.getName() + ": raise to " + String.valueOf(value); 
+			ret = player.getName() + Messages.Action_7 + String.valueOf(value); 
 			break;
 		case DEAL:
-			ret = player.getName() + ": get Card " + value.toString(); 
+			ret = player.getName() + Messages.Action_8 + value.toString(); 
 			break;
 		case COLLECT:
-			ret = player.getName() + ": collected " + String.valueOf(value) + " from pot"; 
+			ret = player.getName() + Messages.Action_9 + String.valueOf(value) + Messages.Action_10; 
 			break;
 		case FLOP:
-			ret = "*** FLOP ***"; 
+			ret = "*** FLOP ***"; //$NON-NLS-1$ 
 			break;			
 		case TURN:
-			ret = "*** TURN ***"; 
+			ret = "*** TURN ***";  //$NON-NLS-1$
 			break;
 		case RIVER:
-			ret = "*** RIVER ***"; 
+			ret = "*** RIVER ***";  //$NON-NLS-1$
 			break;
 		case CHECK:
-			ret = player.getName() + ": checks";
+			ret = player.getName() + Messages.Action_11;
 			break;
 		case SHOW:
-			ret = player.getName() + ": shows hand";
+			ret = player.getName() + Messages.Action_12;
 			break;
 		case MUCK:
-			ret = player.getName() + ": mucks hand";
+			ret = player.getName() + Messages.Action_13;
 			break;
 		case SAY:
-			ret = player.getName() + " said: " + value;
+			ret = player.getName() + Messages.Action_14 + value;
 			break;
 		case SHOWDOWN:
-			ret = "*** SHOWDOWN ***"; 
+			ret = "*** SHOWDOWN ***"; //$NON-NLS-1$ 
 			break;
 		default:
-			ret = "Unbekannte Aktion!";
+			ret = Messages.Action_15;
 			break;
 		}
 		return ret;
 	}
 	
 	/**
-	 * Prüft ob bei bestimmten Aktiion / Spieler / Wert Kombinationen die nötigen Werte 
-	 * gefültl sind
+	 * Prueft ob bei bestimmten Aktion / Spieler / Wert Kombinationen die noetigen Werte 
+	 * gefuellt sind
 	 * 
 	 * @param action Die Aktion
 	 * @param player Der Spieler
@@ -307,7 +308,7 @@ public class Action {
 		case CHECK:
 		case MUCK:
 			if (player == null) {
-				throw new ActionMissingParameterException("Spieler fehlt bei Aktion.");
+				throw new ActionMissingParameterException(Messages.Action_16);
 			}
 			break;
 		case DEAL:
@@ -320,7 +321,7 @@ public class Action {
 		case TURN:
 		case RIVER:
 		case SHOWDOWN:
-			// Keine weiteren Angaben nötig
+			// Keine weiteren Angaben noetig
 			break;
 		case SAY:
 			if (player == null || value == null || !(value instanceof String)) {

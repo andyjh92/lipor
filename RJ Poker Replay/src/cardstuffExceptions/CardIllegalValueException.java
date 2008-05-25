@@ -3,6 +3,8 @@
  */
 package cardstuffExceptions;
 
+import language.Messages;
+
 
 /**
  * @author Ralf Joswig
@@ -18,7 +20,7 @@ public class CardIllegalValueException extends CardException {
 	 * Konsturktor ohne Parameter
 	 */
 	public CardIllegalValueException() {
-		super("Unbekannter Kartenwert!");
+		super(Messages.CardIllegalValueException_0);
 	}
 
 	/**

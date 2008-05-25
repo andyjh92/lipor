@@ -1,7 +1,9 @@
 /**
- * Fehlerklasse wenn ein Spieler fehlt / nicht übergeben wurde
+ * Fehlerklasse wenn ein Spieler fehlt / nicht uebergeben wurde
  */
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -17,7 +19,7 @@ public class PlayerMissingException extends PlayerException {
 	 * Standartkonstuktor
 	 */
 	public PlayerMissingException() {
-		super("Fehlender Spieler.");
+		super(Messages.PlayerMissingException_0);
 	}
 
 	/**

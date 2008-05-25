@@ -22,7 +22,7 @@ import rjPokerReplay.views.ViewTable;
 
 public class HandActionAutoplay implements IWorkbenchWindowActionDelegate {
 	
-	public static final String ID = "HandActionAutoplay.action";
+	public static final String ID = "HandActionAutoplay.action"; //$NON-NLS-1$
 	
 	IWorkbenchWindow window;
 

@@ -15,6 +15,8 @@ package rjPokerReplay.views;
 
 import java.util.ArrayList;
 
+import language.Messages;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
@@ -38,49 +40,46 @@ import cardstuff.Card;
 import cardstuff.Hand;
 import cardstuff.Handhistory;
 import cardstuff.Player;
-import cardstuff.Pot;
 import cardstuff.Table;
 import cardstuffExceptions.ActionIllegalActionException;
 import cardstuffExceptions.CardException;
 import cardstuffExceptions.PlayerException;
+import cardstuffExceptions.TableException;
 
 public class ViewTable extends ViewPart {
-	public static final String ID = "RjPokerReplay.ViewTable";
+	public static final String ID = "RjPokerReplay.ViewTable"; //$NON-NLS-1$
 
-	// Zeichenfläsche
+	// Zeichenflaeche
 	private Canvas canvas;
 	
 	// Hintergrundbild
 	private Image background;
 	
-	// Vorlage für original Hintergrundbild
+	// Vorlage fuer original Hintergrundbild
 	private ImageData background_org;
 	
-	// Vorlage für größenangepaßtes Hintergundbild
+	// Vorlage fuer groessenangepasstes Hintergundbild
 	private ImageData background_scal;
 	
-	// Daten für Bildumwanldung
+	// Daten fuer Bildumwanldung
 	private ImageData imgData;
 	
 	// gemerkte Breite des Zeichenfensters 
 	private int canvasWidht;
 	
-	// gemerkte Höhe des Zeichenfensters
+	// gemerkte Hoehe des Zeichenfensters
 	private int canvasHeight;
 	
-	// Zeichenfläche für den tisch
+	// Zeichenflaeche fuer den tisch
 	private GC gcTable;
 	
-	// Einsätze der Spieler
-	private double bet[] = new double[10];
-	
-	// Kennzeichen für Preflop, Flop, Turn oder River
+	// Kennzeichen fuer Preflop, Flop, Turn oder River
 	private int status = 0;
 	
 	// aktueller Tisch
 	private Table table = null;
 	
-	// Der akuelle Display
+	// Der aktuelle Display
 	private Display display;
 	
 	// Feld mit den Positionen der Spieler am Tisch
@@ -95,12 +94,9 @@ public class ViewTable extends ViewPart {
 	// Bild des Buttons
 	private Image button;
 	
-	// Thread für den Autoplay
+	// Thread fuer den Autoplay
 	private static Thread thread;
 	
-	// der Pot
-	Pot pot = new Pot();
-
 	/**
 	 * Zeichnet den Pokertsich
 	 */
@@ -109,19 +105,19 @@ public class ViewTable extends ViewPart {
 		// Display besorgen
 		display = Display.getCurrent();
 
-		// Zeichenfläche mit Layout
+		// Zeichenflaeche mit Layout
 		canvas = new Canvas(parent, SWT.BACKGROUND);
 		canvas.setLayout(null);
 
-		// Hintergundbild mit Pokertisch in der original Größe
+		// Hintergundbild mit Pokertisch in der original Groesse
 		background_org = ApplicationWorkbenchAdvisor.getImageStore().get(
 				Constants.IMG_BACKGROUND).getImageData();
 
-		// Größe der Zeichenfläche
+		// Groesse der Zeichenflaeche
 		int width = canvas.getParent().getShell().getBounds().width;
 		int height = canvas.getParent().getShell().getBounds().height;
 
-		// Hintergrund auf passende Größe bringen
+		// Hintergrund auf passende Groesse bringen
 		background_scal = background_org.scaledTo(width, height);
 
 		// und Bild als Hintergrund verwenden
@@ -134,7 +130,7 @@ public class ViewTable extends ViewPart {
 			public void paintControl(PaintEvent e) {
 				if (canvasHeight != canvas.getBounds().height
 						|| canvasWidht != canvas.getBounds().width) {
-					// Bei Größenänderung den Tisch neu zeichnen
+					// Bei Groessenaenderung den Tisch neu zeichnen
 					drawTable();
 				}
 			}
@@ -146,19 +142,19 @@ public class ViewTable extends ViewPart {
 	 */
 	public void drawTable() {
 
-		// Größe der Zeichenfläche ermitteln
+		// Groesse der Zeichenflaeche ermitteln
 		Rectangle client = canvas.getClientArea();
 		int width = client.width;
 		int height = client.height;
 
-		// Bestimmte Dinge müssen nur bei einer Änderung der Größe durchgeführt
+		// Bestimmte Dinge muessen nur bei einer Aenderung der Groesse durchgefuehrt
 		// werden
 		if (canvasHeight != height || canvasWidht != width) {
-			// aktuelle Größe der Zeichenfläsche merken
+			// aktuelle Groesse der Zeichenflaeche merken
 			canvasWidht = canvas.getBounds().width;
 			canvasHeight = canvas.getBounds().height;
 
-			// Bild auf die passende größe bringen und als Hintergund verwenden
+			// Bild auf die passende groesse bringen und als Hintergund verwenden
 			background_scal = background_org.scaledTo(width, height);
 
 			// Position der einzelnen Spieler am Tisch ermitteln
@@ -191,7 +187,7 @@ public class ViewTable extends ViewPart {
 		gcTable = new GC(background);
 		canvas.setBackgroundImage(background);
 
-		// Prüfen ob der Tisch Daten enthält
+		// Pruefen ob der Tisch Daten enthaelt
 		if (table != null && table.getPokerroom() != 0) {
 			// Button anzeigen
 			int posOfButton = 0;
@@ -209,7 +205,7 @@ public class ViewTable extends ViewPart {
 					Player player = table.getPlayers()[i];
 					int textX = playerPos.get(i + 1).x;
 					int textY = playerPos.get(i + 1).y;
-					int lineSpacing2 = 20;
+					int lineSpacing2 = 15;
 					// an dieser Postion sitzt auch wirklich ein Spieler
 
 					// Name des Spielers
@@ -221,9 +217,9 @@ public class ViewTable extends ViewPart {
 					String text;
 					if (stack == 0) {
 						// Spieler ist All-In, dann Text statt Betrag anzeigen
-						text = "All-In";
+						text = Messages.ViewTable_0;
 					} else {
-						// Spieler hat nach Geld, dann das anzeigen
+						// Spieler hat noch was, dann das anzeigen
 						text = String.valueOf(stack);
 					}
 					gcTable.drawText(text, textX,
@@ -231,15 +227,15 @@ public class ViewTable extends ViewPart {
 					textY = textY + lineSpacing2;
 
 					// Hinweis wenn der Spieler nicht aktiv ist
-					if (player.getState() != Player.AKTIV) {
-						gcTable.drawText("Is not active", textX, textY, true);
+					if (player.getState() == Player.SITTINGOUT) {
+						gcTable.drawText(Messages.ViewTable_1, textX, textY, true);
 						textY = textY + lineSpacing2;
 
 					}
 
 					// der aktuelle Einsatz
-					String einsatz = "Ante: ";
-					einsatz = einsatz + String.valueOf(bet[i]);
+					String einsatz = Messages.ViewTable_2;
+					einsatz = einsatz + String.valueOf(table.getBetOfPlayer(i));
 					gcTable.drawText(einsatz, textX, textY, true);
 					textY = textY + lineSpacing2;
 
@@ -277,13 +273,13 @@ public class ViewTable extends ViewPart {
 			// Der Pot
 			int potY = (int) (canvasHeight / 2.0 - 20.0);
 			int potX = (int) (canvasWidht / 2.0 - 10.0);
-			String potText = "Pot: " + String.valueOf(pot.getPotSize());
+			String potText = Messages.ViewTable_3 + String.valueOf(table.getPot());
 			gcTable.drawText(potText, potX, potY, true);
 		}
 	}
 
 	/**
-	 * Zeigt den River Zusätzlich werden Flop und Turn angezeigt
+	 * Zeigt den River, zusaetzlich werden Flop und Turn angezeigt
 	 */
 	private void showRiver() {
 		showFlop();
@@ -294,7 +290,7 @@ public class ViewTable extends ViewPart {
 	}
 
 	/**
-	 * Zeigt den Turn Zusätzlich wird der Flop angezeigt
+	 * Zeigt den Turn, zusaetzlich wird der Flop angezeigt
 	 * 
 	 * @param table
 	 *            Der Tisch zu dem der Turn gezeigt wird
@@ -334,7 +330,7 @@ public class ViewTable extends ViewPart {
 				// Bild der Karte holen
 				ImageData imgData = card.getImage().getImageData();
 
-				// Karte auf passende Größe bringen
+				// Karte auf passende Groesse bringen
 				imgData = imgData.scaledTo(54, 72);
 				Image card2 = new Image(Display.getCurrent(), imgData);
 
@@ -342,7 +338,7 @@ public class ViewTable extends ViewPart {
 				gcTable.drawImage(card2, x, y);
 			} catch (CardException e) {
 				ErrorHandler.handleError(e,
-						"Fehler beim Holen eines Kartenbildes.", false);
+						Messages.ViewTable_4, false);
 			}
 		}
 	}
@@ -353,17 +349,17 @@ public class ViewTable extends ViewPart {
 	 * @param countPlayer
 	 *            Anzahl der Spieler
 	 * @param height
-	 *            Höhe der Grafik
+	 *            Hoehe der Grafik
 	 * @param width
 	 *            Breite der Grafik
 	 * @return Eine Liste mit den Positionen der Spieler
 	 */
 	private static ArrayList<Rectangle> getPlayPosition(int countPlayer,
 			int height, int width) {
-		// Position und Größe der Felder für die Spieler
+		// Position und Groesse der Felder fuer die Spieler
 		ArrayList<Rectangle> playerPos = new ArrayList<Rectangle>();
 
-		// Höhe und Breite der Spielerfelder
+		// Hoehe und Breite der Spielerfelder
 		int hoehe = 100;
 		int breite = 75;
 
@@ -373,7 +369,7 @@ public class ViewTable extends ViewPart {
 		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 1
-		posHi = (int) (height / 3.7 - hoehe);
+		posHi = (int) (height / 4 - hoehe);
 		posRi = (int) (width - width / 3 - breite / 2);
 		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
@@ -383,27 +379,27 @@ public class ViewTable extends ViewPart {
 		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 3
-		posHi = (int) (height - height / 2 + hoehe);
+		posHi = (int) (height - height / 1.75 + hoehe);
 		posRi = (int) (width - width / 6 - breite / 2);
 		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 4
-		posHi = (int) (height - height / 2.5 + hoehe);
+		posHi = (int) (height - height / 2 + hoehe);
 		posRi = (int) (width - width / 3 - breite / 2);
 		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 5
-		posHi = (int) (height - height / 2.7 + hoehe);
+		posHi = (int) (height - height / 2.1 + hoehe);
 		posRi = (int) (width / 2 - breite / 2);
 		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 6
-		posHi = (int) (height - height / 2.5 + hoehe);
+		posHi = (int) (height - height / 2 + hoehe);
 		posRi = (int) (width / 3 - breite / 2);
 		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 7
-		posHi = (int) (height - height / 2 + hoehe);
+		posHi = (int) (height - height / 1.75 + hoehe);
 		posRi = (int) (width / 6 - breite / 2);
 		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
@@ -413,18 +409,25 @@ public class ViewTable extends ViewPart {
 		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 9
-		posHi = (int) (height / 3.7 - hoehe);
+		posHi = (int) (height / 4 - hoehe);
 		posRi = (int) (width / 3 - breite / 2);
 		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		return playerPos;
 	}
-	
+
+	/**
+	 * Position der Boardkarten ermitteln
+	 * 
+	 * @param height Hoehe der Grafik
+	 * @param width Breite der Grafik
+	 * @return Array mit den Positionen fuer die Karten
+	 */
 	private static ArrayList<Rectangle> getBoardCardPos(int height, int width) {
-		// Position und Größe der Felder für die Spieler
+		// Position und Groesse der Felder fuer die Karten
 		ArrayList<Rectangle> cardPos = new ArrayList<Rectangle>();
 		
-		// Höhe und Breite der Karten
+		// Hoehe und Breite der Karten
 		int hoehe = 96;
 		int breite = 72;
 		
@@ -460,7 +463,7 @@ public class ViewTable extends ViewPart {
 	}
 
 	/**
-	 * Überträgt eine Aktion an den aktuellen Tisch
+	 * Uebertraegt eine Aktion an den aktuellen Tisch
 	 * 
 	 * @param step
 	 * @param hand
@@ -479,12 +482,11 @@ public class ViewTable extends ViewPart {
 				player = table.getPlayerByName(p1.getName());
 			} catch (PlayerException e) {
 				ErrorHandler.handleError(e,
-						"Fehler beim Ermitteln es Spielers am Tisch.", false);
+						Messages.ViewTable_5, false);
 			}
 		}
 
 		// Die verschiedenen Aktionen
-		double pay = 0.0;
 		switch (action.getAction()) {
 		case Action.DEAL:
 			// Karten werden verteilt
@@ -508,45 +510,55 @@ public class ViewTable extends ViewPart {
 				}
 			} catch (PlayerException e) {
 				ErrorHandler.handleError(e,
-						"Fehler beim Ermitteln des Spielers.", false);
+						Messages.ViewTable_6, false);
 			} catch (CardException e) {
 				ErrorHandler.handleError(e,
-						"Fehler beim Ermitteln der Poketcards.", false);
+						Messages.ViewTable_7, false);
 			}
 			break;
 		case Action.SMALLBLIND:
-			// Spieler zahl small Blind
-			pay = pot.pay(player, table.getSmallblind());
-
-			// Einsatz vermerken
-			bet[pos] = pay;
+			// Spieler zahl Smallblind
+			try {
+					table.playerPayed(player, table.getSmallblind());
+				} catch (PlayerException e) {
+					ErrorHandler.handleError(e,
+							Messages.ViewTable_8, false);
+				}
 			break;
 		case Action.BIGBLIND:
-			// Spieler zahl big Blind
-			pay = pot.pay(player, table.getBigblind());
-			
-			// Einsatz vermerken
-			bet[pos] = pay;
+			// Spieler zahlt Bigblind
+			try {
+					table.playerPayed(player, table.getBigblind());
+				} catch (PlayerException e) {
+					ErrorHandler.handleError(e,
+							Messages.ViewTable_9, false);
+				}
 			break;
 		case Action.ANTE:
 			// Spieler zahl ante
-			pay = pot.pay(player, (Double) action.getValue());
-
-			// Einsatz vermerken
-			bet[pos] = pay;
+			try {
+					table.playerPayed(player, (Double) action.getValue());
+				} catch (PlayerException e) {
+					ErrorHandler.handleError(e,
+							Messages.ViewTable_10, false);
+				}
 			break;
 		case Action.BET:
-			pay = pot.pay(player, (Double) action.getValue());
-
-			// Einsatz vermerken
-			bet[pos] = pay;
+			try {
+					table.playerPayed(player, (Double) action.getValue());
+				} catch (PlayerException e) {
+					ErrorHandler.handleError(e,
+							Messages.ViewTable_11, false);
+				}
 			break;
 		case Action.CALL:
-			// ein Spieler called den einsatz
-			pay = pot.pay(player, (Double) action.getValue());
-
-			// Einsatz vermerken
-			bet[pos] = bet[pos] + pay;
+			// ein Spieler called den Einsatz
+			try {
+					table.playerPayed(player, (Double) action.getValue());
+				} catch (PlayerException e) {
+					ErrorHandler.handleError(e,
+							Messages.ViewTable_11, false);
+				}
 			break;
 		case Action.CHECK:
 			// do nothing
@@ -557,75 +569,64 @@ public class ViewTable extends ViewPart {
 				// Karten nicht mehr anzeigen
 				player.fold();
 			}
-
-			// Einsatz auf 0 setzen
-			bet[pos] = 0.0;
 			break;
 		case Action.RAISE:
-			// Spieler erhöht
-			pay = pot.pay(player, (Double) action.getValue() - bet[pos]);
-
-			// Einsatz vermerken
-			bet[pos] = bet[pos] + pay;
+			// Spieler erhoeht
+			try {
+					table.playerPayed(player, (Double) action.getValue() - table.getBetOfPlayer(pos));
+				} catch (IllegalArgumentException e) {
+					ErrorHandler.handleError(e,
+							Messages.ViewTable_13, false);
+				} catch (PlayerException e) {
+					ErrorHandler.handleError(e,
+							Messages.ViewTable_13, false);
+				}
 			break;
 		case Action.FLOP:
 			// merken das der Flop gezeitgt wird
 			status = 1;
 
-			// Einsätze auf 0 setzen
-			resetEinsatz();
-			
-			
-			// es beginnt die nächste Setzrunde
-			pot.roundsEnd();
+			// es beginnt die naechste Setzrunde
+			table.endOfRound();
 			break;
 		case Action.TURN:
 			// merken das der Turn gezeitgt wird
 			status = 2;
 
-			// Einsätze auf 0 setzen
-			resetEinsatz();
-			
-			// es beginnt die nächste Setzrunde
-			pot.roundsEnd();
+			// es beginnt die naechste Setzrunde
+			table.endOfRound();
 			break;
 		case Action.RIVER:
 			// merken das der River gezeitgt wird
 			status = 3;
 
-			// Einsätze auf 0 setzen
-			resetEinsatz();
-			
-			// es beginnt die nächste Setzrunde
-			pot.roundsEnd();
+			// es beginnt die naechste Setzrunde
+			table.endOfRound();
 			break;
 		case Action.COLLECT:
 			// Spieler bekommt den Pot
 			
 			// zur Sicherheit die aktuelle Setzrunde beenden
-			pot.roundsEnd();
+			table.endOfRound();
 			
-			// Beträge auszahlen
+			// Betraege auszahlen
 			try {
 				// Spieler seinen Anteil am Pot zuweisen
-				player.deposit(pot.payout((Double) action.getValue()));
+				player.deposit(table.payOut((Double) action.getValue()));
 //				player.deposit((Double) action.getValue());
 				
-				// falls noch ein Einsatz offen ist, auch dem zuweisen
-				player.deposit(pot.payout(bet[pos]));
-//				player.deposit(bet[pos]);
-				
-				// Einsätze auf 0 setzen
-				bet[pos] = 0.0;
 			} catch (PlayerException e) {
 				ErrorHandler.handleError(e,
-						"Fehler beim verteilen des Einsatzes.", false);
+						Messages.ViewTable_15, false);
+			} catch (TableException e) {
+				ErrorHandler.handleError(e,
+						Messages.ViewTable_15, false);
 			}
 			break;
 		case Action.SHOW:
 			// ein Spieler zeigt seine Karten
 			Card card1 = (Card) action.getValue();
-			// Zeiger auf nächste Aktion stellen
+			// Zeiger auf naechste Aktion stellen
 			ApplicationWorkbenchAdvisor.nextHandStep();
 
 			// zweite Karte ermitteln
@@ -636,14 +637,14 @@ public class ViewTable extends ViewPart {
 			}
 			int handStep = ApplicationWorkbenchAdvisor.getHandStep();
 			
-			// Deckblätter gegen echte Karten tauschen
+			// Deckblaetter gegen echte Karten tauschen
 			try {
 				Card card2 = (Card) hand.getAction(handStep - 1).getValue();
 				player.replacePoketCards(card1, card2);
 			} catch (PlayerException e) {
-				ErrorHandler.handleError(e,	"Fehler beim Zeigen der Karten", false);
+				ErrorHandler.handleError(e,	Messages.ViewTable_17, false);
 			} catch (ActionIllegalActionException e) {
-				ErrorHandler.handleError(e,	"Fehler beim Zeigen der Karten", false);
+				ErrorHandler.handleError(e,	Messages.ViewTable_17, false);
 			}
 			break;
 		case Action.MUCK:
@@ -652,10 +653,12 @@ public class ViewTable extends ViewPart {
 				// Karten nicht mehr anzeigen
 				player.fold();
 			}
-
-			// Einsatz auf 0 setzen
-			bet[pos] = 0.0;
 			break;
+		case Action.SHOWDOWN:
+			// der grosse Showdown
+			
+			// Setzrunde beenden
+			table.endOfRound();
 		}
 
 		// Tischinformationen anzeigen
@@ -677,31 +680,27 @@ public class ViewTable extends ViewPart {
 	}
 
 	/**
-	 * Setzt alle Einsätze auf Null
-	 */
-	private void resetEinsatz() {
-		for (int i = 0; i < 10; i++) {
-			bet[i] = 0.0;
-		}
-	}
-
-	/**
 	 * Versetzt den Tisch in den Anfangszustand
 	 */
 	public void resetTable() {
-		// aktuellen Pot zurücksetzen
-		pot.clear();
+		// aktuellen Pot zuruecksetzen
+		if (table != null) {
+			table.clearPot();
+		}
 
-		// Einsätze auf Null setzen
-		resetEinsatz();
-
-		// Status für Flop/Turn/River auf Angang setzen
+		// Status fuer Flop/Turn/River auf Angang setzen
 		status = 0;
 
-		// Boardkarten löschen
+		// Boardkarten loeschen
 		if (table != null) {
 			table.removeBord();
 		}
+		
+		// den Thread fuer Autoplay loeschen
+		thread = null;
+		
+		// den Modus fuer Autoplay zuruecksetzen
+		ApplicationWorkbenchAdvisor.setAutoplay(false);
 	}
 
 	/**
@@ -710,17 +709,17 @@ public class ViewTable extends ViewPart {
 	 * @param countPlayer
 	 *            Anzahl der Spieler
 	 * @param height
-	 *            Höhe der Grafik
+	 *            Hoehe der Grafik
 	 * @param width
 	 *            Breite der Grafik
 	 * @return Eine Liste mit den Positionen der Spieler
 	 */
 	private static ArrayList<Rectangle> getButtonPosition(int countPlayer,
 			int height, int width) {
-		// Position und Größe der Felder für die Spieler
+		// Position und Groesse der Felder fuer die Spieler
 		ArrayList<Rectangle> buttonPos = new ArrayList<Rectangle>();
 
-		// Höhe und Breite der Spielerfelder
+		// Hoehe und Breite der Spielerfelder
 		int hoehe = 15;
 		int breite = 15;
 
@@ -778,7 +777,7 @@ public class ViewTable extends ViewPart {
 	}
 
 	/**
-	 * Sprigt zum Anfang der Hand wenn möglich, sonst wenn möglich zur
+	 * Sprigt zum Anfang der Hand wenn moeglich, sonst wenn moeglich zur
 	 * vorherigen
 	 */
 	public void doHandBack() {
@@ -788,7 +787,7 @@ public class ViewTable extends ViewPart {
 
 		// befinden wir uns am Anfang der Hand
 		if (handStep < 1) {
-			// Ja prüfen ob es sich um die erste Hand handelt
+			// Ja pruefen ob es sich um die erste Hand handelt
 			if (activeHand > 0) {
 				// nein, dann zum Anfang der vorherigen Hand
 				activeHand--;
@@ -803,7 +802,7 @@ public class ViewTable extends ViewPart {
 		ApplicationWorkbenchAdvisor.setActiveHand(activeHand);
 		ApplicationWorkbenchAdvisor.setHandStep(handStep);
 
-		// Tisch zurücksetzen
+		// Tisch zuruecksetzen
 		ApplicationWorkbenchAdvisor
 				.setTable((Table) ApplicationWorkbenchAdvisor.getHands().get(
 						activeHand));
@@ -811,7 +810,7 @@ public class ViewTable extends ViewPart {
 		// Tisch auf Anfang stellen
 		resetTable();
 
-		// Tisch mit Änderungen neu anzeigen
+		// Tisch mit Aenderungen neu anzeigen
 		drawTable();
 
 		// Handhistorie anzeigen
@@ -822,7 +821,7 @@ public class ViewTable extends ViewPart {
 	}
 
 	/**
-	 * Geht, wenn möglich, einen Schritt zurück
+	 * Geht, wenn moeglich, einen Schritt zurueck
 	 */
 	public void doStepBack() {
 		// Anzahl der bisher gemachten Schritte holen
@@ -832,20 +831,20 @@ public class ViewTable extends ViewPart {
 
 		doHandBack();
 
-		// und genau eine Schritt weniger als bisher gemacht ausführen
+		// und genau eine Schritt weniger als bisher gemacht ausfuehren
 		for (int i = 1; i < step; i++) {
 			doNextStep();
 		}
 	}
 
 	/**
-	 * Springt wenn möglich zur nächsten Hand
+	 * Springt wenn moeglich zur naechsten Hand
 	 */
 	public void doNextHand() {
-		// Zeiger auf nächste Hand setzen
+		// Zeiger auf naechste Hand setzen
 		ApplicationWorkbenchAdvisor.nextHand();
 
-		// Tisch zurück setzen
+		// Tisch zurueck setzen
 		resetTable();
 
 		// und frischen Tisch zeichnen
@@ -859,7 +858,7 @@ public class ViewTable extends ViewPart {
 	}
 
 	/**
-	 * Führt den nächten Schritt aus
+	 * Fuehrt den naechten Schritt aus
 	 */
 	public void doNextStep() {
 		// aktive Hand holen
@@ -874,16 +873,16 @@ public class ViewTable extends ViewPart {
 			return;
 		}
 		
-		// letzen ausgeführten Step merken
+		// letzen ausgefuehrten Step merken
 		int oldHandStep = ApplicationWorkbenchAdvisor.getHandStep();
 		
-		// Zeiger auf nächste Aktion stellen
+		// Zeiger auf naechste Aktion stellen
 		ApplicationWorkbenchAdvisor.nextHandStep();
 
 		// neuen Step holen
 		int handStep = ApplicationWorkbenchAdvisor.getHandStep();
 		
-		// Aktion in Tisch übernehmen
+		// Aktion in Tisch uebernehmen
 		if (handStep > 0 && oldHandStep != handStep) {
 			try {
 				doAction(hand.getAction(handStep - 1));
@@ -892,12 +891,12 @@ public class ViewTable extends ViewPart {
 			}
 		}
 
-		// Tisch mit Änderungen neu anzeigen
+		// Tisch mit Aenderungen neu anzeigen
 		drawTable();
 	}
 
 	/**
-	 * Zeigt geänderten Handverlauf an
+	 * Zeigt geaenderten Handverlauf an
 	 */
 	public void updateHandView() {
 		IWorkbenchPage page = getViewSite().getWorkbenchWindow().getActivePage();
@@ -911,15 +910,15 @@ public class ViewTable extends ViewPart {
 	}
 
 	/**
-	 * Spielt die Hand bis zur nächten Aktion des Spielers ab
+	 * Spielt die Hand bis zur naechten Aktion des Spielers ab
 	 */
 	public void doNextOwnAction() {
 		new Thread() {
 			public void run() {
 				int delay = 1000 * Activator.getDefault().getPreferenceStore()
 						.getInt(PreferenceConstants.P_GENERAL_TIME_DELAY);
-				String name = "";
-				String ownName = "";
+				String name = ""; //$NON-NLS-1$
+				String ownName = ""; //$NON-NLS-1$
 
 				switch (ApplicationWorkbenchAdvisor.getTable().getPokerroom()) {
 				case Handhistory.POKERSTARS:
@@ -952,10 +951,10 @@ public class ViewTable extends ViewPart {
 							if (player != null) {
 								name = player.getName();
 							} else {
-								name = "";
+								name = ""; //$NON-NLS-1$
 							}
 						} catch (ActionIllegalActionException e) {
-							ErrorHandler.handleError(e, "Fehler beim Autoplay",
+							ErrorHandler.handleError(e, Messages.ViewTable_19,
 									false);
 						}
 					}
@@ -963,7 +962,7 @@ public class ViewTable extends ViewPart {
 						Thread.sleep(delay);
 					} catch (InterruptedException e) {
 						ErrorHandler.handleError(e,
-								"Fehler beim Warten in Autoplay", false);
+								Messages.ViewTable_20, false);
 					}
 				} while (!name.equals(ownName) && handStepOld != handStep);
 			}
@@ -972,10 +971,10 @@ public class ViewTable extends ViewPart {
 	}
 
 	/**
-	 * Spielt eine Hand bis zu deren Ende ab oder unterbricht die Ausführung
+	 * Spielt eine Hand bis zu deren Ende ab oder unterbricht die Ausfuehrung
 	 */
 	public void doAutoplay() {
-		// einen Thraed anlegen für den Autoplay
+		// einen Thraed anlegen fuer den Autoplay
 		if (thread == null) {
 			thread = new Thread() {
 				public void run() {
@@ -990,7 +989,7 @@ public class ViewTable extends ViewPart {
 						// aktuellen Schritt in der Hand ermitteln
 						handStepOld = ApplicationWorkbenchAdvisor.getHandStep();
 						
-						// und synchron wegen der Anzeige den nächsten Schritt ausführen
+						// und synchron wegen der Anzeige den naechsten Schritt ausfuehren
 						Display.getDefault().syncExec(new Runnable() {
 							public void run() {
 								doNextStep();
@@ -1005,32 +1004,29 @@ public class ViewTable extends ViewPart {
 							Thread.sleep(delay);
 						} catch (InterruptedException e) {
 							ErrorHandler.handleError(e,
-									"Autoplay wurde ungeplant unterbrochen.", false);
+									Messages.ViewTable_21, false);
 						}
 						
-						// und solange ein neuer Schritt ausgeführt wurde, den nächsten ausführen
+						// und solange ein neuer Schritt ausgefuehrt wurde, den naechsten ausfuehren
 					} while (handStepOld != handStep && ApplicationWorkbenchAdvisor.isAutoplay());
 				}
 			};
 		}
 		
-		// wenn kein Autoplay läuft und eine Hand ausgewählt wurde
+		// wenn kein Autoplay laeuft und eine Hand ausgewaehlt wurde
 		if (thread != null && !ApplicationWorkbenchAdvisor.isAutoplay() && ApplicationWorkbenchAdvisor.getActiveHand() != -1) {
 		
-			// Status für Autoplay passend setzen
+			// Status fuer Autoplay passend setzen
 			ApplicationWorkbenchAdvisor.setAutoplay(true);
 			
 			// den Autoplay in einem neuen Thread starten
 			thread.start();
-		
-			
 		} else {
-			// Thread für Autoplay stoppen
+			// Thread fuer Autoplay stoppen
 			ApplicationWorkbenchAdvisor.setAutoplay(false);
 			
-			// Thread löschen, nötig falls dieser neu gestartet wird
+			// Thread loeschen, noetig falls dieser neu gestartet wird
 			thread = null;
 		}
 	}
-
 }

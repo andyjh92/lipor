@@ -1,8 +1,10 @@
 /**
- * Fehlerklasse für allg. Tischfehler
+ * Fehlerklasse fuer allg. Tischfehler
  */
 
 package cardstuffExceptions;
+
+import language.Messages;
 
 /**
  * @author Ralf Joswig
@@ -19,7 +21,7 @@ public class TableException extends Exception{
 	 * Standartkonstuktor
 	 */
 	public TableException() {
-		super("Allg. Fehler bei Tischoperation");
+		super(Messages.TableException_0);
 	}
 
 	/**
