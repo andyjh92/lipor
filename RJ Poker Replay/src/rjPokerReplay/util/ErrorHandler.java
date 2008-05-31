@@ -12,6 +12,10 @@
  */
 package rjPokerReplay.util;
 
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.swt.widgets.Shell;
+
 /**
  * @author Ralf Joswig
  * 
@@ -19,8 +23,25 @@ package rjPokerReplay.util;
  */
 public class ErrorHandler {
 
+	@SuppressWarnings("deprecation")
 	public static void handleError(Exception e, String message, boolean exit) {
+		 final Thread current = Thread.currentThread();
+	        if (current.getName().equals("rjPokerAutoPlay")) current.stop();
+	        final Thread[] all = new Thread[Thread.activeCount()+100];
+	        final int count = Thread.enumerate(all);
+	        
+	        // Try to find the main thread
+	        //
+	        for (int i=0;i<count;i++) {
+	            if (all[i].getName().equals("rjPokerAutoPlay")) all[i].stop();
+	        }
+
+
 		if (message != null) {
+			MessageBox mb = new MessageBox(new Shell(), SWT.ICON_ERROR | SWT.OK);
+			mb.setMessage(e.getMessage());
+			mb.setText("Fehler!");
+			mb.open();
 			System.out.println(message);
 		}
 		e.printStackTrace();

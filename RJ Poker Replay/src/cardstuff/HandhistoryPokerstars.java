@@ -31,7 +31,6 @@ import java.util.StringTokenizer;
 import java.util.TimeZone;
 
 import language.Messages;
-
 import rjPokerReplay.util.ErrorHandler;
 import cardstuffExceptions.ActionException;
 import cardstuffExceptions.ActionIllegalActionException;
@@ -173,9 +172,12 @@ public class HandhistoryPokerstars extends Handhistory {
 		hand.setPotExtern(Double.valueOf(text));
 		
 		// Rake
+		do {
+			text = tokenizer.nextToken();
+		} while (!"Rake".equals(text));
+		
 		text = tokenizer.nextToken();
-		text = tokenizer.nextToken();
-		text = tokenizer.nextToken();
+		
 		if (text.startsWith("$")) { //$NON-NLS-1$
 			text = text.substring(1, text.length());
 		}
@@ -405,7 +407,7 @@ public class HandhistoryPokerstars extends Handhistory {
 		}
 		
 		// wenn die Aktion gleich Says und kein Spieler gefunden, dann hat wohl ein Zusauer was gesagt.
-		// Dann merken wir uns die Aktionnicht.
+		// Dann merken wir uns die Aktion nicht.
 		if (action == Action.SAY && player == null) {
 			action = 0;
 		}
@@ -417,6 +419,12 @@ public class HandhistoryPokerstars extends Handhistory {
 			} catch (ActionException e) {
 				ErrorHandler.handleError(e, Messages.HandhistoryPokerstars_4, false);
 			}
+		}
+		
+		// wenn der Spieler den Ante bezahlt hat, den zum Tisch
+		// zusaetzlich setzen
+		if (action == Action.ANTE) {
+			hand.setAnte(((Double)value).doubleValue());
 		}
 	}
 

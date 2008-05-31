@@ -97,6 +97,12 @@ public class ViewTable extends ViewPart {
 	// Thread fuer den Autoplay
 	private static Thread thread;
 	
+	// Hoehe der Pokerkarten
+	private final static int HOEHE_KARTE = 96;
+	
+	// Breite der Pokerkarte
+	private final static int BREITE_KARTE = 72;
+	
 	/**
 	 * Zeichnet den Pokertsich
 	 */
@@ -271,7 +277,7 @@ public class ViewTable extends ViewPart {
 			}
 
 			// Der Pot
-			int potY = (int) (canvasHeight / 2.0 - 20.0);
+			int potY = (int) (canvasHeight / 2.0 - 20.0) - HOEHE_KARTE / 2;
 			int potX = (int) (canvasWidht / 2.0 - 10.0);
 			String potText = Messages.ViewTable_3 + String.valueOf(table.getPot());
 			gcTable.drawText(potText, potX, potY, true);
@@ -427,30 +433,26 @@ public class ViewTable extends ViewPart {
 		// Position und Groesse der Felder fuer die Karten
 		ArrayList<Rectangle> cardPos = new ArrayList<Rectangle>();
 		
-		// Hoehe und Breite der Karten
-		int hoehe = 96;
-		int breite = 72;
-		
 		// 1. Karte Flop
-		int posHi = (int) (height / 2 );
-		int posRi = (int) (width / 2 - breite * 2.5);
-		cardPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		int posHi = (int) (height / 2 ) - HOEHE_KARTE / 2;
+		int posRi = (int) (width / 2 - BREITE_KARTE * 2.5);
+		cardPos.add(new Rectangle(posRi, posHi, BREITE_KARTE, HOEHE_KARTE));
 		
 		// 2. Karte Flop
-		posRi = (int) (width / 2 - breite * 1.5);
-		cardPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posRi = (int) (width / 2 - BREITE_KARTE * 1.5);
+		cardPos.add(new Rectangle(posRi, posHi, BREITE_KARTE, HOEHE_KARTE));
 		
 		// 3. Karte Flop
-		posRi = (int) (width / 2 - breite * 0.5);
-		cardPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posRi = (int) (width / 2 - BREITE_KARTE * 0.5);
+		cardPos.add(new Rectangle(posRi, posHi, BREITE_KARTE, HOEHE_KARTE));
 		
 		// 4. Karte Turn
-		posRi = (int) (width / 2 + breite * 0.5);
-		cardPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posRi = (int) (width / 2 + BREITE_KARTE * 0.5);
+		cardPos.add(new Rectangle(posRi, posHi, BREITE_KARTE, HOEHE_KARTE));
 		
 		// 5. Karte River
-		posRi = (int) (width / 2 + breite * 1.5);
-		cardPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posRi = (int) (width / 2 + BREITE_KARTE * 1.5);
+		cardPos.add(new Rectangle(posRi, posHi, BREITE_KARTE, HOEHE_KARTE));
 		
 		return cardPos;
 	}
@@ -739,32 +741,32 @@ public class ViewTable extends ViewPart {
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 3
-		posHi = (int) (height - height / 2 + hoehe + 50);
+		posHi = (int) (height - height / 2 + hoehe + 10);
 		posRi = (int) (width - width / 6 - breite / 2 - 40);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 4
-		posHi = (int) (height - height / 2.5 + hoehe + 25);
+		posHi = (int) (height - height / 2.5 + hoehe);
 		posRi = (int) (width - width / 3 - breite / 2);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 5
-		posHi = (int) (height - height / 2.7 + hoehe + 20);
+		posHi = (int) (height - height / 2.7 + hoehe);
 		posRi = (int) (width / 2 - breite / 2);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 6
-		posHi = (int) (height - height / 2.5 + hoehe + 25);
+		posHi = (int) (height - height / 2.5 + hoehe);
 		posRi = (int) (width / 3 - breite / 2);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 7
-		posHi = (int) (height - height / 2 + hoehe + 50);
+		posHi = (int) (height - height / 2 + hoehe + 10);
 		posRi = (int) (width / 6 - breite / 2 + 40);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 8
-		posHi = (int) (height / 3 - hoehe + 60);
+		posHi = (int) (height / 3 - hoehe + 50);
 		posRi = (int) (width / 6 - breite / 2 + 35);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
@@ -959,8 +961,14 @@ public class ViewTable extends ViewPart {
 						}
 					}
 					try {
-						Thread.sleep(delay);
+						int action = ApplicationWorkbenchAdvisor.getHands().get(ApplicationWorkbenchAdvisor.getActiveHand()).getAction(handStep).getAction();
+						if (action != Action.ANTE) {
+							Thread.sleep(delay);
+						}
 					} catch (InterruptedException e) {
+						ErrorHandler.handleError(e,
+								Messages.ViewTable_20, false);
+					} catch (ActionIllegalActionException e) {
 						ErrorHandler.handleError(e,
 								Messages.ViewTable_20, false);
 					}
@@ -976,7 +984,7 @@ public class ViewTable extends ViewPart {
 	public void doAutoplay() {
 		// einen Thraed anlegen fuer den Autoplay
 		if (thread == null) {
-			thread = new Thread() {
+			thread = new Thread("rjPokerAutoPlay") { //$NON-NLS-1$
 				public void run() {
 					// Wartezeit zwischen zwei Schritten ermitteln
 					int delay = 1000 * Activator.getDefault().getPreferenceStore()
@@ -1001,8 +1009,14 @@ public class ViewTable extends ViewPart {
 						
 						// die vorgegebene Zeit warten
 						try {
-							Thread.sleep(delay);
+							int action = ApplicationWorkbenchAdvisor.getHands().get(ApplicationWorkbenchAdvisor.getActiveHand()).getAction(handStep).getAction();
+							if (action != Action.ANTE) {
+								Thread.sleep(delay);
+							}
 						} catch (InterruptedException e) {
+							ErrorHandler.handleError(e,
+									Messages.ViewTable_21, false);
+						} catch (ActionIllegalActionException e) {
 							ErrorHandler.handleError(e,
 									Messages.ViewTable_21, false);
 						}

@@ -15,6 +15,8 @@ package rjPokerReplay.wizard;
 
 import java.io.IOException;
 
+import language.Messages;
+
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -48,8 +50,8 @@ public class SelectFile extends WizardPage {
 	 */
 	protected SelectFile(String pageName) {
 		super(pageName);
-        setTitle("Import Handhistory from Pokerstars");
-        setDescription("Select Handhistory from Pokerstars to import");
+        setTitle(Messages.SelectFile_0);
+        setDescription(Messages.SelectFile_1);
         setPageComplete(false);
 	}
 
@@ -67,7 +69,7 @@ public class SelectFile extends WizardPage {
         
         // Label fuer den Dateipfad
         Label lPfad = new Label(container, SWT.NULL);
-        lPfad.setText("File:");
+        lPfad.setText(Messages.SelectFile_2);
         
         // Ein Textfeld fuer den Pfad
         tPfad = new Text(container, SWT.LEFT);
@@ -91,7 +93,7 @@ public class SelectFile extends WizardPage {
 			bWaehlen.setImage(ApplicationWorkbenchAdvisor.getImageStore().get(rjPokerReplay.Constants.IMG_OPEN_FOLDER));
 		} catch (Exception e) {
 			// wenn das mit dem Bild nicht ging, einen Text waehlen
-			bWaehlen.setText("Brows");
+			bWaehlen.setText(Messages.SelectFile_3);
 		}
 		// Und eine Listener fuer die Wahltaste
 		bWaehlen.addSelectionListener(new SelectionAdapter() {
@@ -138,14 +140,14 @@ public class SelectFile extends WizardPage {
 			ret = true;
 		} else {
 			// nein, Fehlermeldung ausgeben
-			setErrorMessage("File does not exist");
+			setErrorMessage(Messages.SelectFile_4);
 		}
 		
 		// Pruefen ob der Daeityp eine Pokerstars-Handhistorie-Datei ist
 		try {
 			if (ret && Handhistory.getKind(tPfad.getText()) != Handhistory.POKERSTARS) {
 				// nein, Fehlertext setzen und Rueckgabewert umsetzen 
-				setErrorMessage("Wrong filetype, is not a Pokerstar handhistory.");
+				setErrorMessage(Messages.SelectFile_5);
 				ret = false;
 			} else {
 				// Typ stimmt, dann Fehlermeldung loeschen und Rueckgabewert umsetzen
@@ -153,7 +155,7 @@ public class SelectFile extends WizardPage {
 				ret = true;
 			}
 		} catch (IOException e) {
-			ErrorHandler.handleError(e, "Error checking filtetype", false);
+			ErrorHandler.handleError(e, Messages.SelectFile_6, false);
 		}
 		
 		return ret;		

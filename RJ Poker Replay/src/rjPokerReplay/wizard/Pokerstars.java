@@ -25,7 +25,6 @@ import org.eclipse.ui.IWorkbenchPage;
 import rjPokerReplay.Activator;
 import rjPokerReplay.ApplicationWorkbenchAdvisor;
 import rjPokerReplay.util.ErrorHandler;
-import rjPokerReplay.util.FileUtil;
 import rjPokerReplay.views.ViewTable;
 import rjPokerReplay.views.ViewTableinfo;
 import cardstuff.HandhistoryPokerstars;
@@ -47,7 +46,7 @@ public class Pokerstars extends Wizard implements IImportWizard {
 	public boolean performFinish() {
 		// gewaehlten Dateiname ermitteln
 		String file = ""; //$NON-NLS-1$
-		SelectFile t = (SelectFile)getPage("Select File");
+		SelectFile t = (SelectFile)getPage("Select File");//$NON-NLS-1$
 		if (t != null) {
 			file = t.getPath();
 		}
@@ -105,6 +104,6 @@ public class Pokerstars extends Wizard implements IImportWizard {
 	 */
 	public void addPages() {
 		// Seite mit Dialog zur Auswahl der Datei
-		addPage(new SelectFile(Messages.Pokerstars_4));
+		addPage(new SelectFile("Select File"));//$NON-NLS-1$
 	}
 }

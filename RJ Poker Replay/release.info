@@ -21,7 +21,9 @@ Alpha 2
   - better handling of All-In and sidepots
   - correct position of players at table
   - don't try to import handhistory when press finish button without file selected
-  
+  - fix problem with rake when has sidepots
+  - change position of boardcards and pot
+  - autoplay post all ante as one
   
 TODO
   - changing notifying of changed table or cards to listener

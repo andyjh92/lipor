@@ -67,7 +67,8 @@ public class ViewTableinfo extends ViewPart {
         	
         	text.append(Messages.ViewTableinfo_1 + table.getSmallblind() +
         			"/" + //$NON-NLS-1$ 
-        			table.getBigblind()+ " "); //$NON-NLS-1$
+        			table.getBigblind() + " " +  //$NON-NLS-1$
+        			"Ante: " + table.getAnte() + " "); //$NON-NLS-1$ //$NON-NLS-2$
         	text.append(table.getCountSeats() + "-max" + Text.DELIMITER); //$NON-NLS-1$
 
         	text.append(Messages.ViewTableinfo_2 + table.getTitel() +

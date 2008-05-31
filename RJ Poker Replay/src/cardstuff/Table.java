@@ -138,6 +138,9 @@ public class Table {
 	// Einsaetze in der aktuellen Setzrunde
 	private double bet[] = new double[10];
 	
+	// Die Hoehe des Ante
+	private double ante = 0.0;
+	
 	/***************************************************************************
 	 * Konstruktoren 
 	 **************************************************************************/
@@ -276,6 +279,15 @@ public class Table {
 		return smallblind;
 	}
 
+	/**
+	 * Gibt die Hoehe des Ante zurueck
+	 * 
+	 * @return Der Ante
+	 */
+	public double getAnte() {
+		return ante;
+	}
+	
 	/**
 	 * Gibt die Hoehe des Bigblinds zurueck
 	 * 
@@ -511,6 +523,22 @@ public class Table {
 		this.smallblind = smallblind;
 	}
 
+	/**
+	 * Setzt die Hoehe des Ante
+	 * 
+	 * @param ante Die Hoehe des Ante
+	 * @throws IllegalArgumentException
+	 */
+	public void setAnte(double ante) throws IllegalArgumentException {
+		// Der Ante darf nicht kleiner 0
+		if (ante < 0.0) {
+			throw new IllegalArgumentException(Messages.Table_33);
+		}
+				
+		// alles passt, dann merken
+		this.ante = ante;
+	}
+	
 	/**
 	 * Setzt die Hoehe des Bigblinds
 	 * 
@@ -856,8 +884,13 @@ public class Table {
 		ret = ret + Messages.Table_11 + 
 		      String.valueOf(smallblind) + 
 		      "/" + //$NON-NLS-1$ 
-		      String.valueOf(bigblind) + 
-		      "\n"; //$NON-NLS-1$ 
+		      String.valueOf(bigblind); //$NON-NLS-1$ 
+		
+		// Ante wenn in der Hand vorhanden
+		if (ante != 0.0) {
+			ret = ret + "/ Ante:" + String.valueOf(ante); //$NON-NLS-1$; 
+		}
+		ret = ret + "\n"; //$NON-NLS-1$;
 		
 		// Datum und Uhrzeit
 		
