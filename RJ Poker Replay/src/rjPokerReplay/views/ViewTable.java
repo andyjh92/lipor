@@ -44,6 +44,7 @@ import cardstuff.Table;
 import cardstuffExceptions.ActionIllegalActionException;
 import cardstuffExceptions.CardException;
 import cardstuffExceptions.PlayerException;
+import cardstuffExceptions.PlayerIllegalChipsException;
 import cardstuffExceptions.TableException;
 
 public class ViewTable extends ViewPart {
@@ -102,6 +103,10 @@ public class ViewTable extends ViewPart {
 	
 	// Breite der Pokerkarte
 	private final static int BREITE_KARTE = 72;
+
+	// Hoehe und Breite der Spielerfelder
+	private final static int PLAYER_FIELD_HEIGHT = 130;
+	private final static int PLAYER_FLIED_WIDTH = 90;
 	
 	/**
 	 * Zeichnet den Pokertsich
@@ -196,26 +201,35 @@ public class ViewTable extends ViewPart {
 		// Pruefen ob der Tisch Daten enthaelt
 		if (table != null && table.getPokerroom() != 0) {
 			// Button anzeigen
+			int shiftButton = 1;
+			if (table.getCountSeats() == 10) {
+				shiftButton = 2;
+			}
 			int posOfButton = 0;
 			if (table != null) {
 				posOfButton = table.getButtonposition();
 			}
 			if (posOfButton != 0) {
-				gcTable.drawImage(button, buttonPos.get(posOfButton - 1).x,
-						buttonPos.get(posOfButton - 1).y);
+				gcTable.drawImage(button, buttonPos.get(posOfButton - shiftButton).x,
+						buttonPos.get(posOfButton - shiftButton).y);
 			}
 
 			// Spieler an Tisch setzen
+			int shiftPlace = 1;
+			if (table.getCountSeats() == 10) {
+				shiftPlace = 0;
+			}
 			for (int i = 0; i < 10; i++) {
 				if (table.getPlayers()[i] != null) {
 					Player player = table.getPlayers()[i];
-					int textX = playerPos.get(i + 1).x;
-					int textY = playerPos.get(i + 1).y;
+					int textX = playerPos.get(i + shiftPlace).x;
+					int textY = playerPos.get(i + shiftPlace).y;
 					int lineSpacing2 = 15;
 					// an dieser Postion sitzt auch wirklich ein Spieler
 
 					// Name des Spielers
 					gcTable.drawText(player.getName(), textX, textY, true);
+//gcTable.drawRectangle(playerPos.get(i+shiftPlace));					
 					textY = textY + lineSpacing2;
 
 					// Stack
@@ -364,60 +378,89 @@ public class ViewTable extends ViewPart {
 			int height, int width) {
 		// Position und Groesse der Felder fuer die Spieler
 		ArrayList<Rectangle> playerPos = new ArrayList<Rectangle>();
-
-		// Hoehe und Breite der Spielerfelder
-		int hoehe = 100;
-		int breite = 75;
+		
+		// Abstand der Spielerfelder zum Tisch
+		final int abstand = 5;
 
 		// Dealer
-		int posHi = (int) (height / 4 - hoehe);
-		int posRi = (int) (width / 2 - breite / 2);
-		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		int posHi = (int) (height * 0.29) - PLAYER_FIELD_HEIGHT - abstand;
+		if (posHi < 0) {
+			posHi = 0;
+		}
+		int posRi =(int) (width / 2 - PLAYER_FLIED_WIDTH / 2); 
+		playerPos.add(new Rectangle(posRi, posHi, PLAYER_FLIED_WIDTH, PLAYER_FIELD_HEIGHT));
 
 		// Spieler 1
-		posHi = (int) (height / 4 - hoehe);
-		posRi = (int) (width - width / 3 - breite / 2);
-		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posHi = (int) (height * 0.3 - PLAYER_FIELD_HEIGHT) - abstand;
+		if (posHi < 0) {
+			posHi = 0;
+		}
+		posRi = (int) (width * 0.6125);
+		playerPos.add(new Rectangle(posRi, posHi, PLAYER_FLIED_WIDTH, PLAYER_FIELD_HEIGHT));
 
 		// Spieler 2
-		posHi = (int) (height / 3 - hoehe);
-		posRi = (int) (width - width / 6 - breite / 2);
-		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posHi = (int) (height * 0.35833 - PLAYER_FIELD_HEIGHT) - abstand;
+		if (posHi < 0) {
+			posHi = 0;
+		}
+		posRi = (int) (width * 0.76875);
+		playerPos.add(new Rectangle(posRi, posHi, PLAYER_FLIED_WIDTH, PLAYER_FIELD_HEIGHT));
 
 		// Spieler 3
-		posHi = (int) (height - height / 1.75 + hoehe);
-		posRi = (int) (width - width / 6 - breite / 2);
-		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posHi = (int) (height * 0.63333) + abstand;
+		if (posHi < 0) {
+			posHi = 0;
+		}
+		posRi = (int) (width * 0.76875);
+		playerPos.add(new Rectangle(posRi, posHi, PLAYER_FLIED_WIDTH, PLAYER_FIELD_HEIGHT));
 
 		// Spieler 4
-		posHi = (int) (height - height / 2 + hoehe);
-		posRi = (int) (width - width / 3 - breite / 2);
-		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posHi = (int) (height * 0.69166) + abstand;
+		if (posHi < 0) {
+			posHi = 0;
+		}
+		posRi = (int) (width * 0.6125);
+		playerPos.add(new Rectangle(posRi, posHi, PLAYER_FLIED_WIDTH, PLAYER_FIELD_HEIGHT));
 
 		// Spieler 5
-		posHi = (int) (height - height / 2.1 + hoehe);
-		posRi = (int) (width / 2 - breite / 2);
-		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posHi = (int) (height * 0.7) + abstand;
+		if (posHi < 0) {
+			posHi = 0;
+		}
+		posRi =(int) (width / 2 - PLAYER_FLIED_WIDTH / 2); 
+		playerPos.add(new Rectangle(posRi, posHi, PLAYER_FLIED_WIDTH, PLAYER_FIELD_HEIGHT));
 
 		// Spieler 6
-		posHi = (int) (height - height / 2 + hoehe);
-		posRi = (int) (width / 3 - breite / 2);
-		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posHi = (int) (height * 0.69166) + abstand;
+		if (posHi < 0) {
+			posHi = 0;
+		}
+		posRi = (int) (width * 0.28125);
+		playerPos.add(new Rectangle(posRi, posHi, PLAYER_FLIED_WIDTH, PLAYER_FIELD_HEIGHT));
 
 		// Spieler 7
-		posHi = (int) (height - height / 1.75 + hoehe);
-		posRi = (int) (width / 6 - breite / 2);
-		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posHi = (int) (height * 0.63333) + abstand;
+		if (posHi < 0) {
+			posHi = 0;
+		}
+		posRi = (int) (width * 0.1375);
+		playerPos.add(new Rectangle(posRi, posHi, PLAYER_FLIED_WIDTH, PLAYER_FIELD_HEIGHT));
 
 		// Spieler 8
-		posHi = (int) (height / 3 - hoehe);
-		posRi = (int) (width / 6 - breite / 2);
-		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posHi = (int) (height * 0.35833 - PLAYER_FIELD_HEIGHT) - abstand;
+		if (posHi < 0) {
+			posHi = 0;
+		}
+		posRi = (int) (width * 0.1375);
+		playerPos.add(new Rectangle(posRi, posHi, PLAYER_FLIED_WIDTH, PLAYER_FIELD_HEIGHT));
 
 		// Spieler 9
-		posHi = (int) (height / 4 - hoehe);
-		posRi = (int) (width / 3 - breite / 2);
-		playerPos.add(new Rectangle(posRi, posHi, breite, hoehe));
+		posHi = (int) (height * 0.3 - PLAYER_FIELD_HEIGHT) - abstand;
+		if (posHi < 0) {
+			posHi = 0;
+		}
+		posRi = (int) (width * 0.28125);
+		playerPos.add(new Rectangle(posRi, posHi, PLAYER_FLIED_WIDTH, PLAYER_FIELD_HEIGHT));
 
 		return playerPos;
 	}
@@ -615,7 +658,6 @@ public class ViewTable extends ViewPart {
 			try {
 				// Spieler seinen Anteil am Pot zuweisen
 				player.deposit(table.payOut((Double) action.getValue()));
-//				player.deposit((Double) action.getValue());
 				
 			} catch (PlayerException e) {
 				ErrorHandler.handleError(e,
@@ -661,6 +703,24 @@ public class ViewTable extends ViewPart {
 			
 			// Setzrunde beenden
 			table.endOfRound();
+			break;
+		case Action.UNCALLED_BET:
+			// Spieler bekommt einen nicht gecallten Einsatz zurueck
+			
+			// Setzrunde beenden
+			table.endOfRound();
+			
+			// Spieler Einsatz erstatten
+			try {
+					player.deposit(table.payOut((Double) action.getValue()));
+				} catch (PlayerIllegalChipsException e) {
+					ErrorHandler.handleError(e,
+							Messages.ViewTable_15, false);
+				} catch (TableException e) {
+					ErrorHandler.handleError(e,
+							Messages.ViewTable_15, false);
+				}
+			break;
 		}
 
 		// Tischinformationen anzeigen
@@ -721,58 +781,61 @@ public class ViewTable extends ViewPart {
 		// Position und Groesse der Felder fuer die Spieler
 		ArrayList<Rectangle> buttonPos = new ArrayList<Rectangle>();
 
-		// Hoehe und Breite der Spielerfelder
-		int hoehe = 15;
-		int breite = 15;
+		// Hoehe und Breite des Button
+		final int hoehe = 15;
+		final int breite = 15;
+		
+		// Versatz für den Button zum Tisch
+		final int versatz = 30;
 
 		// Dealer
-		int posHi = (int) (height / 4 - hoehe) + 60;
+		int posHi = (int) (height * 0.25) + versatz;
 		int posRi = (int) (width / 2 - breite / 2);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
-
+		  
 		// Spieler 1
-		posHi = (int) (height / 3.7 - hoehe + 60);
-		posRi = (int) (width - width / 3 - breite / 2);
+		posHi = (int) (height * 0.3 - hoehe) + versatz;
+		posRi = (int) (width * 0.6125);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 2
-		posHi = (int) (height / 3 - hoehe + 60);
-		posRi = (int) (width - width / 6 - breite / 2 - 40);
+		posHi = (int) (height * 0.35833 - hoehe) + versatz;
+		posRi = (int) (width * 0.76875);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 3
-		posHi = (int) (height - height / 2 + hoehe + 10);
-		posRi = (int) (width - width / 6 - breite / 2 - 40);
+		posHi = (int) (height * 0.63333) - versatz;
+		posRi = (int) (width * 0.76875);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 4
-		posHi = (int) (height - height / 2.5 + hoehe);
-		posRi = (int) (width - width / 3 - breite / 2);
+		posHi = (int) (height * 0.69166) - versatz;
+		posRi = (int) (width * 0.6125);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 5
-		posHi = (int) (height - height / 2.7 + hoehe);
-		posRi = (int) (width / 2 - breite / 2);
+		posHi = (int) (height * 0.7) - versatz;
+		posRi =(int) (width / 2 - breite / 2);
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 6
-		posHi = (int) (height - height / 2.5 + hoehe);
-		posRi = (int) (width / 3 - breite / 2);
+		posHi = (int) (height * 0.69166) -  versatz;
+		posRi = (int) (width * 0.28125) + PLAYER_FLIED_WIDTH;
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 7
-		posHi = (int) (height - height / 2 + hoehe + 10);
-		posRi = (int) (width / 6 - breite / 2 + 40);
+		posHi = (int) (height * 0.63333) - versatz;
+		posRi = (int) (width * 0.1375) + PLAYER_FLIED_WIDTH;
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 8
-		posHi = (int) (height / 3 - hoehe + 50);
-		posRi = (int) (width / 6 - breite / 2 + 35);
+		posHi = (int) (height * 0.35833 - hoehe) + versatz;
+		posRi = (int) (width * 0.1375) + PLAYER_FLIED_WIDTH;;
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		// Spieler 9
-		posHi = (int) (height / 3.7 - hoehe + 60);
-		posRi = (int) (width / 3 - breite / 2);
+		posHi = (int) (height * 0.3 - hoehe) + versatz;
+		posRi = (int) (width * 0.28125) + PLAYER_FLIED_WIDTH;;
 		buttonPos.add(new Rectangle(posRi, posHi, breite, hoehe));
 
 		return buttonPos;

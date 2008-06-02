@@ -82,6 +82,9 @@ public class Action {
 	// Ante
 	public static final int ANTE = 18;
 	
+	// Spieler bekommt einen nicht gecallten Einsatz zurueck
+	public static final int UNCALLED_BET = 19;
+	
 	/***************************************************************************
 	 * Instanz Eigenschaften
 	 **************************************************************************/
@@ -182,7 +185,8 @@ public class Action {
 		      action != SAY &&
 		      action != SMALL_AND_BIGBLIND &&
 		      action != SHOWDOWN &&
-		      action != ANTE) {
+		      action != ANTE &&
+		      action != UNCALLED_BET) {
 			throw new ActionIllegalActionException();
 		}
 
@@ -274,6 +278,9 @@ public class Action {
 		case SHOWDOWN:
 			ret = "*** SHOWDOWN ***"; //$NON-NLS-1$ 
 			break;
+		case UNCALLED_BET:
+			ret = "Nicht gecallter Einsatz (" + String.valueOf(value) + ") geht an " + player.getName() + " zurueck";
+			break;
 		default:
 			ret = Messages.Action_15;
 			break;
@@ -300,6 +307,7 @@ public class Action {
 		case BIGBLIND:
 		case COLLECT:
 		case ANTE:
+		case UNCALLED_BET:
 			if (player == null || value == null || !(value instanceof Double)) {
 				throw new ActionMissingParameterException();
 			}

@@ -24,6 +24,8 @@ Alpha 2
   - fix problem with rake when has sidepots
   - change position of boardcards and pot
   - autoplay post all ante as one
+  - correct position of button on table
+  - now ten player can sit at the table
   
 TODO
   - changing notifying of changed table or cards to listener

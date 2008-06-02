@@ -31,13 +31,13 @@
             allowMultiple="false"
             class="rjPokerReplay.views.ViewHandhistory"
             id="RJPoker Replay.Handhistory"
-            name="Handhistory">
+            name="%view.name.1">
       </view>
       <view
             allowMultiple="false"
             class="rjPokerReplay.views.ViewTableinfo"
             id="RJPoker Replay.ViewTableinfo"
-            name="TableinfoView">
+            name="%view.name.2">
       </view>
    </extension>
    <extension
@@ -57,6 +57,10 @@
          <property
                name="appName"
                value="RJ Poker Replay">
+         </property>
+         <property
+               name="aboutText"
+               value="RJ Poker Replay by Ralf Joswig&#x0A;Vers. 0.0.1 Aplpha 2">
          </property>
       </product>
    </extension>

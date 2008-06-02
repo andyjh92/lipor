@@ -263,11 +263,25 @@ public class HandhistoryPokerstars extends Handhistory {
 				!text.equals("leaves") && //$NON-NLS-1$
 				!text.equals("sits") && //$NON-NLS-1$
 				!text.equals("was") && //$NON-NLS-1$
+				!text.equals("Uncalled") && //$NON-NLS-1$
 				tokenizer.hasMoreTokens()) {
 			name = name + " " + text; //$NON-NLS-1$
 			text = tokenizer.nextToken();
 		}
+		if ("Uncalled".equals(text) && //$NON-NLS-1$
+				tokenizer.hasMoreTokens()) {
+			do {
+				text = tokenizer.nextToken();
+			} while (!"to".equals(text)); //$NON-NLS-1$
+			name = tokenizer.nextToken();
+			while (tokenizer.hasMoreTokens()) {
+				name = name+ " " + tokenizer.nextToken(); //$NON-NLS-1$
+			}
+			tokenizer = new StringTokenizer(input);
+			text = tokenizer.nextToken();
+		}
 		name = name.trim();
+		
 		if ("is".equals(text)) { //$NON-NLS-1$
 			text = tokenizer.nextToken();
 			if (!"disconnected".equals(text) &&  //$NON-NLS-1$
@@ -382,6 +396,10 @@ public class HandhistoryPokerstars extends Handhistory {
 			// Spieler wurde vom Tisch entfernt, da er nicht gezahlt hat
 		} else if (input.endsWith("is capped")) {  //$NON-NLS-1$
 			// Spieler hat beim Limit Holdem die max. Anzahl an Erhoehungen erreicht 
+		} else if ("Uncalled".equals(text)) { //$NON-NLS-1$
+			// Spieler bekommt einen nicht gecallten Einsatz zurueck
+			action = Action.UNCALLED_BET;
+			text = tokenizer.nextToken();
 		} else {
 			System.out.println(Messages.HandhistoryPokerstars_3 + input);
 		}
@@ -395,10 +413,15 @@ public class HandhistoryPokerstars extends Handhistory {
 			  action == Action.BIGBLIND ||
 			  action == Action.COLLECT ||
 			  action == Action.SMALL_AND_BIGBLIND ||
-			  action == Action.ANTE) {
+			  action == Action.ANTE ||
+			  action == Action.UNCALLED_BET) {
 			text = tokenizer.nextToken();
 			if (text.startsWith("$")) { //$NON-NLS-1$
 				text = text.substring(1, text.length());
+			}
+			if (text.startsWith("(")) {  //$NON-NLS-1$
+				text = text.substring(1, text.length());
+				text = text.substring(0, text.length() - 1);
 			}
 			value = Double.valueOf(text);
 		} else if (action == Action.SAY) {
