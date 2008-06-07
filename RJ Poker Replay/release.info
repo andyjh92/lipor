@@ -26,7 +26,13 @@ Alpha 2
   - autoplay post all ante as one
   - correct position of button on table
   - now ten player can sit at the table
+  - modify notifying of changed table or cards to listener
+  - wrong amount when players pay ante
+  
+1.0
+  - wrong card shown for ace diamond
+  - new licence-dialog
+  - show first information of players hand
   
 TODO
-  - changing notifying of changed table or cards to listener
   - add new view with information about the current value of the hand

@@ -5,7 +5,8 @@ Bundle-SymbolicName: RjPokerReplay;singleton:=true
 Bundle-Version: 0.0.1
 Bundle-Activator: rjPokerReplay.Activator
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.ui.intro
 Eclipse-LazyStart: true
 Export-Package: cardstuff;uses:="org.eclipse.swt.graphics",
  cardstuffExceptions,

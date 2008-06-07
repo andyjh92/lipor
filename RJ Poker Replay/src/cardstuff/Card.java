@@ -35,6 +35,7 @@ public class Card {
 	/***************************************************************************
 	 * Konstanten
 	 **************************************************************************/
+	
 	/*
 	 * Konstante fuer die Farbe Karo
 	 */
@@ -107,7 +108,7 @@ public class Card {
 	 * Konstante fuer die Karte Ass
 	 */
 	public static final int ACE = 14;
-
+	
 	/***************************************************************************
 	 * Instanz Eigenschaften
 	 **************************************************************************/
@@ -465,11 +466,99 @@ public class Card {
 		
 		return new Card(tmpValue, tmpSuit);
 	}
-	
+
+	/**
+	 * Gibt ein Bild mit einer Kartenrueckseite zurueck
+	 * 
+	 * @return Die Kartenrueckseite
+	 */
 	public static Image getImageBack() {
 		ImageData imgData = new ImageData(ViewTable.class.getClassLoader().getResourceAsStream("images/back_red_casino.gif")); //$NON-NLS-1$
 		Image image = new Image(Display.getCurrent(), imgData);
 		return image;
 	}
-
+	
+	/**
+	 * Gibt einen der Kartenfarbe entsprechenden Wert zurueck.
+	 * Dabei gilt: Kara (Diamond) = 0
+	 *             Herz (Heart) = 1
+	 *             Kreuz (Cross) = 2
+	 *             Pik (Spade) = 3
+	 *             
+	 * @return Der der Farbe entsprechende Wert
+	 */
+	public int getSuitValue() {
+		int ret;
+		
+		// Wert zur Farbe ermitteln
+		switch (suit) {
+		case DIAMOND:
+			ret = 0;
+			break;
+		case HEART:
+			ret = 1;
+			break;
+		case CLUB:
+			ret = 2;
+			break;
+		case SPADE:
+			ret = 3;
+			break;
+		default:
+			ret = -1;
+			break;
+		}
+		
+		// und zurueckgeben
+		return ret;
+	}
+	
+	/**
+	 * Gibt den Wert der Karte einem von 0 bis 12 entsprechende Wert zurueck
+	 * Dabei gilt: 2 = 0
+	 *             3 = 1
+	 *             4 = 2 usw. bis
+	 *             J = 9
+	 *             Q = 10
+	 *             K = 11
+	 *             A = 12
+	 *              
+	 * @return Einen int-Wert entsprechende des Kartenwertes
+	 */
+	public int getValueValue() {
+		int ret =0 ;
+		
+		// Dem internen Wert einen externen zurordnen
+		switch (value) {
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+			ret = value - 2;
+			break;
+		case 11:
+			ret = 9;
+			break;
+		case 12:
+			ret = 10;
+			break;
+		case 13:
+			ret = 11;
+			break;
+		case 14:
+			ret = 12;
+			break;
+		default:
+			ret = -1;
+			break;
+		}
+		
+		// und diesen zurueckmelden
+		return ret;
+	}
 }

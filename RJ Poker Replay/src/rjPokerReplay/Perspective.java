@@ -18,6 +18,7 @@ import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
 import rjPokerReplay.views.ViewHandhistory;
+import rjPokerReplay.views.ViewHandinfo;
 import rjPokerReplay.views.ViewTable;
 import rjPokerReplay.views.ViewTableinfo;
 
@@ -31,6 +32,7 @@ public class Perspective implements IPerspectiveFactory {
 		IFolderLayout bottom = layout.createFolder("bottom", IPageLayout.BOTTOM, (float)(IPageLayout.RATIO_MAX * 0.8), editorArea); //$NON-NLS-1$
 		bottom.addPlaceholder(ViewHandhistory.ID);
 		bottom.addView(ViewTableinfo.ID);
+		bottom.addView(ViewHandinfo.ID);
 		layout.addStandaloneView(ViewTable.ID, false, IPageLayout.LEFT, (float)(IPageLayout.RATIO_MAX * 0.2), editorArea);
 		layout.getViewLayout(ViewTable.ID).setCloseable(false);
 	}

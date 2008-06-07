@@ -39,6 +39,12 @@
             id="RJPoker Replay.ViewTableinfo"
             name="%view.name.2">
       </view>
+      <view
+            allowMultiple="false"
+            class="rjPokerReplay.views.ViewHandinfo"
+            id="RJPoker Replay.ViewHandinfo"
+            name="%view.name.3">
+      </view>
    </extension>
    <extension
          id="product"
@@ -60,7 +66,7 @@
          </property>
          <property
                name="aboutText"
-               value="RJ Poker Replay by Ralf Joswig&#x0A;Vers. 0.0.1 Aplpha 2">
+               value="RJ Poker Replay by Ralf Joswig&#x0A;Vers. 1.0&#x0A;&#x0A;Die jeweils aktuellste Version kann hier heruntergeladen werden:&#x0A;https://sourceforge.net/project/showfiles.php?group_id=224389&#x0A;&#x0A;Anregungen und Fehlermeldung bitte an die eMail-Adresse&#x0A;   ralfjoswig@users.sourceforge.net">
          </property>
       </product>
    </extension>
@@ -158,6 +164,21 @@
             id="RJ Poker Replay.pokerstars"
             name="Pokerstars">
       </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            configurer="rjPokerReplay.Configurer"
+            content="RJ Poker Replay.config"
+            id="RJ Poker Replay.config"
+            introId="RJ Poker Replay.config">
+         <presentation
+               home-page-id="RJ Poker Replay.presentation1">
+            <implementation
+                  kind="swt">
+            </implementation>
+         </presentation>
+      </config>
    </extension>
 
 </plugin>

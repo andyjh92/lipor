@@ -26,7 +26,6 @@ import rjPokerReplay.Activator;
 import rjPokerReplay.ApplicationWorkbenchAdvisor;
 import rjPokerReplay.util.ErrorHandler;
 import rjPokerReplay.views.ViewTable;
-import rjPokerReplay.views.ViewTableinfo;
 import cardstuff.HandhistoryPokerstars;
 import cardstuff.Table;
 import cardstuffExceptions.HandhistoryException;
@@ -78,18 +77,12 @@ public class Pokerstars extends Wizard implements IImportWizard {
         	ApplicationWorkbenchAdvisor.setTable((Table)ApplicationWorkbenchAdvisor.getHands().get(0));
         	IWorkbenchPage activPage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
         	ViewTable tableView = null;
-        	ViewTableinfo infoView = null;
         	if (activPage != null) {
         		tableView = (ViewTable)(activPage.findView(ViewTable.ID));
-        		infoView = (ViewTableinfo)(activPage.findView(ViewTableinfo.ID)); 
         	}
         	if (tableView != null) {
         		tableView.resetTable();
         		tableView.drawTable();
-        		tableView.updateHandView();
-        	}
-        	if (infoView != null) {
-        		infoView.showInfo();
         	}
         }
 		

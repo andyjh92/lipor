@@ -35,7 +35,7 @@ import rjPokerReplay.Activator;
 import rjPokerReplay.ApplicationWorkbenchAdvisor;
 import rjPokerReplay.preferences.PreferenceConstants;
 import rjPokerReplay.util.ErrorHandler;
-import rjPokerReplay.util.FileUtil;
+import util.FileUtil;
 import cardstuff.Handhistory;
 
 public class SelectFile extends WizardPage {

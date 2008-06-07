@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import language.Messages;
 
 import rjPokerReplay.util.ErrorHandler;
-import rjPokerReplay.util.FileUtil;
+import util.FileUtil;
 
 import cardstuffExceptions.HandhistoryException;
 

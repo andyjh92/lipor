@@ -6,7 +6,13 @@
    <aboutInfo>
       <text>
          RJ Poker Replay by Ralf Joswig
-Vers. 0.0.1 Aplpha 2
+Vers. 1.0
+
+Die jeweils aktuellste Version kann hier heruntergeladen werden:
+https://sourceforge.net/project/showfiles.php?group_id=224389
+
+Anregungen und Fehlermeldung bitte an die eMail-Adresse
+   ralfjoswig@users.sourceforge.net
       </text>
    </aboutInfo>
 
@@ -18,7 +24,6 @@ Vers. 0.0.1 Aplpha 2
 
    <windowImages i16="icons/alt_window_16.gif" i32="icons/alt_window_32.gif"/>
 
-
    <launcher name="RjPokerReplay">
       <solaris/>
       <win useIco="false">
@@ -26,6 +31,7 @@ Vers. 0.0.1 Aplpha 2
       </win>
    </launcher>
 
+   <intro introId="RjPokerReplay.intro"/>
 
    <vm>
    </vm>
@@ -33,29 +39,74 @@ Vers. 0.0.1 Aplpha 2
    <plugins>
       <plugin id="RjPokerReplay"/>
       <plugin id="com.ibm.icu"/>
+      <plugin id="com.ibm.icu36.data.update" fragment="true"/>
       <plugin id="javax.servlet"/>
+      <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.apache.lucene"/>
+      <plugin id="org.apache.lucene.analysis"/>
+      <plugin id="org.eclipse.ant.core"/>
+      <plugin id="org.eclipse.ant.core.nl_de" fragment="true"/>
       <plugin id="org.eclipse.core.commands"/>
+      <plugin id="org.eclipse.core.commands.nl_de" fragment="true"/>
       <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.contenttype.nl_de" fragment="true"/>
       <plugin id="org.eclipse.core.databinding"/>
+      <plugin id="org.eclipse.core.databinding.nl_de" fragment="true"/>
       <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.expressions.nl_de" fragment="true"/>
       <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.jobs.nl_de" fragment="true"/>
       <plugin id="org.eclipse.core.runtime"/>
       <plugin id="org.eclipse.core.runtime.compatibility.auth"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.auth.nl_de" fragment="true"/>
       <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
+      <plugin id="org.eclipse.core.runtime.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.core.variables"/>
+      <plugin id="org.eclipse.core.variables.nl_de" fragment="true"/>
       <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.app.nl_de" fragment="true"/>
       <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.common.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.equinox.http.jetty"/>
+      <plugin id="org.eclipse.equinox.http.jetty.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.equinox.http.servlet"/>
+      <plugin id="org.eclipse.equinox.http.servlet.nl_de" fragment="true"/>
       <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.preferences.nl_de" fragment="true"/>
       <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.equinox.registry.nl_de" fragment="true"/>
       <plugin id="org.eclipse.help"/>
+      <plugin id="org.eclipse.help.base"/>
+      <plugin id="org.eclipse.help.base.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.help.nl_de" fragment="true"/>
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
+      <plugin id="org.eclipse.jface.databinding.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.jface.nl_de" fragment="true"/>
       <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.osgi.nl_de" fragment="true"/>
       <plugin id="org.eclipse.osgi.services"/>
+      <plugin id="org.eclipse.osgi.services.nl_de" fragment="true"/>
       <plugin id="org.eclipse.swt"/>
+      <plugin id="org.eclipse.swt.carbon.macosx" fragment="true"/>
+      <plugin id="org.eclipse.swt.gtk.linux.ppc" fragment="true"/>
       <plugin id="org.eclipse.swt.gtk.linux.x86" fragment="true"/>
+      <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.swt.gtk.solaris.sparc" fragment="true"/>
+      <plugin id="org.eclipse.swt.motif.aix.ppc" fragment="true"/>
+      <plugin id="org.eclipse.swt.nl_de" fragment="true"/>
       <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.swt.wpf.win32.x86" fragment="true"/>
       <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.carbon" fragment="true"/>
+      <plugin id="org.eclipse.ui.forms"/>
+      <plugin id="org.eclipse.ui.forms.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.ui.intro"/>
+      <plugin id="org.eclipse.ui.intro.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.ui.nl_de" fragment="true"/>
       <plugin id="org.eclipse.ui.workbench"/>
+      <plugin id="org.eclipse.ui.workbench.nl_de" fragment="true"/>
+      <plugin id="org.mortbay.jetty"/>
    </plugins>
 
 </product>

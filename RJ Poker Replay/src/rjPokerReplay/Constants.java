@@ -59,7 +59,7 @@ public class Constants {
 	public final static String IMG_CARD_DIAMOND_JACK = "11_1.png"; //$NON-NLS-1$
 	public final static String IMG_CARD_DIAMOND_QUEEN = "12_1.png"; //$NON-NLS-1$
 	public final static String IMG_CARD_DIAMOND_KING = "13_1.png"; //$NON-NLS-1$
-	public final static String IMG_CARD_DIAMOND_ASS = "1_2.png"; //$NON-NLS-1$
+	public final static String IMG_CARD_DIAMOND_ASS = "1_1.png"; //$NON-NLS-1$
 	public final static String IMG_CARD_CLUB_TWO = "2_2.png"; //$NON-NLS-1$
 	public final static String IMG_CARD_CLUB_THREE = "3_2.png"; //$NON-NLS-1$
 	public final static String IMG_CARD_CLUB_FOUR = "4_2.png"; //$NON-NLS-1$

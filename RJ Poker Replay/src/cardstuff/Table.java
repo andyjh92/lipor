@@ -15,9 +15,7 @@ package cardstuff;
 import java.util.Calendar;
 
 import language.Messages;
-
 import rjPokerReplay.util.ErrorHandler;
-
 import cardstuffExceptions.CardException;
 import cardstuffExceptions.HandException;
 import cardstuffExceptions.HandIllegalBigblindException;
@@ -206,7 +204,7 @@ public class Table {
 			potTotal = potTotal + pot[i];
 		}
 		
-		// die Einsätze der aktuellen Setzrunde hinzuaddieren
+		// die Einsï¿½tze der aktuellen Setzrunde hinzuaddieren
 		for (int i = 0; i < bet.length; i++) {
 			potTotal = potTotal + bet[i];
 		}
@@ -722,11 +720,6 @@ public class Table {
 		// Button eins weiter geben
 		buttonposition = nextPlayerPos(buttonposition);
 	}
-	
-//	public double addToPot(double amount) {
-//		
-//		return 0;
-//	}
 	
 	/**
 	 * Ermittelt die Anzahl der vorhandenen Spieler

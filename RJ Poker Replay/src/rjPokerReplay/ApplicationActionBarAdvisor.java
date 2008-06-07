@@ -11,8 +11,10 @@ import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 
+import rjPokerReplay.actions.LicenceAction;
 import rjPokerReplay.actions.ShowViewAction;
 import rjPokerReplay.views.ViewHandhistory;
+import rjPokerReplay.views.ViewHandinfo;
 import rjPokerReplay.views.ViewTableinfo;
 
 /**
@@ -33,6 +35,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	private IWorkbenchAction preferenceAction;
 	private ShowViewAction showHandhistoryViewAction;
 	private ShowViewAction showTableinfoViewAction;
+	private ShowViewAction showHandinfoViewAction;
+	private LicenceAction licenceAction;
 
 	public ApplicationActionBarAdvisor(IActionBarConfigurer configurer) {
 		super(configurer);
@@ -68,8 +72,18 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		showTableinfoViewAction = new ShowViewAction(window, Messages.ApplicationActionBarAdvisor_1, ViewTableinfo.ID);
 		showTableinfoViewAction.show(true);
 		register(showTableinfoViewAction);
+		
+		showHandinfoViewAction = new ShowViewAction(window, Messages.ApplicationActionBarAdvisor_5, ViewHandinfo.ID);
+		showHandinfoViewAction.show(true);
+		register(showHandinfoViewAction);
+		
+		licenceAction = new LicenceAction(window);
+		register(licenceAction);
 	}
 
+	/**
+	 * Menueleiste zusammenbauen
+	 */
 	protected void fillMenuBar(IMenuManager menuBar) {
 		MenuManager fileMenu = new MenuManager(Messages.ApplicationActionBarAdvisor_2,  
 				IWorkbenchActionConstants.M_FILE);
@@ -79,6 +93,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		
 		MenuManager windowMenu = new MenuManager(Messages.ApplicationActionBarAdvisor_3, IWorkbenchActionConstants.M_WINDOW);
 		windowMenu.add(showHandhistoryViewAction);
+		windowMenu.add(showHandinfoViewAction);
 		windowMenu.add(showTableinfoViewAction);
 		windowMenu.add(preferenceAction);
 		menuBar.add(windowMenu);
@@ -87,6 +102,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 				IWorkbenchActionConstants.M_HELP);
 		menuBar.add(helpMenu);
 		helpMenu.add(helpAction);
+		helpMenu.add(licenceAction);
 		helpMenu.add(aboutAction);
 	}
    

@@ -14,6 +14,7 @@
 package rjPokerReplay.views;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import language.Messages;
 
@@ -27,7 +28,6 @@ import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.part.ViewPart;
 
 import rjPokerReplay.Activator;
@@ -35,6 +35,7 @@ import rjPokerReplay.ApplicationWorkbenchAdvisor;
 import rjPokerReplay.Constants;
 import rjPokerReplay.preferences.PreferenceConstants;
 import rjPokerReplay.util.ErrorHandler;
+import util.AbstractListener;
 import cardstuff.Action;
 import cardstuff.Card;
 import cardstuff.Hand;
@@ -107,6 +108,12 @@ public class ViewTable extends ViewPart {
 	// Hoehe und Breite der Spielerfelder
 	private final static int PLAYER_FIELD_HEIGHT = 130;
 	private final static int PLAYER_FLIED_WIDTH = 90;
+	
+	// Liste der Views die auf Tischaenderungen horchen
+	private HashMap<String, AbstractListener> listener = new HashMap<String, AbstractListener> ();
+	
+	// Karten die im Board gezeigt werden
+	private Card boardcards[] = new Card[5];
 	
 	/**
 	 * Zeichnet den Pokertsich
@@ -295,6 +302,9 @@ public class ViewTable extends ViewPart {
 			int potX = (int) (canvasWidht / 2.0 - 10.0);
 			String potText = Messages.ViewTable_3 + String.valueOf(table.getPot());
 			gcTable.drawText(potText, potX, potY, true);
+			
+			// Zum Schluss alle die es interresiert informieren
+			inform();
 		}
 	}
 
@@ -563,6 +573,10 @@ public class ViewTable extends ViewPart {
 			break;
 		case Action.SMALLBLIND:
 			// Spieler zahl Smallblind
+			
+			// Zur Sicherheit, falls vorher Antes bezahlt wurden, so tun als ob neue Runde
+			table.endOfRound();
+			
 			try {
 					table.playerPayed(player, table.getSmallblind());
 				} catch (PlayerException e) {
@@ -630,6 +644,11 @@ public class ViewTable extends ViewPart {
 		case Action.FLOP:
 			// merken das der Flop gezeitgt wird
 			status = 1;
+			
+			// Karten fuer die Bewertung der Hand in das Zwischenboard uebertragen
+			for (int i = 0; i < 3; i++) {
+				boardcards[i] = table.getBoard()[i];
+			}
 
 			// es beginnt die naechste Setzrunde
 			table.endOfRound();
@@ -638,12 +657,18 @@ public class ViewTable extends ViewPart {
 			// merken das der Turn gezeitgt wird
 			status = 2;
 
+			// Karten fuer die Bewertung der Hand in das Zwischenboard uebertragen
+			boardcards[3] = table.getBoard()[3];
+			
 			// es beginnt die naechste Setzrunde
 			table.endOfRound();
 			break;
 		case Action.RIVER:
 			// merken das der River gezeitgt wird
 			status = 3;
+			
+			// Karten fuer die Bewertung der Hand in das Zwischenboard uebertragen
+			boardcards[4] = table.getBoard()[4];
 
 			// es beginnt die naechste Setzrunde
 			table.endOfRound();
@@ -722,23 +747,6 @@ public class ViewTable extends ViewPart {
 				}
 			break;
 		}
-
-		// Tischinformationen anzeigen
-		showTableInfo();
-	}
-
-	/**
-	 * Zeigt die Tischinformationen im entsprechenden View an
-	 */
-	private void showTableInfo() {
-		IWorkbenchPage page = getViewSite().getWorkbenchWindow().getActivePage();
-		ViewTableinfo view = null;
-		if (page != null) {
-			view = (ViewTableinfo)(page.findView(ViewTableinfo.ID));
-		}
-		if (view != null) {
-			view.showInfo();
-		}
 	}
 
 	/**
@@ -763,6 +771,9 @@ public class ViewTable extends ViewPart {
 		
 		// den Modus fuer Autoplay zuruecksetzen
 		ApplicationWorkbenchAdvisor.setAutoplay(false);
+		
+		// gezeigte Boardkarten loeschen
+		boardcards = new Card[5];
 	}
 
 	/**
@@ -877,12 +888,6 @@ public class ViewTable extends ViewPart {
 
 		// Tisch mit Aenderungen neu anzeigen
 		drawTable();
-
-		// Handhistorie anzeigen
-		updateHandView();
-
-		// Tischinformationen anzeigen
-		showTableInfo();
 	}
 
 	/**
@@ -914,12 +919,6 @@ public class ViewTable extends ViewPart {
 
 		// und frischen Tisch zeichnen
 		drawTable();
-
-		// Handhistorie anzeigen
-		updateHandView();
-
-		// Tischinformationen anzeigen
-		showTableInfo();
 	}
 
 	/**
@@ -961,24 +960,10 @@ public class ViewTable extends ViewPart {
 	}
 
 	/**
-	 * Zeigt geaenderten Handverlauf an
-	 */
-	public void updateHandView() {
-		IWorkbenchPage page = getViewSite().getWorkbenchWindow().getActivePage();
-		ViewHandhistory view = null;
-		if (page != null) {
-			view = (ViewHandhistory)(page.findView(ViewHandhistory.ID));
-		}
-		if (view != null) {
-			view.showHand(ApplicationWorkbenchAdvisor.getHands().get(ApplicationWorkbenchAdvisor.getActiveHand()));
-		}
-	}
-
-	/**
 	 * Spielt die Hand bis zur naechten Aktion des Spielers ab
 	 */
 	public void doNextOwnAction() {
-		new Thread() {
+		new Thread("rjPokerAutoPlay") { //$NON-NLS-1$)
 			public void run() {
 				int delay = 1000 * Activator.getDefault().getPreferenceStore()
 						.getInt(PreferenceConstants.P_GENERAL_TIME_DELAY);
@@ -1105,5 +1090,70 @@ public class ViewTable extends ViewPart {
 			// Thread loeschen, noetig falls dieser neu gestartet wird
 			thread = null;
 		}
+	}
+	
+	/**
+	 * Fuegt einen Listener an, der bei Veraenderungen am Tisch informiert werden will
+	 * 
+	 * @param id Eindeutige Kennung fuer den Listener
+	 * @param listener Das Objekt das benachrichtigt werden will
+	 * @throws IllegalArgumentException
+	 */
+	public void addListener(String id, AbstractListener listener) throws IllegalArgumentException {
+		// eine ID und ein Listener muessen uebergeben werden
+		if ("".equals(id) || id == null || listener == null) {  //$NON-NLS-1$
+			throw new IllegalArgumentException(Messages.ViewTable_22);
+		}
+		
+		// pruefen ob bereits ein Listener unter dieser ID aktiv ist
+		if (this.listener.containsKey(id)) {
+			throw new IllegalArgumentException(Messages.ViewTable_23);
+		}
+		
+		// wenn wir bis hierhin gekommen sind
+		this.listener.put(id, listener);
+	}
+	
+	/**
+	 * Loescht einen Listener aus der Liste der Beobacher
+	 * 
+	 * @param id Eindeutige ID des Listeners
+	 * @throws IllegalArgumentException
+	 */
+	public void removeListener(String id) throws IllegalArgumentException {
+		// eine ID muss uebergeben werden
+		if ("".equals(id) || id == null) {  //$NON-NLS-1$
+			throw new IllegalArgumentException(Messages.ViewTable_24);
+		}
+		
+		// versuchen wir den Listener zu entfernen
+		listener.remove(id);
+	}
+	
+	/**
+	 * Informiert alle gewuenschten Objekte ueber Aenderungen am Tisch
+	 */
+	private void inform() {
+		for ( String elem : listener.keySet() ) {
+			listener.get(elem).inform(elem);
+		}
+	}
+	
+	/**
+	 * Gibt die aktuell im Board liegenden Karten zurueck
+	 * 
+	 * @return Die im Board bereits gezeigten Karten
+	 */
+	public Card[] getActualBoard() {
+		return boardcards;
+	}
+	
+	/**
+	 * Gibt den Tisch mit den akuellen Informationen zurueck
+	 * 
+	 * @return
+	 */
+	public Table getTable() {
+		return table;
 	}
 }

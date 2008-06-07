@@ -20,16 +20,19 @@ import language.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.part.ViewPart;
 
+import rjPokerReplay.Activator;
 import rjPokerReplay.ApplicationWorkbenchAdvisor;
+import util.AbstractListener;
 
 import cardstuff.Action;
 import cardstuff.Hand;
 import cardstuff.Table;
 import cardstuffExceptions.ActionIllegalActionException;
 
-public class ViewTableinfo extends ViewPart {
+public class ViewTableinfo extends ViewPart implements AbstractListener {
 	
 	public static final String ID = "RJPoker Replay.ViewTableinfo"; //$NON-NLS-1$
 	
@@ -42,6 +45,16 @@ public class ViewTableinfo extends ViewPart {
 	public void createPartControl(Composite parent) {
 		text = new Text(parent, SWT.BORDER | SWT.READ_ONLY | SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		text.setEditable(false);
+		
+		// hinterlegen das der View informiert wird wenn sich was am Tisch tut
+		IWorkbenchPage activPage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
+    	ViewTable tableView = null;
+    	if (activPage != null) {
+    		tableView = (ViewTable)(activPage.findView(ViewTable.ID));
+    	}
+    	if (tableView != null) {
+    		tableView.addListener(ID, this);
+    	}
 	}
 
 	@Override
@@ -86,5 +99,28 @@ public class ViewTableinfo extends ViewPart {
 				// Nix, es gibt halt eben keine letze Aktion
 			}
 		}
+	}
+	
+	/**
+	 * Wie von aussen aufgerufen wenn sich was am Tisch geaendert hat. Zeigt dann die aktuelle Hand an
+	 */
+	public void inform(Object source) {
+		showInfo();
+	}
+	
+	/**
+	 * Wird durchlaufen wenn der View nicht mehr angezeigt wird
+	 */
+	public void dispose() {
+		super.dispose();
+		// der View soll nicht mehr ueber Aenderungen am Tisch informiert werden
+		IWorkbenchPage activPage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
+    	ViewTable tableView = null;
+    	if (activPage != null) {
+    		tableView = (ViewTable)(activPage.findView(ViewTable.ID));
+    	}
+    	if (tableView != null) {
+    		tableView.removeListener(ID);
+    	}
 	}
 }
