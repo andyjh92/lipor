@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="HandverlaufNachSpielen" link_to="inhalt.xml#nachspielen"> 
+	<topic label="Tischansicht"  href="html/nachspielen/tischansicht.html" />
+	<topic label="Tischinfo"  href="html/nachspielen/tischinfo.html" />  
+	<topic label="Handinformationen"  href="html/nachspielen/handinformationen.html" />
+	<topic label="Handhistorie"  href="html/nachspielen/handhistorie.html" />
+	<topic label="Funktionen zum Abspielen der Hand"  href="html/nachspielen/funktionen.html" /> 
+</toc>

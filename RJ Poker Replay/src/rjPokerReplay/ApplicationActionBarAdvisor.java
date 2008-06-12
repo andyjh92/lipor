@@ -31,6 +31,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	private IWorkbenchAction exitAction;
 	private IWorkbenchAction importAction;
 	private IWorkbenchAction helpAction;
+	private IWorkbenchAction searchHelpAction;
+    private IWorkbenchAction dynamicHelpAction;
 	private IWorkbenchAction aboutAction;
 	private IWorkbenchAction preferenceAction;
 	private ShowViewAction showHandhistoryViewAction;
@@ -58,6 +60,12 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		
 		helpAction = ActionFactory.HELP_CONTENTS.create(window);
 		register(helpAction);
+		
+		searchHelpAction = ActionFactory.HELP_SEARCH.create(window);
+	    register(searchHelpAction);
+
+	    dynamicHelpAction = ActionFactory.DYNAMIC_HELP.create(window);
+	    register(dynamicHelpAction);
 		
 		aboutAction = ActionFactory.ABOUT.create(window);
 		register(aboutAction);
@@ -102,6 +110,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 				IWorkbenchActionConstants.M_HELP);
 		menuBar.add(helpMenu);
 		helpMenu.add(helpAction);
+		helpMenu.add(searchHelpAction);
+//		helpMenu.add(dynamicHelpAction);
 		helpMenu.add(licenceAction);
 		helpMenu.add(aboutAction);
 	}

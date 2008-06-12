@@ -6,7 +6,7 @@
    <aboutInfo>
       <text>
          RJ Poker Replay by Ralf Joswig
-Vers. 1.0
+Vers. 1.1
 
 Die jeweils aktuellste Version kann hier heruntergeladen werden:
 https://sourceforge.net/project/showfiles.php?group_id=224389
@@ -41,7 +41,11 @@ Anregungen und Fehlermeldung bitte an die eMail-Adresse
       <plugin id="com.ibm.icu"/>
       <plugin id="com.ibm.icu36.data.update" fragment="true"/>
       <plugin id="javax.servlet"/>
+      <plugin id="javax.servlet.jsp"/>
+      <plugin id="org.apache.ant"/>
+      <plugin id="org.apache.commons.el"/>
       <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.apache.jasper"/>
       <plugin id="org.apache.lucene"/>
       <plugin id="org.apache.lucene.analysis"/>
       <plugin id="org.eclipse.ant.core"/>
@@ -69,8 +73,12 @@ Anregungen und Fehlermeldung bitte an die eMail-Adresse
       <plugin id="org.eclipse.equinox.common.nl_de" fragment="true"/>
       <plugin id="org.eclipse.equinox.http.jetty"/>
       <plugin id="org.eclipse.equinox.http.jetty.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.equinox.http.registry"/>
+      <plugin id="org.eclipse.equinox.http.registry.nl_de" fragment="true"/>
       <plugin id="org.eclipse.equinox.http.servlet"/>
       <plugin id="org.eclipse.equinox.http.servlet.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.equinox.jsp.jasper"/>
+      <plugin id="org.eclipse.equinox.jsp.jasper.registry"/>
       <plugin id="org.eclipse.equinox.preferences"/>
       <plugin id="org.eclipse.equinox.preferences.nl_de" fragment="true"/>
       <plugin id="org.eclipse.equinox.registry"/>
@@ -79,6 +87,10 @@ Anregungen und Fehlermeldung bitte an die eMail-Adresse
       <plugin id="org.eclipse.help.base"/>
       <plugin id="org.eclipse.help.base.nl_de" fragment="true"/>
       <plugin id="org.eclipse.help.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.help.ui"/>
+      <plugin id="org.eclipse.help.ui.nl_de" fragment="true"/>
+      <plugin id="org.eclipse.help.webapp"/>
+      <plugin id="org.eclipse.help.webapp.nl_de" fragment="true"/>
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
       <plugin id="org.eclipse.jface.databinding.nl_de" fragment="true"/>

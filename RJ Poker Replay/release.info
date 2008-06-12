@@ -33,6 +33,7 @@ Alpha 2
   - wrong card shown for ace diamond
   - new licence-dialog
   - show first information of players hand
+  - adding helpsystem
   
 TODO
   - add new view with information about the current value of the hand
