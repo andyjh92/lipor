@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Fragment Nl1
+Bundle-SymbolicName: net.sourceforge.rjPokerReplay.nl.de
+Bundle-Version: 1.0.0
+Bundle-Vendor: Ralf Joswig
+Fragment-Host: RjPokerReplay;bundle-version="[1.2,9.9.9)"
+Export-Package: net.sourceforge.rjPokerReplay.lang_de;version="1.0.0";uses:="org.eclipse.osgi.util"
