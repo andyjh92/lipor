@@ -7,7 +7,7 @@
          point="org.eclipse.core.runtime.applications">
       <application>
          <run
-               class="rjPokerReplay.Application">
+               class="net.sourceforge.rjPokerReplay.Application">
          </run>
       </application>
    </extension>
@@ -15,7 +15,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             name="Perspective"
-            class="rjPokerReplay.Perspective"
+            class="net.sourceforge.rjPokerReplay.Perspective"
             id="RjPokerReplay.perspective">
       </perspective>
    </extension>
@@ -23,25 +23,25 @@
          point="org.eclipse.ui.views">
       <view
             allowMultiple="false"
-            class="rjPokerReplay.views.ViewTable"
+            class="net.sourceforge.rjPokerReplay.views.ViewTable"
             id="RjPokerReplay.ViewTable"
             name="TableView">
       </view>
       <view
             allowMultiple="false"
-            class="rjPokerReplay.views.ViewHandhistory"
+            class="net.sourceforge.rjPokerReplay.views.ViewHandhistory"
             id="RJPoker Replay.Handhistory"
             name="%view.name.1">
       </view>
       <view
             allowMultiple="false"
-            class="rjPokerReplay.views.ViewTableinfo"
+            class="net.sourceforge.rjPokerReplay.views.ViewTableinfo"
             id="RJPoker Replay.ViewTableinfo"
             name="%view.name.2">
       </view>
       <view
             allowMultiple="false"
-            class="rjPokerReplay.views.ViewHandinfo"
+            class="net.sourceforge.rjPokerReplay.views.ViewHandinfo"
             id="RJPoker Replay.ViewHandinfo"
             name="%view.name.3">
       </view>
@@ -54,7 +54,7 @@
             name="RJ Poker Replay">
          <property
                name="windowImages"
-               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+               value="icons/034_16x16.gif,icons/034_32x32.gif">
          </property>
          <property
                name="Rj Poker Replay"
@@ -66,7 +66,7 @@
          </property>
          <property
                name="aboutText"
-               value="RJ Poker Replay by Ralf Joswig&#x0A;Vers. 1.1&#x0A;&#x0A;Die jeweils aktuellste Version kann hier heruntergeladen werden:&#x0A;https://sourceforge.net/project/showfiles.php?group_id=224389&#x0A;&#x0A;Anregungen und Fehlermeldung bitte an die eMail-Adresse&#x0A;   ralfjoswig@users.sourceforge.net">
+               value="RJ Poker Replay by Ralf Joswig&#x0A;Vers. 1.2&#x0A;&#x0A;Die jeweils aktuellste Version kann hier heruntergeladen werden:&#x0A;https://sourceforge.net/project/showfiles.php?group_id=224389&#x0A;&#x0A;Anregungen und Fehlermeldung bitte an die eMail-Adresse&#x0A;   ralfjoswig@users.sourceforge.net">
          </property>
       </product>
    </extension>
@@ -78,8 +78,8 @@
             visible="true">
          <action
                allowLabelUpdate="false"
-               class="rjPokerReplay.actions.HandActionHandBack"
-               icon="icons/player_start.png"
+               class="net.sourceforge.rjPokerReplay.actions.HandActionHandBack"
+               icon="$nl$/icons/player_start.png"
                id="RJ Poker Replay.HandStart"
                label="%action.label.0"
                style="push"
@@ -88,8 +88,8 @@
          </action>
          <action
                allowLabelUpdate="false"
-               class="rjPokerReplay.actions.HandActionStepBack"
-               icon="icons/player_rew.png"
+               class="net.sourceforge.rjPokerReplay.actions.HandActionStepBack"
+               icon="$nl$/icons/player_rew.png"
                id="RJ Poker Replay.StepBack"
                label="%action.label.1"
                style="push"
@@ -98,8 +98,8 @@
          </action>
          <action
                allowLabelUpdate="false"
-               class="rjPokerReplay.actions.HandActionNextStep"
-               icon="icons/player_fwd.png"
+               class="net.sourceforge.rjPokerReplay.actions.HandActionNextStep"
+               icon="$nl$/icons/player_fwd.png"
                id="RJ Poker Replay.StepForward"
                label="%action.label.2"
                style="push"
@@ -108,8 +108,8 @@
          </action>
          <action
                allowLabelUpdate="false"
-               class="rjPokerReplay.actions.HandActionNextHand"
-               icon="icons/player_end.png"
+               class="net.sourceforge.rjPokerReplay.actions.HandActionNextHand"
+               icon="$nl$/icons/player_end.png"
                id="RJ Poker Replay.HandNext"
                label="%action.label.3"
                style="push"
@@ -118,8 +118,8 @@
          </action>
          <action
                allowLabelUpdate="false"
-               class="rjPokerReplay.actions.HandActionNextOwnAction"
-               icon="icons/player_eject.png"
+               class="net.sourceforge.rjPokerReplay.actions.HandActionNextOwnAction"
+               icon="$nl$/icons/player_eject.png"
                id="RJ Poker Replay.OwnAction"
                label="%action.label.4"
                style="push"
@@ -128,8 +128,8 @@
          </action>
          <action
                allowLabelUpdate="true"
-               class="rjPokerReplay.actions.HandActionAutoplay"
-               icon="icons/player_play.png"
+               class="net.sourceforge.rjPokerReplay.actions.HandActionAutoplay"
+               icon="$nl$/icons/player_play.png"
                id="RJ Poker Replay.Autoplay"
                label="%action.label.5"
                style="push"
@@ -141,12 +141,12 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="rjPokerReplay.preferences.PreferencePagePokerstars"
+            class="net.sourceforge.rjPokerReplay.preferences.PreferencePagePokerstars"
             id="rjpokerreplay.preferences.PreferencePagePokerstars"
             name="Pokerstars">
       </page>
       <page
-            class="rjPokerReplay.preferences.PreferenceGeneral"
+            class="net.sourceforge.rjPokerReplay.preferences.PreferenceGeneral"
             id="RJ Poker Replay.General"
             name="%page.name.1">
       </page>
@@ -154,31 +154,16 @@
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="rjPokerReplay.preferences.PreferenceInitializer">
+            class="net.sourceforge.rjPokerReplay.preferences.PreferenceInitializer">
       </initializer>
    </extension>
    <extension
          point="org.eclipse.ui.importWizards">
       <wizard
-            class="rjPokerReplay.wizard.Pokerstars"
+            class="net.sourceforge.rjPokerReplay.wizard.Pokerstars"
             id="RJ Poker Replay.pokerstars"
             name="Pokerstars">
       </wizard>
-   </extension>
-   <extension
-         point="org.eclipse.ui.intro.config">
-      <config
-            configurer="rjPokerReplay.Configurer"
-            content="RJ Poker Replay.config"
-            id="RJ Poker Replay.config"
-            introId="RJ Poker Replay.config">
-         <presentation
-               home-page-id="RJ Poker Replay.presentation1">
-            <implementation
-                  kind="swt">
-            </implementation>
-         </presentation>
-      </config>
    </extension>
    <extension
          id="rjPokerReplayHelp"

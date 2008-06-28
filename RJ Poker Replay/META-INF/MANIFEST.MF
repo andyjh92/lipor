@@ -2,15 +2,13 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: RJ Poker Replay
 Bundle-SymbolicName: RjPokerReplay;singleton:=true
-Bundle-Version: 0.0.1
-Bundle-Activator: rjPokerReplay.Activator
+Bundle-Version: 1.2.0
+Bundle-Activator: net.sourceforge.rjPokerReplay.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.intro
 Eclipse-LazyStart: true
-Export-Package: cardstuff;uses:="org.eclipse.swt.graphics",
- cardstuffExceptions,
- rjPokerReplay;
+Export-Package: net.sourceforge.rjPokerReplay;
   uses:="org.eclipse.equinox.app,
    org.eclipse.ui.application,
    org.osgi.framework,
@@ -18,5 +16,13 @@ Export-Package: cardstuff;uses:="org.eclipse.swt.graphics",
    org.eclipse.jface.action,
    org.eclipse.jface.resource,
    cardstuff,
-   org.eclipse.ui"
+   org.eclipse.ui",
+ net.sourceforge.rjPokerReplay.actions,
+ net.sourceforge.rjPokerReplay.cardstuff;uses:="org.eclipse.swt.graphics",
+ net.sourceforge.rjPokerReplay.cardstuffExceptions,
+ net.sourceforge.rjPokerReplay.preferences,
+ net.sourceforge.rjPokerReplay.util,
+ net.sourceforge.rjPokerReplay.views,
+ net.sourceforge.rjPokerReplay.wizard
 Bundle-Localization: plugin
+Bundle-Vendor: Ralf Joswig

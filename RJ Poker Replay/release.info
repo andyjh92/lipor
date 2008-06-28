@@ -33,7 +33,15 @@ Alpha 2
   - wrong card shown for ace diamond
   - new licence-dialog
   - show first information of players hand
+  
+1.1
   - adding helpsystem
+  
+1.2
+  - save windowstate at programend and restore at start
+  - the backgroundimage for the table can be changed
+  - the images of the cards are customizable
+  - if nikname in handhistory different from preferences, a dialog popup to confirm or change  
   
 TODO
   - add new view with information about the current value of the hand
