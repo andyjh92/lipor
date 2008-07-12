@@ -13,10 +13,11 @@
 
 package net.sourceforge.rjPokerReplay.views;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import net.sourceforge.rjPokerReplay.Activator;
-import net.sourceforge.rjPokerReplay.ApplicationActionBarAdvisor;
 import net.sourceforge.rjPokerReplay.ApplicationWorkbenchAdvisor;
 import net.sourceforge.rjPokerReplay.Constants;
 import net.sourceforge.rjPokerReplay.cardstuff.Action;
@@ -28,15 +29,10 @@ import net.sourceforge.rjPokerReplay.cardstuff.Table;
 import net.sourceforge.rjPokerReplay.cardstuffExceptions.ActionIllegalActionException;
 import net.sourceforge.rjPokerReplay.cardstuffExceptions.CardException;
 import net.sourceforge.rjPokerReplay.cardstuffExceptions.PlayerException;
-import net.sourceforge.rjPokerReplay.cardstuffExceptions.PlayerIllegalChipsException;
 import net.sourceforge.rjPokerReplay.cardstuffExceptions.TableException;
 import net.sourceforge.rjPokerReplay.preferences.PreferenceConstants;
 import net.sourceforge.rjPokerReplay.util.ErrorHandler;
 
-import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.action.IMenuManager;
-import org.eclipse.jface.action.IStatusLineManager;
-import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
@@ -47,12 +43,7 @@ import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.IActionBars;
-import org.eclipse.ui.IViewSite;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.part.ViewPart;
-import org.eclipse.ui.services.IServiceLocator;
 
 public class ViewTable extends ViewPart {
 	public static final String ID = "RjPokerReplay.ViewTable"; //$NON-NLS-1$
@@ -117,6 +108,9 @@ public class ViewTable extends ViewPart {
 	
 	// Karten die im Board gezeigt werden
 	private Card boardcards[] = new Card[5];
+	
+	// Formatierer für Betraege
+	private NumberFormat numberFormat;
 	
 	/**
 	 * Zeichnet den Pokertsich
@@ -201,6 +195,18 @@ public class ViewTable extends ViewPart {
 			table = ApplicationWorkbenchAdvisor.getTable().copy();
 		}
 
+		// wenn noch keine Intanz von Numberformat vorliegt
+		if ( numberFormat == null && table != null) {
+			// Echtgeldtisch?
+			if (table.getTabletype() == Table.REALMONEY){
+				// ja, dann Zahlenformat für Dollar
+				numberFormat = NumberFormat.getCurrencyInstance(Locale.US);
+			} else {
+				// sonst einfache Zahlen
+				numberFormat = NumberFormat.getInstance();
+			}
+		}
+		
 		// Hintergrund neue anzeigen
 		gcTable.dispose();
 		background.dispose();
@@ -250,7 +256,8 @@ public class ViewTable extends ViewPart {
 						text = Messages.ViewTable_0;
 					} else {
 						// Spieler hat noch was, dann das anzeigen
-						text = String.valueOf(stack);
+//						text = String.valueOf(stack);
+						text = numberFormat.format(stack);
 					}
 					gcTable.drawText(text, textX,
 							textY, true);
@@ -265,7 +272,8 @@ public class ViewTable extends ViewPart {
 
 					// der aktuelle Einsatz
 					String einsatz = Messages.ViewTable_2;
-					einsatz = einsatz + String.valueOf(table.getBetOfPlayer(i));
+//					einsatz = einsatz + String.valueOf(table.getBetOfPlayer(i));
+					einsatz = einsatz + numberFormat.format(table.getBetOfPlayer(i));
 					gcTable.drawText(einsatz, textX, textY, true);
 					textY = textY + lineSpacing2;
 
@@ -303,14 +311,15 @@ public class ViewTable extends ViewPart {
 			// Der Pot
 			int potY = (int) (canvasHeight / 2.0 - 20.0) - HOEHE_KARTE / 2;
 			int potX = (int) (canvasWidht / 2.0 - 10.0);
-			String potText = Messages.ViewTable_3 + String.valueOf(table.getPot());
+//			String potText = Messages.ViewTable_3 + String.valueOf(table.getPot());
+			String potText = Messages.ViewTable_3 + numberFormat.format(table.getPot());
 			gcTable.drawText(potText, potX, potY, true);
 			
 			// Zum Schluss alle die es interresiert informieren
 			Activator.getDefault().inform();
 		}
 		
-		testGetAction();
+//		testGetAction();
 	}
 
 	/**
@@ -738,17 +747,16 @@ public class ViewTable extends ViewPart {
 			// Spieler bekommt einen nicht gecallten Einsatz zurueck
 			
 			// Setzrunde beenden
+			// Dabei wird ein ueberzaehliger Einsatz autom. zurueckgezahlt
 			table.endOfRound();
-			
-			// Spieler Einsatz erstatten
+			break;
+		case Action.SMALL_AND_BIGBLIND:
+			// Spieler zahlt Small- und Bigblind
 			try {
-					player.deposit(table.payOut((Double) action.getValue()));
-				} catch (PlayerIllegalChipsException e) {
+					table.playerPayed(player, (Double) action.getValue(), table.getSmallblind());
+				} catch (PlayerException e) {
 					ErrorHandler.handleError(e,
-							Messages.ViewTable_19, false);
-				} catch (TableException e) {
-					ErrorHandler.handleError(e,
-							Messages.ViewTable_20, false);
+							Messages.ViewTable_9, false);
 				}
 			break;
 		}
@@ -779,6 +787,9 @@ public class ViewTable extends ViewPart {
 		
 		// gezeigte Boardkarten loeschen
 		boardcards = new Card[5];
+		
+		// Formatierer für Zahlen rücksetzen
+		numberFormat = null;
 	}
 
 	/**
@@ -1134,15 +1145,15 @@ public class ViewTable extends ViewPart {
 //		System.out.println("");
 //	}
 	
-	private void testGetAction() {
-		IAction myAction = getViewSite().getActionBars() 
-        .getGlobalActionHandler(ActionFactory.IMPORT.getId());
-		System.out.println("myAction:" + myAction);
-		IToolBarManager myToolBarManager = getViewSite().getActionBars().getToolBarManager();
-//		System.out.println("myToolBarManager:" + myToolBarManager);
-		System.out.println("myToolBarManager.isEmpty()=" + myToolBarManager.isEmpty());
-		IMenuManager myMenuManager = getViewSite().getActionBars().getMenuManager(); 
-//		System.out.println("myMenuManager:" + myMenuManager);
-		System.out.println("myMenuManager.isEmpty()=" + myMenuManager.isEmpty());
-	}
+//	private void testGetAction() {
+//		IAction myAction = getViewSite().getActionBars() 
+//        .getGlobalActionHandler(ActionFactory.IMPORT.getId());
+//		System.out.println("myAction:" + myAction);
+//		IToolBarManager myToolBarManager = getViewSite().getActionBars().getToolBarManager();
+////		System.out.println("myToolBarManager:" + myToolBarManager);
+//		System.out.println("myToolBarManager.isEmpty()=" + myToolBarManager.isEmpty());
+//		IMenuManager myMenuManager = getViewSite().getActionBars().getMenuManager(); 
+////		System.out.println("myMenuManager:" + myMenuManager);
+//		System.out.println("myMenuManager.isEmpty()=" + myMenuManager.isEmpty());
+//	}
 }

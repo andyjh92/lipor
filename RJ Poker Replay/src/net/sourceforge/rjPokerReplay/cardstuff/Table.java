@@ -205,7 +205,7 @@ public class Table {
 			potTotal = potTotal + pot[i];
 		}
 		
-		// die Eins�tze der aktuellen Setzrunde hinzuaddieren
+		// die Einsaetze der aktuellen Setzrunde hinzuaddieren
 		for (int i = 0; i < bet.length; i++) {
 			potTotal = potTotal + bet[i];
 		}
@@ -1201,6 +1201,50 @@ public class Table {
 		return payed;
 	}
 
+	/**
+	 * Laesst einen Spieler am Tisch einen Betrag bezahlen
+	 * 
+	 * @param player Der Spieler der zahlen soll
+	 * @param amount Der Betrag der gezahl werden soll
+	 * @param dontBet Ein Betrag der nicht zum Einsatz des Spieler hinzugefuegt wird, obwohl er vom 
+	 *                Guthaben abgezogen und dem Pot zugerechnet wird. Wird benoetigt fuer gleichzeitiges
+	 *                Bezahlen von Small- und Bigblind 
+	 * @return Der tatsaechlich gezahlte Betrag
+	 * @throws PlayerException
+	 */
+	public double playerPayed(Player player, double amount, double dontBet) throws PlayerException {
+		double payed = 0.0;
+		
+		// pruefen ob ein Spieler uebergeben wurde
+		if (player == null) {
+			throw new PlayerMissingException();
+		}
+		
+		// pruefen ob ein Betrag zur Zahlung uebergeben wurde
+		if (amount <= 0) {
+			throw new PlayerIllegalChipsException();
+		}
+		
+		// pruefen ob ein Betrag der nicht als Einsatz gewertet werden soll uebergeben wurde
+		if (dontBet <= 0) {
+			throw new PlayerIllegalChipsException();
+		}
+		
+		// Alle Angaben vorhanden, dann Betrag kassieren
+		payed = player.pay(amount);
+		
+		// den tatsaechlich gezahlten Betrag merken
+		int pos = getSeatOfPlayerByName(player.getName()) - 1; 
+		bet[pos] = bet[pos] + payed - dontBet;
+		
+		// den Betrag der zwar in den Pot, aber nicht in den Einsatz wandern soll
+		// dem aktuellen Pot zurechnen
+		pot[potNumber] = pot[potNumber] + dontBet;
+		
+		// und zurueckgeben
+		return payed;
+	}
+	
 	/**
 	 * Setzt alle Einsaetze und den Pot auf Null
 	 */

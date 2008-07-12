@@ -74,16 +74,18 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		register(preferenceAction);
 		
 		showHandhistoryViewAction = new ShowViewAction(window, Messages.ApplicationActionBarAdvisor_0, ViewHandhistory.ID);
-//		showHandhistoryViewAction.show(false);
-//		showHandhistoryViewAction.setChecked(false);
+		showHandhistoryViewAction.show(false);
+		showHandhistoryViewAction.setChecked(false);
 		register(showHandhistoryViewAction);
 		
 		showTableinfoViewAction = new ShowViewAction(window, Messages.ApplicationActionBarAdvisor_1, ViewTableinfo.ID);
-//		showTableinfoViewAction.show(true);
+		showTableinfoViewAction.show(true);
+		showTableinfoViewAction.setChecked(true);
 		register(showTableinfoViewAction);
 		
 		showHandinfoViewAction = new ShowViewAction(window, Messages.ApplicationActionBarAdvisor_2, ViewHandinfo.ID);
-//		showHandinfoViewAction.show(true);
+		showHandinfoViewAction.show(true);
+		showHandinfoViewAction.setChecked(true);
 		register(showHandinfoViewAction);
 		
 		licenceAction = new LicenceAction(window);

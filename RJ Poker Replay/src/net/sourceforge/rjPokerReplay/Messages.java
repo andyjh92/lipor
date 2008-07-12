@@ -3,7 +3,7 @@ package net.sourceforge.rjPokerReplay;
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "net.sourceforge.rjPokerReplay.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "net.sourceforge.rjPokerReplay.messages"; //$NON-NLS-1$	
 	public static String Activator_0;
 	public static String Activator_1;
 	public static String Activator_2;

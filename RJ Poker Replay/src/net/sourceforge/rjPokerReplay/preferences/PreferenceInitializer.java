@@ -28,7 +28,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 				URL location = source.getLocation();
 				path = location.getPath();
 				int i = 0;
-				String sep = System.getProperty(Messages.PreferenceInitializer_0);
+				String sep = System.getProperty("file.separator"); //$NON-NLS-1$
 				do {
 					String t = path.substring(path.length() - 1, path.length());
 					if (sep.equals(t)) {
@@ -36,7 +36,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 					}
 					path = path.substring(0, path.length() - 1);
 				} while (i < 2);
-				path = path + sep + Messages.PreferenceInitializer_1;
+				path = path + sep + "images"; //$NON-NLS-1$
 			} 
         } catch ( Exception e ) {
         	// Nix tun

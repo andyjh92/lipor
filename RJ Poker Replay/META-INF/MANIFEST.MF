@@ -7,7 +7,7 @@ Bundle-Activator: net.sourceforge.rjPokerReplay.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.intro
-Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
 Export-Package: net.sourceforge.rjPokerReplay;
   uses:="org.eclipse.equinox.app,
    org.eclipse.ui.application,
@@ -26,3 +26,4 @@ Export-Package: net.sourceforge.rjPokerReplay;
  net.sourceforge.rjPokerReplay.wizard
 Bundle-Localization: plugin
 Bundle-Vendor: Ralf Joswig
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

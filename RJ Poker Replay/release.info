@@ -38,10 +38,11 @@ Alpha 2
   - adding helpsystem
   
 1.2
-  - save windowstate at programend and restore at start
   - the backgroundimage for the table can be changed
   - the images of the cards are customizable
   - if nikname in handhistory different from preferences, a dialog popup to confirm or change  
-  
-TODO
-  - add new view with information about the current value of the hand
+  - fix error when importing realmoney table (NumberFormatExecption)
+  - different formating of real- and playmoney values
+  - no double playout of uncalled bet
+  - fix problem with pot- / betsize when player payed small- and bigblind at the same time
+  - translation for german and english (not help)

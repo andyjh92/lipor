@@ -12,7 +12,6 @@
 
 package net.sourceforge.rjPokerReplay.cardstuff;
 
-import net.sourceforge.rjPokerReplay.cardstuffExceptions.ActionException;
 import net.sourceforge.rjPokerReplay.cardstuffExceptions.ActionIllegalActionException;
 import net.sourceforge.rjPokerReplay.cardstuffExceptions.ActionMissingParameterException;
 

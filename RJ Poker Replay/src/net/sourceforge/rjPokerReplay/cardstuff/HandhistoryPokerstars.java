@@ -95,7 +95,7 @@ public class HandhistoryPokerstars extends Handhistory {
 	        	if(input.trim().equals("")) { //$NON-NLS-1$
 	        		continue;
 	        	}
-	        	
+
 	        	// Verarbeitung der einzelnen Zeilen anhand von bestimmten Merkmalen
 	        	if (input.startsWith("PokerStars")) { //$NON-NLS-1$
 	        		hand = convertHeader(input);
@@ -418,12 +418,12 @@ public class HandhistoryPokerstars extends Handhistory {
 			  action == Action.ANTE ||
 			  action == Action.UNCALLED_BET) {
 			text = tokenizer.nextToken();
-			if (text.startsWith("$")) { //$NON-NLS-1$
-				text = text.substring(1, text.length());
-			}
 			if (text.startsWith("(")) {  //$NON-NLS-1$
 				text = text.substring(1, text.length());
 				text = text.substring(0, text.length() - 1);
+			}
+			if (text.startsWith("$")) { //$NON-NLS-1$
+				text = text.substring(1, text.length());
 			}
 			value = Double.valueOf(text);
 		} else if (action == Action.SAY) {
