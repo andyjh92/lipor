@@ -94,6 +94,10 @@ public class ShowViewAction extends Action {
 		// den Wert ob angezeigt wird oder nicht merken, wichtig fuer externe Aufrufe
 		this.show = show;
 
+		ViewTable viewTable = (ViewTable)(window.getActivePage().findView(ViewTable.ID));
+		if (viewTable == null) {
+			return;
+		}
 		if (show) {
 			// View soll anzgezeigt werden.
 			
@@ -108,7 +112,7 @@ public class ShowViewAction extends Action {
 			
 			// Tisch neu zeichnen, da jetzt weniger Platz fuer die Anzeige
 			if (window.getActivePage() != null) {
-				((ViewTable)(window.getActivePage().findView(ViewTable.ID))).drawTable();
+				viewTable.drawTable();
 			}
 				
 		} else {
@@ -118,7 +122,7 @@ public class ShowViewAction extends Action {
 				
 				if (window.getActivePage().findView(id) != null) {
 					// Tisch neu zeichnen, da jetzt weniger Platz fuer die Anzeige
-					((ViewTable)(window.getActivePage().findView(ViewTable.ID))).drawTable();
+					viewTable.drawTable();
 				}
 			} catch (ArrayIndexOutOfBoundsException e) {
 				// Es wurden noch keine Views angelegt, also kann hier noch nichts geschehen
