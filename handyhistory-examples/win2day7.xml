@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session sessioncode="4027992341">
+ <general>
+  <client_version>20.1.6.1</client_version>
+  <mode>real</mode>
+  <gametype>Holdem NL</gametype>
+  <tablename>10*€5 EW Ticket PLX, 493192904</tablename>
+  <tournamentcurrency>EUR</tournamentcurrency>
+  <duration>00:00:04</duration>
+  <gamecount>1</gamecount>
+  <startdate>2020-07-20 19:00:20</startdate>
+  <currency>EUR</currency>
+  <nickname>Pfettbaron</nickname>
+  <bets>1</bets>
+  <wins>2</wins>
+  <chipsin>2</chipsin>
+  <chipsout>2</chipsout>
+  <statuspoints>EW 0</statuspoints>
+  <awardpoints>EW 0</awardpoints>
+  <ipoints>EW 0</ipoints>
+  <tournamentcode>493120249</tournamentcode>
+  <tournamentname>10*€5 EW Ticket PLX</tournamentname>
+  <place>168</place>
+  <buyin>EW 20 + EW 0</buyin>
+  <totalbuyin>€0</totalbuyin>
+  <win>0</win>
+ </general>
+ <game gamecode="3520812445">
+  <general>
+   <startdate>2020-07-20 19:00:20</startdate>
+   <players>
+    <player dealer="1" addon="0" reg_code="4027992341" chips="1" win="0" rebuy="0" bet="1" seat="1" name="Pfettbaron"/>
+    <player dealer="0" addon="0" reg_code="" chips="1" win="2" rebuy="0" bet="1" seat="2" name="badmemory"/>
+   </players>
+  </general>
+  <round no="0">
+   <action sum="1" type="15" no="1" cards="" player="Pfettbaron"/>
+   <action sum="1" type="15" no="2" cards="" player="badmemory"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Pfettbaron">D8 DK</cards>
+   <cards type="Pocket" player="badmemory">HQ HK</cards>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">H7 D2 H9</cards>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">C5</cards>
+  </round>
+  <round no="4">
+   <cards type="River" player="">SA</cards>
+  </round>
+ </game>
+</session>

@@ -7,7 +7,7 @@
          point="org.eclipse.core.runtime.applications">
       <application>
          <run
-               class="net.sourceforge.rjPokerReplay.Application">
+               class="io.gitlab.lipor.Application">
          </run>
       </application>
    </extension>
@@ -15,7 +15,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             name="Perspective"
-            class="net.sourceforge.rjPokerReplay.Perspective"
+            class="io.gitlab.lipor.Perspective"
             id="RjPokerReplay.perspective">
       </perspective>
    </extension>
@@ -23,25 +23,25 @@
          point="org.eclipse.ui.views">
       <view
             allowMultiple="false"
-            class="net.sourceforge.rjPokerReplay.views.ViewTable"
+            class="io.gitlab.lipor.views.ViewTable"
             id="RjPokerReplay.ViewTable"
             name="TableView">
       </view>
       <view
             allowMultiple="false"
-            class="net.sourceforge.rjPokerReplay.views.ViewHandhistory"
+            class="io.gitlab.lipor.views.ViewHandhistory"
             id="RJPoker Replay.Handhistory"
             name="%view.name.1">
       </view>
       <view
             allowMultiple="false"
-            class="net.sourceforge.rjPokerReplay.views.ViewTableinfo"
+            class="io.gitlab.lipor.views.ViewTableinfo"
             id="RJPoker Replay.ViewTableinfo"
             name="%view.name.2">
       </view>
       <view
             allowMultiple="false"
-            class="net.sourceforge.rjPokerReplay.views.ViewHandinfo"
+            class="io.gitlab.lipor.views.ViewHandinfo"
             id="RJPoker Replay.ViewHandinfo"
             name="%view.name.3">
       </view>
@@ -50,23 +50,19 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application="RjPokerReplay.application"
-            name="RJ Poker Replay">
+            application="Lipor.application"
+            name="Lipor">
          <property
                name="windowImages"
-               value="icons/034_16x16.gif,icons/034_32x32.gif">
-         </property>
-         <property
-               name="Rj Poker Replay"
-               value="RJ Poker Replay">
+               value="icons/16x16.png">
          </property>
          <property
                name="appName"
-               value="RJ Poker Replay">
+               value="Lipor">
          </property>
          <property
                name="aboutText"
-               value="RJ Poker Replay by Ralf Joswig&#x0A;Vers. 1.2&#x0A;&#x0A;Die jeweils aktuellste Version kann hier heruntergeladen werden:&#x0A;https://sourceforge.net/project/showfiles.php?group_id=224389&#x0A;&#x0A;Anregungen und Fehlermeldung bitte an die eMail-Adresse&#x0A;   ralfjoswig@users.sourceforge.net">
+               value="%aboutText">
          </property>
       </product>
    </extension>
@@ -78,7 +74,7 @@
             visible="true">
          <action
                allowLabelUpdate="false"
-               class="net.sourceforge.rjPokerReplay.actions.HandActionHandBack"
+               class="io.gitlab.lipor.actions.HandActionHandBack"
                icon="$nl$/icons/player_start.png"
                id="RJ Poker Replay.HandStart"
                label="%action.label.0"
@@ -88,7 +84,7 @@
          </action>
          <action
                allowLabelUpdate="false"
-               class="net.sourceforge.rjPokerReplay.actions.HandActionStepBack"
+               class="io.gitlab.lipor.actions.HandActionStepBack"
                icon="$nl$/icons/player_rew.png"
                id="RJ Poker Replay.StepBack"
                label="%action.label.1"
@@ -98,7 +94,7 @@
          </action>
          <action
                allowLabelUpdate="false"
-               class="net.sourceforge.rjPokerReplay.actions.HandActionNextStep"
+               class="io.gitlab.lipor.actions.HandActionNextStep"
                icon="$nl$/icons/player_fwd.png"
                id="RJ Poker Replay.StepForward"
                label="%action.label.2"
@@ -108,7 +104,7 @@
          </action>
          <action
                allowLabelUpdate="false"
-               class="net.sourceforge.rjPokerReplay.actions.HandActionNextHand"
+               class="io.gitlab.lipor.actions.HandActionNextHand"
                icon="$nl$/icons/player_end.png"
                id="RJ Poker Replay.HandNext"
                label="%action.label.3"
@@ -118,7 +114,7 @@
          </action>
          <action
                allowLabelUpdate="false"
-               class="net.sourceforge.rjPokerReplay.actions.HandActionNextOwnAction"
+               class="io.gitlab.lipor.actions.HandActionNextOwnAction"
                icon="$nl$/icons/player_eject.png"
                id="RJ Poker Replay.OwnAction"
                label="%action.label.4"
@@ -128,7 +124,7 @@
          </action>
          <action
                allowLabelUpdate="true"
-               class="net.sourceforge.rjPokerReplay.actions.HandActionAutoplay"
+               class="io.gitlab.lipor.actions.HandActionAutoplay"
                icon="$nl$/icons/player_play.png"
                id="RJ Poker Replay.Autoplay"
                label="%action.label.5"
@@ -141,44 +137,24 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="net.sourceforge.rjPokerReplay.preferences.PreferencePagePokerstars"
+            class="io.gitlab.lipor.preferences.PreferencePageWin2day"
             id="rjpokerreplay.preferences.PreferencePagePokerstars"
-            name="Pokerstars">
-      </page>
-      <page
-            class="net.sourceforge.rjPokerReplay.preferences.PreferenceGeneral"
-            id="RJ Poker Replay.General"
-            name="%page.name.1">
+            name="Win2day">
       </page>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="net.sourceforge.rjPokerReplay.preferences.PreferenceInitializer">
+            class="io.gitlab.lipor.preferences.PreferenceInitializer">
       </initializer>
    </extension>
    <extension
          point="org.eclipse.ui.importWizards">
       <wizard
-            class="net.sourceforge.rjPokerReplay.wizard.Pokerstars"
-            id="RJ Poker Replay.pokerstars"
-            name="Pokerstars">
+            class="io.gitlab.lipor.wizard.Win2day"
+            id="lipor.win2day"
+            name="Win2day">
       </wizard>
-   </extension>
-   <extension
-         id="rjPokerReplayHelp"
-         name="Hilfe"
-         point="org.eclipse.help.toc">
-      <toc
-            file="inhalt.xml"
-            primary="true">
-      </toc>
-      <toc
-            file="inhaltStart.xml">
-      </toc>
-      <toc
-            file="inhaltNachspielen.xml">
-      </toc>
    </extension>
 
 </plugin>

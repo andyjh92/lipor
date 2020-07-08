@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session sessioncode="4023523029">
+ <general>
+  <client_version>20.1.6.1</client_version>
+  <mode>real</mode>
+  <gametype>Holdem NL</gametype>
+  <tablename>€300 Micro KO #bleibdaheim, 492424050</tablename>
+  <tournamentcurrency>EUR</tournamentcurrency>
+  <duration>00:04:57</duration>
+  <gamecount>4</gamecount>
+  <startdate>2020-05-13 18:33:28</startdate>
+  <currency>EUR</currency>
+  <nickname>Pfettbaron</nickname>
+  <bets>28.010</bets>
+  <wins>44.885</wins>
+  <chipsin>9.195</chipsin>
+  <chipsout>45.023</chipsout>
+  <statuspoints>EW 0,45</statuspoints>
+  <awardpoints>EW 0</awardpoints>
+  <ipoints>EW 0,45</ipoints>
+  <tournamentcode>492317705</tournamentcode>
+  <tournamentname>€300 Micro KO #bleibdaheim</tournamentname>
+  <place>30</place>
+  <buyin>€2,35 + €2,20 + €0,45</buyin>
+  <totalbuyin>€5</totalbuyin>
+  <win>0</win>
+ </general>
+ <game gamecode="3505247278">
+  <general>
+   <startdate>2020-05-13 18:33:28</startdate>
+   <players>
+    <player name="Contagious" addon="0" chips="11.625" seat="1" rebuy="0" reg_code="" win="0" dealer="0" bet="2.430"/>
+    <player name="MikeEhrmantraut" addon="0" chips="9.885" seat="2" rebuy="0" reg_code="" win="0" dealer="0" bet="2.430"/>
+    <player name="Darti" addon="0" chips="6.400" seat="4" rebuy="0" reg_code="" win="0" dealer="0" bet="30"/>
+    <player name="Pfettbaron" addon="0" chips="10.000" seat="5" rebuy="0" reg_code="4023523029" win="10.440" dealer="0" bet="10.000"/>
+    <player name="Oberwart123" addon="0" chips="19.686" seat="6" rebuy="0" reg_code="" win="0" dealer="0" bet="1.230"/>
+    <player name="lisakki" addon="0" chips="8.447" seat="7" rebuy="0" reg_code="" win="0" dealer="0" bet="30"/>
+    <player name="Gackman" addon="0" chips="24.880" seat="9" rebuy="0" reg_code="" win="0" dealer="0" bet="1.830"/>
+    <player name="Soederkis" addon="0" chips="25.993" seat="10" rebuy="0" reg_code="" win="0" dealer="1" bet="30"/>
+   </players>
+  </general>
+  <round no="0">
+   <action no="1" cards="" type="15" player="Contagious" sum="30"/>
+   <action no="2" cards="" type="15" player="MikeEhrmantraut" sum="30"/>
+   <action no="3" cards="" type="15" player="Darti" sum="30"/>
+   <action no="4" cards="" type="15" player="Pfettbaron" sum="30"/>
+   <action no="5" cards="" type="15" player="Oberwart123" sum="30"/>
+   <action no="6" cards="" type="15" player="lisakki" sum="30"/>
+   <action no="7" cards="" type="15" player="Gackman" sum="30"/>
+   <action no="8" cards="" type="15" player="Soederkis" sum="30"/>
+   <action no="9" cards="" type="1" player="Contagious" sum="150"/>
+   <action no="10" cards="" type="2" player="MikeEhrmantraut" sum="300"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Darti">X X</cards>
+   <action no="11" cards="" type="0" player="Darti" sum="0"/>
+   <cards type="Pocket" player="Pfettbaron">D4 C4</cards>
+   <action no="12" cards="" type="23" player="Pfettbaron" sum="600"/>
+   <cards type="Pocket" player="Oberwart123">X X</cards>
+   <action no="13" cards="" type="3" player="Oberwart123" sum="600"/>
+   <cards type="Pocket" player="lisakki">X X</cards>
+   <action no="14" cards="" type="0" player="lisakki" sum="0"/>
+   <cards type="Pocket" player="Gackman">X X</cards>
+   <action no="15" cards="" type="3" player="Gackman" sum="600"/>
+   <cards type="Pocket" player="Soederkis">X X</cards>
+   <action no="16" cards="" type="0" player="Soederkis" sum="0"/>
+   <cards type="Pocket" player="Contagious">X X</cards>
+   <action no="17" cards="" type="3" player="Contagious" sum="450"/>
+   <cards type="Pocket" player="MikeEhrmantraut">X X</cards>
+   <action no="18" cards="" type="3" player="MikeEhrmantraut" sum="300"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">H5 S10 H3</cards>
+   <action no="19" cards="" type="4" player="Contagious" sum="0"/>
+   <action no="20" cards="" type="4" player="MikeEhrmantraut" sum="0"/>
+   <action no="21" cards="" type="4" player="Pfettbaron" sum="0"/>
+   <action no="22" cards="" type="4" player="Oberwart123" sum="0"/>
+   <action no="23" cards="" type="5" player="Gackman" sum="600"/>
+   <action no="24" cards="" type="3" player="Contagious" sum="600"/>
+   <action no="25" cards="" type="3" player="MikeEhrmantraut" sum="600"/>
+   <action no="26" cards="" type="3" player="Pfettbaron" sum="600"/>
+   <action no="27" cards="" type="3" player="Oberwart123" sum="600"/>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">S4</cards>
+   <action no="28" cards="" type="4" player="Contagious" sum="0"/>
+   <action no="29" cards="" type="4" player="MikeEhrmantraut" sum="0"/>
+   <action no="30" cards="" type="4" player="Pfettbaron" sum="0"/>
+   <action no="31" cards="" type="4" player="Oberwart123" sum="0"/>
+   <action no="32" cards="" type="5" player="Gackman" sum="600"/>
+   <action no="33" cards="" type="23" player="Contagious" sum="1.200"/>
+   <action no="34" cards="" type="3" player="MikeEhrmantraut" sum="1.200"/>
+   <action no="35" cards="" type="23" player="Pfettbaron" sum="8.770"/>
+   <action no="36" cards="" type="0" player="Oberwart123" sum="0"/>
+   <action no="37" cards="" type="0" player="Gackman" sum="0"/>
+   <action no="38" cards="" type="0" player="Contagious" sum="0"/>
+   <action no="39" cards="" type="0" player="MikeEhrmantraut" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3505248438">
+  <general>
+   <startdate>2020-05-13 18:35:51</startdate>
+   <players>
+    <player name="Contagious" addon="0" chips="9.195" seat="1" rebuy="0" reg_code="" win="0" dealer="1" bet="30"/>
+    <player name="MikeEhrmantraut" addon="0" chips="7.455" seat="2" rebuy="0" reg_code="" win="1.020" dealer="0" bet="630"/>
+    <player name="Darti" addon="0" chips="6.370" seat="4" rebuy="0" reg_code="" win="1.020" dealer="0" bet="630"/>
+    <player name="Pfettbaron" addon="0" chips="18.010" seat="5" rebuy="0" reg_code="4023523029" win="0" dealer="0" bet="30"/>
+    <player name="Oberwart123" addon="0" chips="18.456" seat="6" rebuy="0" reg_code="" win="0" dealer="0" bet="330"/>
+    <player name="lisakki" addon="0" chips="8.417" seat="7" rebuy="0" reg_code="" win="0" dealer="0" bet="30"/>
+    <player name="Gackman" addon="0" chips="23.050" seat="9" rebuy="0" reg_code="" win="0" dealer="0" bet="30"/>
+    <player name="Soederkis" addon="0" chips="25.963" seat="10" rebuy="0" reg_code="" win="0" dealer="0" bet="330"/>
+   </players>
+  </general>
+  <round no="0">
+   <action no="1" cards="" type="15" player="MikeEhrmantraut" sum="30"/>
+   <action no="2" cards="" type="15" player="Darti" sum="30"/>
+   <action no="3" cards="" type="15" player="Pfettbaron" sum="30"/>
+   <action no="4" cards="" type="15" player="Oberwart123" sum="30"/>
+   <action no="5" cards="" type="15" player="lisakki" sum="30"/>
+   <action no="6" cards="" type="15" player="Gackman" sum="30"/>
+   <action no="7" cards="" type="15" player="Soederkis" sum="30"/>
+   <action no="8" cards="" type="15" player="Contagious" sum="30"/>
+   <action no="9" cards="" type="1" player="MikeEhrmantraut" sum="150"/>
+   <action no="10" cards="" type="2" player="Darti" sum="300"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Pfettbaron">C10 DQ</cards>
+   <action no="11" cards="" type="0" player="Pfettbaron" sum="0"/>
+   <cards type="Pocket" player="Oberwart123">X X</cards>
+   <action no="12" cards="" type="3" player="Oberwart123" sum="300"/>
+   <cards type="Pocket" player="lisakki">X X</cards>
+   <action no="13" cards="" type="0" player="lisakki" sum="0"/>
+   <cards type="Pocket" player="Gackman">X X</cards>
+   <action no="14" cards="" type="0" player="Gackman" sum="0"/>
+   <cards type="Pocket" player="Soederkis">X X</cards>
+   <action no="15" cards="" type="3" player="Soederkis" sum="300"/>
+   <cards type="Pocket" player="Contagious">X X</cards>
+   <action no="16" cards="" type="0" player="Contagious" sum="0"/>
+   <cards type="Pocket" player="MikeEhrmantraut">S10 DJ</cards>
+   <action no="17" cards="" type="3" player="MikeEhrmantraut" sum="150"/>
+   <cards type="Pocket" player="Darti">D6 H10</cards>
+   <action no="18" cards="" type="4" player="Darti" sum="0"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">HQ S7 C5</cards>
+   <action no="19" cards="" type="4" player="MikeEhrmantraut" sum="0"/>
+   <action no="20" cards="" type="4" player="Darti" sum="0"/>
+   <action no="21" cards="" type="4" player="Oberwart123" sum="0"/>
+   <action no="22" cards="" type="4" player="Soederkis" sum="0"/>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">D7</cards>
+   <action no="23" cards="" type="4" player="MikeEhrmantraut" sum="0"/>
+   <action no="24" cards="" type="4" player="Darti" sum="0"/>
+   <action no="25" cards="" type="4" player="Oberwart123" sum="0"/>
+   <action no="26" cards="" type="4" player="Soederkis" sum="0"/>
+  </round>
+  <round no="4">
+   <cards type="River" player="">D10</cards>
+   <action no="27" cards="" type="4" player="MikeEhrmantraut" sum="0"/>
+   <action no="28" cards="" type="5" player="Darti" sum="300"/>
+   <action no="29" cards="" type="0" player="Oberwart123" sum="0"/>
+   <action no="30" cards="" type="0" player="Soederkis" sum="0"/>
+   <action no="31" cards="" type="3" player="MikeEhrmantraut" sum="300"/>
+  </round>
+ </game>
+ <game gamecode="3505248536">
+  <general>
+   <startdate>2020-05-13 18:36:47</startdate>
+   <players>
+    <player name="Contagious" addon="0" chips="9.165" seat="1" rebuy="0" reg_code="" win="0" dealer="0" bet="30"/>
+    <player name="MikeEhrmantraut" addon="0" chips="7.845" seat="2" rebuy="0" reg_code="" win="16.620" dealer="1" bet="7.815"/>
+    <player name="Darti" addon="0" chips="6.760" seat="4" rebuy="0" reg_code="" win="0" dealer="0" bet="180"/>
+    <player name="Pfettbaron" addon="0" chips="17.980" seat="5" rebuy="0" reg_code="4023523029" win="0" dealer="0" bet="330"/>
+    <player name="Oberwart123" addon="0" chips="18.126" seat="6" rebuy="0" reg_code="" win="0" dealer="0" bet="30"/>
+    <player name="lisakki" addon="0" chips="8.387" seat="7" rebuy="0" reg_code="" win="0" dealer="0" bet="30"/>
+    <player name="Gackman" addon="0" chips="23.020" seat="9" rebuy="0" reg_code="" win="0" dealer="0" bet="330"/>
+    <player name="Soederkis" addon="0" chips="25.633" seat="10" rebuy="0" reg_code="" win="0" dealer="0" bet="7.845"/>
+   </players>
+  </general>
+  <round no="0">
+   <action no="1" cards="" type="15" player="Darti" sum="30"/>
+   <action no="2" cards="" type="15" player="Pfettbaron" sum="30"/>
+   <action no="3" cards="" type="15" player="Oberwart123" sum="30"/>
+   <action no="4" cards="" type="15" player="lisakki" sum="30"/>
+   <action no="5" cards="" type="15" player="Gackman" sum="30"/>
+   <action no="6" cards="" type="15" player="Soederkis" sum="30"/>
+   <action no="7" cards="" type="15" player="Contagious" sum="30"/>
+   <action no="8" cards="" type="15" player="MikeEhrmantraut" sum="30"/>
+   <action no="9" cards="" type="1" player="Darti" sum="150"/>
+   <action no="10" cards="" type="2" player="Pfettbaron" sum="300"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Oberwart123">X X</cards>
+   <action no="11" cards="" type="0" player="Oberwart123" sum="0"/>
+   <cards type="Pocket" player="lisakki">X X</cards>
+   <action no="12" cards="" type="0" player="lisakki" sum="0"/>
+   <cards type="Pocket" player="Gackman">X X</cards>
+   <action no="13" cards="" type="3" player="Gackman" sum="300"/>
+   <cards type="Pocket" player="Soederkis">SA HK</cards>
+   <action no="14" cards="" type="23" player="Soederkis" sum="2.100"/>
+   <cards type="Pocket" player="Contagious">X X</cards>
+   <action no="15" cards="" type="0" player="Contagious" sum="0"/>
+   <cards type="Pocket" player="MikeEhrmantraut">S10 D10</cards>
+   <action no="16" cards="" type="23" player="MikeEhrmantraut" sum="7.815"/>
+   <cards type="Pocket" player="Darti">X X</cards>
+   <action no="17" cards="" type="0" player="Darti" sum="0"/>
+   <cards type="Pocket" player="Pfettbaron">H7 C5</cards>
+   <action no="18" cards="" type="0" player="Pfettbaron" sum="0"/>
+   <action no="19" cards="" type="0" player="Gackman" sum="0"/>
+   <action no="20" cards="" type="3" player="Soederkis" sum="5.715"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">SK S4 C10</cards>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">SQ</cards>
+  </round>
+  <round no="4">
+   <cards type="River" player="">C6</cards>
+  </round>
+ </game>
+ <game gamecode="3505248608">
+  <general>
+   <startdate>2020-05-13 18:37:28</startdate>
+   <players>
+    <player name="Contagious" addon="0" chips="9.135" seat="1" rebuy="0" reg_code="" win="0" dealer="0" bet="9.135"/>
+    <player name="MikeEhrmantraut" addon="0" chips="16.620" seat="2" rebuy="0" reg_code="" win="0" dealer="0" bet="30"/>
+    <player name="Darti" addon="0" chips="6.580" seat="4" rebuy="0" reg_code="" win="0" dealer="1" bet="30"/>
+    <player name="Pfettbaron" addon="0" chips="17.650" seat="5" rebuy="0" reg_code="4023523029" win="0" dealer="0" bet="17.650"/>
+    <player name="Oberwart123" addon="0" chips="18.096" seat="6" rebuy="0" reg_code="" win="0" dealer="0" bet="330"/>
+    <player name="lisakki" addon="0" chips="8.357" seat="7" rebuy="0" reg_code="" win="0" dealer="0" bet="30"/>
+    <player name="Gackman" addon="0" chips="22.690" seat="9" rebuy="0" reg_code="" win="0" dealer="0" bet="30"/>
+    <player name="Soederkis" addon="0" chips="17.788" seat="10" rebuy="0" reg_code="" win="44.885" dealer="0" bet="17.788">
+     <knockout tobalance="€1,65" kicked="Contagious" tobounty="€1,65"/>
+     <knockout tobalance="€1,10" kicked="Pfettbaron" tobounty="€1,10"/>
+    </player>
+   </players>
+  </general>
+  <round no="0">
+   <action no="1" cards="" type="15" player="Pfettbaron" sum="30"/>
+   <action no="2" cards="" type="15" player="Oberwart123" sum="30"/>
+   <action no="3" cards="" type="15" player="lisakki" sum="30"/>
+   <action no="4" cards="" type="15" player="Gackman" sum="30"/>
+   <action no="5" cards="" type="15" player="Soederkis" sum="30"/>
+   <action no="6" cards="" type="15" player="Contagious" sum="30"/>
+   <action no="7" cards="" type="15" player="MikeEhrmantraut" sum="30"/>
+   <action no="8" cards="" type="15" player="Darti" sum="30"/>
+   <action no="9" cards="" type="1" player="Pfettbaron" sum="150"/>
+   <action no="10" cards="" type="2" player="Oberwart123" sum="300"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="lisakki">X X</cards>
+   <action no="11" cards="" type="0" player="lisakki" sum="0"/>
+   <cards type="Pocket" player="Gackman">X X</cards>
+   <action no="12" cards="" type="0" player="Gackman" sum="0"/>
+   <cards type="Pocket" player="Soederkis">C5 C7</cards>
+   <action no="13" cards="" type="3" player="Soederkis" sum="300"/>
+   <cards type="Pocket" player="Contagious">DJ HJ</cards>
+   <action no="14" cards="" type="23" player="Contagious" sum="1.500"/>
+   <cards type="Pocket" player="MikeEhrmantraut">X X</cards>
+   <action no="15" cards="" type="0" player="MikeEhrmantraut" sum="0"/>
+   <cards type="Pocket" player="Darti">X X</cards>
+   <action no="16" cards="" type="0" player="Darti" sum="0"/>
+   <cards type="Pocket" player="Pfettbaron">D10 DA</cards>
+   <action no="17" cards="" type="3" player="Pfettbaron" sum="1.350"/>
+   <cards type="Pocket" player="Oberwart123">X X</cards>
+   <action no="18" cards="" type="0" player="Oberwart123" sum="0"/>
+   <action no="19" cards="" type="3" player="Soederkis" sum="1.200"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">D9 CQ D8</cards>
+   <action no="20" cards="" type="4" player="Pfettbaron" sum="0"/>
+   <action no="21" cards="" type="5" player="Soederkis" sum="16.258"/>
+   <action no="22" cards="" type="7" player="Contagious" sum="7.605"/>
+   <action no="23" cards="" type="7" player="Pfettbaron" sum="16.120"/>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">S6</cards>
+  </round>
+  <round no="4">
+   <cards type="River" player="">H5</cards>
+  </round>
+ </game>
+</session>

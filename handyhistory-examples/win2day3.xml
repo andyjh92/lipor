@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session sessioncode="4022471209">
+ <general>
+  <client_version>20.1.6.1</client_version>
+  <mode>real</mode>
+  <gametype>Holdem NL</gametype>
+  <tablename>€3.500 Friday Night, 492240353</tablename>
+  <tournamentcurrency>EUR</tournamentcurrency>
+  <duration>00:18:41</duration>
+  <gamecount>120</gamecount>
+  <startdate>2020-05-01 23:36:10</startdate>
+  <currency>EUR</currency>
+  <nickname>VlgrDsplyofPheim</nickname>
+  <bets>61.750</bets>
+  <wins>54.000</wins>
+  <chipsin>91.934</chipsin>
+  <chipsout>154.740</chipsout>
+  <statuspoints>0,00</statuspoints>
+  <awardpoints>0,00</awardpoints>
+  <ipoints>0,00</ipoints>
+  <tournamentcode>492136514</tournamentcode>
+  <tournamentname>€3.500 Friday Night</tournamentname>
+  <place>N/A</place>
+  <buyin>€18,20 + €1,80</buyin>
+  <totalbuyin>€20</totalbuyin>
+  <win>N/A</win>
+ </general>
+ <game gamecode="3501297545">
+  <general>
+   <startdate>2020-05-01 23:36:10</startdate>
+   <players>
+    <player win="0" seat="1" chips="92.284" rebuy="0" addon="0" reg_code="" bet="350" name="HUIPULLATUULEE" dealer="0"/>
+    <player win="0" seat="2" chips="108.990" rebuy="0" addon="0" reg_code="" bet="350" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="93.881" rebuy="0" addon="0" reg_code="" bet="350" name="palmanova" dealer="0"/>
+    <player win="0" seat="6" chips="42.758" rebuy="0" addon="0" reg_code="" bet="350" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="248.637" rebuy="0" addon="0" reg_code="4022471209" bet="17.850" name="VlgrDsplyofPheim" dealer="1"/>
+    <player win="0" seat="9" chips="61.036" rebuy="0" addon="0" reg_code="" bet="2.100" name="hofi10" dealer="0"/>
+    <player win="39.200" seat="10" chips="151.340" rebuy="0" addon="0" reg_code="" bet="17.850" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="hofi10" type="15" cards="" no="1" sum="350"/>
+   <action player="Lightz" type="15" cards="" no="2" sum="350"/>
+   <action player="HUIPULLATUULEE" type="15" cards="" no="3" sum="350"/>
+   <action player="Fritzino1" type="15" cards="" no="4" sum="350"/>
+   <action player="palmanova" type="15" cards="" no="5" sum="350"/>
+   <action player="montekristo9" type="15" cards="" no="6" sum="350"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="7" sum="350"/>
+   <action player="hofi10" type="1" cards="" no="8" sum="1.750"/>
+   <action player="Lightz" type="2" cards="" no="9" sum="3.500"/>
+  </round>
+  <round no="1">
+   <cards player="HUIPULLATUULEE" type="Pocket">X X</cards>
+   <action player="HUIPULLATUULEE" type="0" cards="" no="10" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="11" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="12" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="13" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">D2 D5</cards>
+   <action player="VlgrDsplyofPheim" type="23" cards="" no="14" sum="7.000"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="15" sum="0"/>
+   <cards player="Lightz" type="Pocket">D8 SJ</cards>
+   <action player="Lightz" type="3" cards="" no="16" sum="3.500"/>
+  </round>
+  <round no="2">
+   <cards player="" type="Flop">H5 H8 C7</cards>
+   <action player="Lightz" type="4" cards="" no="17" sum="0"/>
+   <action player="VlgrDsplyofPheim" type="4" cards="" no="18" sum="0"/>
+  </round>
+  <round no="3">
+   <cards player="" type="Turn">D7</cards>
+   <action player="Lightz" type="5" cards="" no="19" sum="10.500"/>
+   <action player="VlgrDsplyofPheim" type="3" cards="" no="20" sum="10.500"/>
+  </round>
+  <round no="4">
+   <cards player="" type="River">D4</cards>
+   <action player="Lightz" type="4" cards="" no="21" sum="0"/>
+   <action player="VlgrDsplyofPheim" type="4" cards="" no="22" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501297630">
+  <general>
+   <startdate>2020-05-01 23:37:04</startdate>
+   <players>
+    <player win="0" seat="1" chips="91.934" rebuy="0" addon="0" reg_code="" bet="3.850" name="HUIPULLATUULEE" dealer="0"/>
+    <player win="11.200" seat="2" chips="108.640" rebuy="0" addon="0" reg_code="" bet="7.000" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="93.531" rebuy="0" addon="0" reg_code="" bet="350" name="palmanova" dealer="0"/>
+    <player win="0" seat="6" chips="42.408" rebuy="0" addon="0" reg_code="" bet="350" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="230.787" rebuy="0" addon="0" reg_code="4022471209" bet="350" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="58.936" rebuy="0" addon="0" reg_code="" bet="350" name="hofi10" dealer="1"/>
+    <player win="0" seat="10" chips="172.690" rebuy="0" addon="0" reg_code="" bet="2.100" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="Lightz" type="15" cards="" no="1" sum="350"/>
+   <action player="HUIPULLATUULEE" type="15" cards="" no="2" sum="350"/>
+   <action player="Fritzino1" type="15" cards="" no="3" sum="350"/>
+   <action player="palmanova" type="15" cards="" no="4" sum="350"/>
+   <action player="montekristo9" type="15" cards="" no="5" sum="350"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="6" sum="350"/>
+   <action player="hofi10" type="15" cards="" no="7" sum="350"/>
+   <action player="Lightz" type="1" cards="" no="8" sum="1.750"/>
+   <action player="HUIPULLATUULEE" type="2" cards="" no="9" sum="3.500"/>
+  </round>
+  <round no="1">
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="23" cards="" no="10" sum="7.000"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="11" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="12" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">C9 D3</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="13" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="14" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="15" sum="0"/>
+   <cards player="HUIPULLATUULEE" type="Pocket">X X</cards>
+   <action player="HUIPULLATUULEE" type="0" cards="" no="16" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501297703">
+  <general>
+   <startdate>2020-05-01 23:37:55</startdate>
+   <players>
+    <player win="0" seat="1" chips="88.084" rebuy="0" addon="0" reg_code="" bet="2.100" name="HUIPULLATUULEE" dealer="0"/>
+    <player win="0" seat="2" chips="115.990" rebuy="0" addon="0" reg_code="" bet="3.850" name="Fritzino1" dealer="0"/>
+    <player win="62.086" seat="4" chips="93.181" rebuy="0" addon="0" reg_code="" bet="58.586" name="palmanova" dealer="0"/>
+    <player win="0" seat="6" chips="42.058" rebuy="0" addon="0" reg_code="" bet="350" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="230.437" rebuy="0" addon="0" reg_code="4022471209" bet="350" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="62.086" seat="9" chips="58.586" rebuy="0" addon="0" reg_code="" bet="58.236" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="170.590" rebuy="0" addon="0" reg_code="" bet="350" name="Lightz" dealer="1"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="HUIPULLATUULEE" type="15" cards="" no="1" sum="350"/>
+   <action player="Fritzino1" type="15" cards="" no="2" sum="350"/>
+   <action player="palmanova" type="15" cards="" no="3" sum="350"/>
+   <action player="montekristo9" type="15" cards="" no="4" sum="350"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="5" sum="350"/>
+   <action player="hofi10" type="15" cards="" no="6" sum="350"/>
+   <action player="Lightz" type="15" cards="" no="7" sum="350"/>
+   <action player="HUIPULLATUULEE" type="1" cards="" no="8" sum="1.750"/>
+   <action player="Fritzino1" type="2" cards="" no="9" sum="3.500"/>
+  </round>
+  <round no="1">
+   <cards player="palmanova" type="Pocket">CA CQ</cards>
+   <action player="palmanova" type="23" cards="" no="10" sum="7.000"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="11" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">DQ H8</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="12" sum="0"/>
+   <cards player="hofi10" type="Pocket">HQ DA</cards>
+   <action player="hofi10" type="23" cards="" no="13" sum="58.236"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="14" sum="0"/>
+   <cards player="HUIPULLATUULEE" type="Pocket">X X</cards>
+   <action player="HUIPULLATUULEE" type="0" cards="" no="15" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="16" sum="0"/>
+   <action player="palmanova" type="3" cards="" no="17" sum="51.236"/>
+  </round>
+  <round no="2">
+   <cards player="" type="Flop">H3 SK C7</cards>
+  </round>
+  <round no="3">
+   <cards player="" type="Turn">C10</cards>
+  </round>
+  <round no="4">
+   <cards player="" type="River">H7</cards>
+  </round>
+ </game>
+ <game gamecode="3501297770">
+  <general>
+   <startdate>2020-05-01 23:38:43</startdate>
+   <players>
+    <player win="0" seat="1" chips="85.984" rebuy="0" addon="0" reg_code="" bet="350" name="HUIPULLATUULEE" dealer="1"/>
+    <player win="9.450" seat="2" chips="112.140" rebuy="0" addon="0" reg_code="" bet="14.000" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="96.681" rebuy="0" addon="0" reg_code="" bet="3.850" name="palmanova" dealer="0"/>
+    <player win="0" seat="6" chips="41.708" rebuy="0" addon="0" reg_code="" bet="350" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="230.087" rebuy="0" addon="0" reg_code="4022471209" bet="350" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="62.086" rebuy="0" addon="0" reg_code="" bet="350" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="170.240" rebuy="0" addon="0" reg_code="" bet="350" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="Fritzino1" type="15" cards="" no="1" sum="350"/>
+   <action player="palmanova" type="15" cards="" no="2" sum="350"/>
+   <action player="montekristo9" type="15" cards="" no="3" sum="350"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="4" sum="350"/>
+   <action player="hofi10" type="15" cards="" no="5" sum="350"/>
+   <action player="Lightz" type="15" cards="" no="6" sum="350"/>
+   <action player="HUIPULLATUULEE" type="15" cards="" no="7" sum="350"/>
+   <action player="Fritzino1" type="1" cards="" no="8" sum="1.750"/>
+   <action player="palmanova" type="2" cards="" no="9" sum="3.500"/>
+  </round>
+  <round no="1">
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="10" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">H3 H7</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="11" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="12" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="13" sum="0"/>
+   <cards player="HUIPULLATUULEE" type="Pocket">X X</cards>
+   <action player="HUIPULLATUULEE" type="0" cards="" no="14" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="23" cards="" no="15" sum="14.000"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="16" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501297826">
+  <general>
+   <startdate>2020-05-01 23:39:26</startdate>
+   <players>
+    <player win="0" seat="1" chips="85.634" rebuy="0" addon="0" reg_code="" bet="350" name="HUIPULLATUULEE" dealer="0"/>
+    <player win="0" seat="2" chips="117.740" rebuy="0" addon="0" reg_code="" bet="350" name="Fritzino1" dealer="1"/>
+    <player win="0" seat="4" chips="92.831" rebuy="0" addon="0" reg_code="" bet="2.100" name="palmanova" dealer="0"/>
+    <player win="0" seat="6" chips="41.358" rebuy="0" addon="0" reg_code="" bet="3.850" name="montekristo9" dealer="0"/>
+    <player win="11.200" seat="7" chips="229.737" rebuy="0" addon="0" reg_code="4022471209" bet="7.000" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="61.736" rebuy="0" addon="0" reg_code="" bet="350" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="169.890" rebuy="0" addon="0" reg_code="" bet="350" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="palmanova" type="15" cards="" no="1" sum="350"/>
+   <action player="montekristo9" type="15" cards="" no="2" sum="350"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="3" sum="350"/>
+   <action player="hofi10" type="15" cards="" no="4" sum="350"/>
+   <action player="Lightz" type="15" cards="" no="5" sum="350"/>
+   <action player="HUIPULLATUULEE" type="15" cards="" no="6" sum="350"/>
+   <action player="Fritzino1" type="15" cards="" no="7" sum="350"/>
+   <action player="palmanova" type="1" cards="" no="8" sum="1.750"/>
+   <action player="montekristo9" type="2" cards="" no="9" sum="3.500"/>
+  </round>
+  <round no="1">
+   <cards player="VlgrDsplyofPheim" type="Pocket">SA DQ</cards>
+   <action player="VlgrDsplyofPheim" type="23" cards="" no="10" sum="7.000"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="11" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="12" sum="0"/>
+   <cards player="HUIPULLATUULEE" type="Pocket">X X</cards>
+   <action player="HUIPULLATUULEE" type="0" cards="" no="13" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="14" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="15" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="16" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501297859">
+  <general>
+   <startdate>2020-05-01 23:39:52</startdate>
+   <players>
+    <player win="0" seat="1" chips="85.284" rebuy="0" addon="0" reg_code="" bet="350" name="HUIPULLATUULEE" dealer="0"/>
+    <player win="0" seat="2" chips="117.390" rebuy="0" addon="0" reg_code="" bet="3.850" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="90.731" rebuy="0" addon="0" reg_code="" bet="3.850" name="palmanova" dealer="1"/>
+    <player win="16.450" seat="6" chips="37.508" rebuy="0" addon="0" reg_code="" bet="37.158" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="237.087" rebuy="0" addon="0" reg_code="4022471209" bet="3.850" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="61.386" rebuy="0" addon="0" reg_code="" bet="350" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="169.540" rebuy="0" addon="0" reg_code="" bet="350" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="montekristo9" type="15" cards="" no="1" sum="350"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="2" sum="350"/>
+   <action player="hofi10" type="15" cards="" no="3" sum="350"/>
+   <action player="Lightz" type="15" cards="" no="4" sum="350"/>
+   <action player="HUIPULLATUULEE" type="15" cards="" no="5" sum="350"/>
+   <action player="Fritzino1" type="15" cards="" no="6" sum="350"/>
+   <action player="palmanova" type="15" cards="" no="7" sum="350"/>
+   <action player="montekristo9" type="1" cards="" no="8" sum="1.750"/>
+   <action player="VlgrDsplyofPheim" type="2" cards="" no="9" sum="3.500"/>
+  </round>
+  <round no="1">
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="10" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="11" sum="0"/>
+   <cards player="HUIPULLATUULEE" type="Pocket">X X</cards>
+   <action player="HUIPULLATUULEE" type="0" cards="" no="12" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="3" cards="" no="13" sum="3.500"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="3" cards="" no="14" sum="3.500"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="23" cards="" no="15" sum="37.158"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">CQ D7</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="16" sum="0"/>
+   <action player="Fritzino1" type="0" cards="" no="17" sum="0"/>
+   <action player="palmanova" type="0" cards="" no="18" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501297939">
+  <general>
+   <startdate>2020-05-01 23:40:48</startdate>
+   <players>
+    <player win="11.550" seat="1" chips="84.934" rebuy="0" addon="0" reg_code="" bet="7.225" name="HUIPULLATUULEE" dealer="0"/>
+    <player win="0" seat="2" chips="113.540" rebuy="0" addon="0" reg_code="" bet="350" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="86.881" rebuy="0" addon="0" reg_code="" bet="350" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="103.576" rebuy="0" addon="0" reg_code="" bet="350" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="50.108" rebuy="0" addon="0" reg_code="" bet="350" name="montekristo9" dealer="1"/>
+    <player win="0" seat="7" chips="233.237" rebuy="0" addon="0" reg_code="4022471209" bet="2.100" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="61.036" rebuy="0" addon="0" reg_code="" bet="3.850" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="169.190" rebuy="0" addon="0" reg_code="" bet="350" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="1" sum="350"/>
+   <action player="hofi10" type="15" cards="" no="2" sum="350"/>
+   <action player="Lightz" type="15" cards="" no="3" sum="350"/>
+   <action player="HUIPULLATUULEE" type="15" cards="" no="4" sum="350"/>
+   <action player="Fritzino1" type="15" cards="" no="5" sum="350"/>
+   <action player="palmanova" type="15" cards="" no="6" sum="350"/>
+   <action player="12926945" type="15" cards="" no="7" sum="350"/>
+   <action player="montekristo9" type="15" cards="" no="8" sum="350"/>
+   <action player="VlgrDsplyofPheim" type="1" cards="" no="9" sum="1.750"/>
+   <action player="hofi10" type="2" cards="" no="10" sum="3.500"/>
+  </round>
+  <round no="1">
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="11" sum="0"/>
+   <cards player="HUIPULLATUULEE" type="Pocket">X X</cards>
+   <action player="HUIPULLATUULEE" type="23" cards="" no="12" sum="7.225"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="13" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="14" sum="0"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="15" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="16" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">D2 D5</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="17" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="18" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501297995">
+  <general>
+   <startdate>2020-05-01 23:41:29</startdate>
+   <players>
+    <player win="0" seat="1" chips="92.634" rebuy="0" addon="0" reg_code="" bet="92.284" name="HUIPULLATUULEE" dealer="0"/>
+    <player win="192.618" seat="2" chips="113.190" rebuy="0" addon="0" reg_code="" bet="92.634" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="86.531" rebuy="0" addon="0" reg_code="" bet="350" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="103.226" rebuy="0" addon="0" reg_code="" bet="350" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="49.758" rebuy="0" addon="0" reg_code="" bet="350" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="231.137" rebuy="0" addon="0" reg_code="4022471209" bet="350" name="VlgrDsplyofPheim" dealer="1"/>
+    <player win="0" seat="9" chips="57.186" rebuy="0" addon="0" reg_code="" bet="2.100" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="168.840" rebuy="0" addon="0" reg_code="" bet="3.850" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="hofi10" type="15" cards="" no="1" sum="350"/>
+   <action player="Lightz" type="15" cards="" no="2" sum="350"/>
+   <action player="HUIPULLATUULEE" type="15" cards="" no="3" sum="350"/>
+   <action player="Fritzino1" type="15" cards="" no="4" sum="350"/>
+   <action player="palmanova" type="15" cards="" no="5" sum="350"/>
+   <action player="12926945" type="15" cards="" no="6" sum="350"/>
+   <action player="montekristo9" type="15" cards="" no="7" sum="350"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="8" sum="350"/>
+   <action player="hofi10" type="1" cards="" no="9" sum="1.750"/>
+   <action player="Lightz" type="2" cards="" no="10" sum="3.500"/>
+  </round>
+  <round no="1">
+   <cards player="HUIPULLATUULEE" type="Pocket">C5 H5</cards>
+   <action player="HUIPULLATUULEE" type="23" cards="" no="11" sum="7.225"/>
+   <cards player="Fritzino1" type="Pocket">CK DK</cards>
+   <action player="Fritzino1" type="23" cards="" no="12" sum="21.450"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="13" sum="0"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="14" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="15" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">C4 H6</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="16" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="17" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="18" sum="0"/>
+   <action player="HUIPULLATUULEE" type="23" cards="" no="19" sum="92.284"/>
+   <action player="Fritzino1" type="3" cards="" no="20" sum="70.834"/>
+  </round>
+  <round no="2">
+   <cards player="" type="Flop">H7 C3 CJ</cards>
+  </round>
+  <round no="3">
+   <cards player="" type="Turn">S6</cards>
+  </round>
+  <round no="4">
+   <cards player="" type="River">C9</cards>
+  </round>
+ </game>
+ <game gamecode="3501301077">
+  <general>
+   <startdate>2020-05-01 23:43:23</startdate>
+   <players>
+    <player win="0" seat="2" chips="209.324" rebuy="0" addon="0" reg_code="" bet="2.400" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="85.831" rebuy="0" addon="0" reg_code="" bet="4.400" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="102.526" rebuy="0" addon="0" reg_code="" bet="400" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="49.058" rebuy="0" addon="0" reg_code="" bet="400" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="230.437" rebuy="0" addon="0" reg_code="4022471209" bet="400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="12.800" seat="9" chips="64.186" rebuy="0" addon="0" reg_code="" bet="63.786" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="161.140" rebuy="0" addon="0" reg_code="" bet="400" name="Lightz" dealer="1"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="Fritzino1" type="15" cards="" no="1" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="2" sum="400"/>
+   <action player="12926945" type="15" cards="" no="3" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="4" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="5" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="6" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="7" sum="400"/>
+   <action player="Fritzino1" type="1" cards="" no="8" sum="2.000"/>
+   <action player="palmanova" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="10" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="11" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">H9 DA</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="12" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="23" cards="" no="13" sum="63.786"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="14" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="15" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="16" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501301158">
+  <general>
+   <startdate>2020-05-01 23:44:22</startdate>
+   <players>
+    <player win="0" seat="2" chips="206.924" rebuy="0" addon="0" reg_code="" bet="400" name="Fritzino1" dealer="1"/>
+    <player win="0" seat="4" chips="81.431" rebuy="0" addon="0" reg_code="" bet="2.400" name="palmanova" dealer="0"/>
+    <player win="6.800" seat="5" chips="102.126" rebuy="0" addon="0" reg_code="" bet="4.400" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="48.658" rebuy="0" addon="0" reg_code="" bet="400" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="230.037" rebuy="0" addon="0" reg_code="4022471209" bet="400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="72.586" rebuy="0" addon="0" reg_code="" bet="400" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="160.740" rebuy="0" addon="0" reg_code="" bet="400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="palmanova" type="15" cards="" no="1" sum="400"/>
+   <action player="12926945" type="15" cards="" no="2" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="3" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="4" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="5" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="6" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="7" sum="400"/>
+   <action player="palmanova" type="1" cards="" no="8" sum="2.000"/>
+   <action player="12926945" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="12926945" type="Pocket">X X</cards>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="10" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">H7 HK</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="11" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="12" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="13" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="14" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="15" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501301212">
+  <general>
+   <startdate>2020-05-01 23:45:01</startdate>
+   <players>
+    <player win="0" seat="2" chips="206.524" rebuy="0" addon="0" reg_code="" bet="400" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="79.031" rebuy="0" addon="0" reg_code="" bet="400" name="palmanova" dealer="1"/>
+    <player win="0" seat="5" chips="106.526" rebuy="0" addon="0" reg_code="" bet="2.400" name="12926945" dealer="0"/>
+    <player win="6.800" seat="6" chips="48.258" rebuy="0" addon="0" reg_code="" bet="4.400" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="229.637" rebuy="0" addon="0" reg_code="4022471209" bet="400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="72.186" rebuy="0" addon="0" reg_code="" bet="400" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="160.340" rebuy="0" addon="0" reg_code="" bet="400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="12926945" type="15" cards="" no="1" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="2" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="3" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="4" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="5" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="6" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="7" sum="400"/>
+   <action player="12926945" type="1" cards="" no="8" sum="2.000"/>
+   <action player="montekristo9" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <cards player="VlgrDsplyofPheim" type="Pocket">H6 C3</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="10" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="11" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="12" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="13" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="14" sum="0"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="15" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501301261">
+  <general>
+   <startdate>2020-05-01 23:45:35</startdate>
+   <players>
+    <player win="0" seat="2" chips="206.124" rebuy="0" addon="0" reg_code="" bet="400" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="78.631" rebuy="0" addon="0" reg_code="" bet="400" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="104.126" rebuy="0" addon="0" reg_code="" bet="400" name="12926945" dealer="1"/>
+    <player win="10.800" seat="6" chips="52.658" rebuy="0" addon="0" reg_code="" bet="52.258" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="229.237" rebuy="0" addon="0" reg_code="4022471209" bet="4.400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="71.786" rebuy="0" addon="0" reg_code="" bet="400" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="159.940" rebuy="0" addon="0" reg_code="" bet="400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="montekristo9" type="15" cards="" no="1" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="2" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="3" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="4" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="5" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="6" sum="400"/>
+   <action player="12926945" type="15" cards="" no="7" sum="400"/>
+   <action player="montekristo9" type="1" cards="" no="8" sum="2.000"/>
+   <action player="VlgrDsplyofPheim" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="10" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="11" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="12" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="13" sum="0"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="14" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="23" cards="" no="15" sum="52.258"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">H7 C6</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="16" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501301319">
+  <general>
+   <startdate>2020-05-01 23:46:25</startdate>
+   <players>
+    <player win="0" seat="2" chips="205.724" rebuy="0" addon="0" reg_code="" bet="400" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="78.231" rebuy="0" addon="0" reg_code="" bet="400" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="103.726" rebuy="0" addon="0" reg_code="" bet="400" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="59.058" rebuy="0" addon="0" reg_code="" bet="400" name="montekristo9" dealer="1"/>
+    <player win="0" seat="7" chips="224.837" rebuy="0" addon="0" reg_code="4022471209" bet="2.400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="6.800" seat="9" chips="71.386" rebuy="0" addon="0" reg_code="" bet="4.400" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="159.540" rebuy="0" addon="0" reg_code="" bet="400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="1" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="2" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="3" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="4" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="5" sum="400"/>
+   <action player="12926945" type="15" cards="" no="6" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="7" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="1" cards="" no="8" sum="2.000"/>
+   <action player="hofi10" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="10" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="11" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="12" sum="0"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="13" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="14" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">D2 H8</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="15" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501301347">
+  <general>
+   <startdate>2020-05-01 23:46:50</startdate>
+   <players>
+    <player win="34.800" seat="2" chips="205.324" rebuy="0" addon="0" reg_code="" bet="16.400" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="77.831" rebuy="0" addon="0" reg_code="" bet="400" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="103.326" rebuy="0" addon="0" reg_code="" bet="400" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="58.658" rebuy="0" addon="0" reg_code="" bet="400" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="222.437" rebuy="0" addon="0" reg_code="4022471209" bet="12.400" name="VlgrDsplyofPheim" dealer="1"/>
+    <player win="0" seat="9" chips="75.786" rebuy="0" addon="0" reg_code="" bet="4.400" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="159.140" rebuy="0" addon="0" reg_code="" bet="4.400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="hofi10" type="15" cards="" no="1" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="2" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="3" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="4" sum="400"/>
+   <action player="12926945" type="15" cards="" no="5" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="6" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="7" sum="400"/>
+   <action player="hofi10" type="1" cards="" no="8" sum="2.000"/>
+   <action player="Lightz" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="3" cards="" no="10" sum="4.000"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="11" sum="0"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="12" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="13" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">C10 HK</cards>
+   <action player="VlgrDsplyofPheim" type="3" cards="" no="14" sum="4.000"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="3" cards="" no="15" sum="2.000"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="4" cards="" no="16" sum="0"/>
+  </round>
+  <round no="2">
+   <cards player="" type="Flop">H9 H4 S5</cards>
+   <action player="hofi10" type="4" cards="" no="17" sum="0"/>
+   <action player="Lightz" type="4" cards="" no="18" sum="0"/>
+   <action player="Fritzino1" type="5" cards="" no="19" sum="4.000"/>
+   <action player="VlgrDsplyofPheim" type="3" cards="" no="20" sum="4.000"/>
+   <action player="hofi10" type="0" cards="" no="21" sum="0"/>
+   <action player="Lightz" type="0" cards="" no="22" sum="0"/>
+  </round>
+  <round no="3">
+   <cards player="" type="Turn">H3</cards>
+   <action player="Fritzino1" type="5" cards="" no="23" sum="4.000"/>
+   <action player="VlgrDsplyofPheim" type="3" cards="" no="24" sum="4.000"/>
+  </round>
+  <round no="4">
+   <cards player="" type="River">D2</cards>
+   <action player="Fritzino1" type="5" cards="" no="25" sum="4.000"/>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="26" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501301447">
+  <general>
+   <startdate>2020-05-01 23:48:10</startdate>
+   <players>
+    <player win="10.800" seat="2" chips="227.724" rebuy="0" addon="0" reg_code="" bet="8.400" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="77.431" rebuy="0" addon="0" reg_code="" bet="400" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="102.926" rebuy="0" addon="0" reg_code="" bet="400" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="58.258" rebuy="0" addon="0" reg_code="" bet="400" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="210.037" rebuy="0" addon="0" reg_code="4022471209" bet="400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="71.386" rebuy="0" addon="0" reg_code="" bet="400" name="hofi10" dealer="1"/>
+    <player win="0" seat="10" chips="154.740" rebuy="0" addon="0" reg_code="" bet="4.400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="Lightz" type="15" cards="" no="1" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="2" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="3" sum="400"/>
+   <action player="12926945" type="15" cards="" no="4" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="5" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="6" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="7" sum="400"/>
+   <action player="Lightz" type="1" cards="" no="8" sum="2.000"/>
+   <action player="Fritzino1" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="10" sum="0"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="11" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="12" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">D3 H10</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="13" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="14" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="3" cards="" no="15" sum="2.000"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="4" cards="" no="16" sum="0"/>
+  </round>
+  <round no="2">
+   <cards player="" type="Flop">D9 S10 CK</cards>
+   <action player="Lightz" type="4" cards="" no="17" sum="0"/>
+   <action player="Fritzino1" type="5" cards="" no="18" sum="4.000"/>
+   <action player="Lightz" type="0" cards="" no="19" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501301499">
+  <general>
+   <startdate>2020-05-01 23:48:58</startdate>
+   <players>
+    <player win="66.800" seat="2" chips="234.124" rebuy="0" addon="0" reg_code="" bet="20.400" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="77.031" rebuy="0" addon="0" reg_code="" bet="16.400" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="102.526" rebuy="0" addon="0" reg_code="" bet="400" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="57.858" rebuy="0" addon="0" reg_code="" bet="8.400" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="209.637" rebuy="0" addon="0" reg_code="4022471209" bet="400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="70.986" rebuy="0" addon="0" reg_code="" bet="20.400" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="150.340" rebuy="0" addon="0" reg_code="" bet="400" name="Lightz" dealer="1"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="Fritzino1" type="15" cards="" no="1" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="2" sum="400"/>
+   <action player="12926945" type="15" cards="" no="3" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="4" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="5" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="6" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="7" sum="400"/>
+   <action player="Fritzino1" type="1" cards="" no="8" sum="2.000"/>
+   <action player="palmanova" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="10" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="3" cards="" no="11" sum="4.000"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">S9 CJ</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="12" sum="0"/>
+   <cards player="hofi10" type="Pocket">SQ SK</cards>
+   <action player="hofi10" type="3" cards="" no="13" sum="4.000"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="14" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">D6 S6</cards>
+   <action player="Fritzino1" type="3" cards="" no="15" sum="2.000"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="4" cards="" no="16" sum="0"/>
+  </round>
+  <round no="2">
+   <cards player="" type="Flop">C6 HJ CQ</cards>
+   <action player="Fritzino1" type="4" cards="" no="17" sum="0"/>
+   <action player="palmanova" type="4" cards="" no="18" sum="0"/>
+   <action player="montekristo9" type="5" cards="" no="19" sum="4.000"/>
+   <action player="hofi10" type="23" cards="" no="20" sum="12.000"/>
+   <action player="Fritzino1" type="3" cards="" no="21" sum="12.000"/>
+   <action player="palmanova" type="3" cards="" no="22" sum="12.000"/>
+   <action player="montekristo9" type="0" cards="" no="23" sum="0"/>
+  </round>
+  <round no="3">
+   <cards player="" type="Turn">C8</cards>
+   <action player="Fritzino1" type="4" cards="" no="24" sum="0"/>
+   <action player="palmanova" type="4" cards="" no="25" sum="0"/>
+   <action player="hofi10" type="4" cards="" no="26" sum="0"/>
+  </round>
+  <round no="4">
+   <cards player="" type="River">D5</cards>
+   <action player="Fritzino1" type="5" cards="" no="27" sum="4.000"/>
+   <action player="palmanova" type="0" cards="" no="28" sum="0"/>
+   <action player="hofi10" type="3" cards="" no="29" sum="4.000"/>
+  </round>
+ </game>
+ <game gamecode="3501301625">
+  <general>
+   <startdate>2020-05-01 23:50:47</startdate>
+   <players>
+    <player win="0" seat="2" chips="280.524" rebuy="0" addon="0" reg_code="" bet="400" name="Fritzino1" dealer="1"/>
+    <player win="0" seat="4" chips="60.631" rebuy="0" addon="0" reg_code="" bet="4.400" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="102.126" rebuy="0" addon="0" reg_code="" bet="4.400" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="49.458" rebuy="0" addon="0" reg_code="" bet="400" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="209.237" rebuy="0" addon="0" reg_code="4022471209" bet="400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="50.586" rebuy="0" addon="0" reg_code="" bet="400" name="hofi10" dealer="0"/>
+    <player win="14.800" seat="10" chips="149.940" rebuy="0" addon="0" reg_code="" bet="12.400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="palmanova" type="15" cards="" no="1" sum="400"/>
+   <action player="12926945" type="15" cards="" no="2" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="3" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="4" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="5" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="6" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="7" sum="400"/>
+   <action player="palmanova" type="1" cards="" no="8" sum="2.000"/>
+   <action player="12926945" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="10" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">D6 DK</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="11" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="12" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="3" cards="" no="13" sum="4.000"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="14" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="3" cards="" no="15" sum="2.000"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="4" cards="" no="16" sum="0"/>
+  </round>
+  <round no="2">
+   <cards player="" type="Flop">CQ CA S6</cards>
+   <action player="palmanova" type="4" cards="" no="17" sum="0"/>
+   <action player="12926945" type="4" cards="" no="18" sum="0"/>
+   <action player="Lightz" type="4" cards="" no="19" sum="0"/>
+  </round>
+  <round no="3">
+   <cards player="" type="Turn">H2</cards>
+   <action player="palmanova" type="4" cards="" no="20" sum="0"/>
+   <action player="12926945" type="4" cards="" no="21" sum="0"/>
+   <action player="Lightz" type="5" cards="" no="22" sum="8.000"/>
+   <action player="palmanova" type="0" cards="" no="23" sum="0"/>
+   <action player="12926945" type="0" cards="" no="24" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501304407">
+  <general>
+   <startdate>2020-05-01 23:52:11</startdate>
+   <players>
+    <player win="0" seat="2" chips="280.124" rebuy="0" addon="0" reg_code="" bet="400" name="Fritzino1" dealer="0"/>
+    <player win="12.800" seat="4" chips="56.231" rebuy="0" addon="0" reg_code="" bet="55.831" name="palmanova" dealer="1"/>
+    <player win="0" seat="5" chips="97.726" rebuy="0" addon="0" reg_code="" bet="2.400" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="49.058" rebuy="0" addon="0" reg_code="" bet="4.400" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="208.837" rebuy="0" addon="0" reg_code="4022471209" bet="400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="50.186" rebuy="0" addon="0" reg_code="" bet="400" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="160.340" rebuy="0" addon="0" reg_code="" bet="400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="12926945" type="15" cards="" no="1" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="2" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="3" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="4" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="5" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="6" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="7" sum="400"/>
+   <action player="12926945" type="1" cards="" no="8" sum="2.000"/>
+   <action player="montekristo9" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="VlgrDsplyofPheim" type="Pocket">SQ H7</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="10" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="11" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="12" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="13" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="23" cards="" no="14" sum="55.831"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="15" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="16" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501304441">
+  <general>
+   <startdate>2020-05-01 23:52:44</startdate>
+   <players>
+    <player win="0" seat="2" chips="279.724" rebuy="0" addon="0" reg_code="" bet="400" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="64.631" rebuy="0" addon="0" reg_code="" bet="400" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="95.326" rebuy="0" addon="0" reg_code="" bet="400" name="12926945" dealer="1"/>
+    <player win="0" seat="6" chips="44.658" rebuy="0" addon="0" reg_code="" bet="2.400" name="montekristo9" dealer="0"/>
+    <player win="6.800" seat="7" chips="208.437" rebuy="0" addon="0" reg_code="4022471209" bet="4.400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="49.786" rebuy="0" addon="0" reg_code="" bet="400" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="159.940" rebuy="0" addon="0" reg_code="" bet="400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="montekristo9" type="15" cards="" no="1" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="2" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="3" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="4" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="5" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="6" sum="400"/>
+   <action player="12926945" type="15" cards="" no="7" sum="400"/>
+   <action player="montekristo9" type="1" cards="" no="8" sum="2.000"/>
+   <action player="VlgrDsplyofPheim" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="VlgrDsplyofPheim" type="Pocket">C6 S10</cards>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="10" sum="0"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="11" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="12" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="13" sum="0"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="14" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="15" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501304479">
+  <general>
+   <startdate>2020-05-01 23:53:18</startdate>
+   <players>
+    <player win="0" seat="2" chips="279.324" rebuy="0" addon="0" reg_code="" bet="400" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="64.231" rebuy="0" addon="0" reg_code="" bet="400" name="palmanova" dealer="0"/>
+    <player win="12.800" seat="5" chips="94.926" rebuy="0" addon="0" reg_code="" bet="20.000" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="42.258" rebuy="0" addon="0" reg_code="" bet="400" name="montekristo9" dealer="1"/>
+    <player win="0" seat="7" chips="212.837" rebuy="0" addon="0" reg_code="4022471209" bet="2.400" name="VlgrDsplyofPheim" dealer="0"/>
+    <player win="0" seat="9" chips="49.386" rebuy="0" addon="0" reg_code="" bet="4.400" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="159.540" rebuy="0" addon="0" reg_code="" bet="400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="1" sum="400"/>
+   <action player="hofi10" type="15" cards="" no="2" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="3" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="4" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="5" sum="400"/>
+   <action player="12926945" type="15" cards="" no="6" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="7" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="1" cards="" no="8" sum="2.000"/>
+   <action player="hofi10" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="10" sum="0"/>
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="11" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="12" sum="0"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="23" cards="" no="13" sum="20.000"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="14" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">C4 HK</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="15" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="0" cards="" no="16" sum="0"/>
+  </round>
+ </game>
+ <game gamecode="3501304530">
+  <general>
+   <startdate>2020-05-01 23:54:09</startdate>
+   <players>
+    <player win="0" seat="2" chips="278.924" rebuy="0" addon="0" reg_code="" bet="400" name="Fritzino1" dealer="0"/>
+    <player win="0" seat="4" chips="63.831" rebuy="0" addon="0" reg_code="" bet="400" name="palmanova" dealer="0"/>
+    <player win="0" seat="5" chips="103.326" rebuy="0" addon="0" reg_code="" bet="400" name="12926945" dealer="0"/>
+    <player win="0" seat="6" chips="41.858" rebuy="0" addon="0" reg_code="" bet="400" name="montekristo9" dealer="0"/>
+    <player win="0" seat="7" chips="210.437" rebuy="0" addon="0" reg_code="4022471209" bet="400" name="VlgrDsplyofPheim" dealer="1"/>
+    <player win="10.800" seat="9" chips="44.986" rebuy="0" addon="0" reg_code="" bet="44.586" name="hofi10" dealer="0"/>
+    <player win="0" seat="10" chips="159.140" rebuy="0" addon="0" reg_code="" bet="4.400" name="Lightz" dealer="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action player="hofi10" type="15" cards="" no="1" sum="400"/>
+   <action player="Lightz" type="15" cards="" no="2" sum="400"/>
+   <action player="Fritzino1" type="15" cards="" no="3" sum="400"/>
+   <action player="palmanova" type="15" cards="" no="4" sum="400"/>
+   <action player="12926945" type="15" cards="" no="5" sum="400"/>
+   <action player="montekristo9" type="15" cards="" no="6" sum="400"/>
+   <action player="VlgrDsplyofPheim" type="15" cards="" no="7" sum="400"/>
+   <action player="hofi10" type="1" cards="" no="8" sum="2.000"/>
+   <action player="Lightz" type="2" cards="" no="9" sum="4.000"/>
+  </round>
+  <round no="1">
+   <cards player="Fritzino1" type="Pocket">X X</cards>
+   <action player="Fritzino1" type="0" cards="" no="10" sum="0"/>
+   <cards player="palmanova" type="Pocket">X X</cards>
+   <action player="palmanova" type="0" cards="" no="11" sum="0"/>
+   <cards player="12926945" type="Pocket">X X</cards>
+   <action player="12926945" type="0" cards="" no="12" sum="0"/>
+   <cards player="montekristo9" type="Pocket">X X</cards>
+   <action player="montekristo9" type="0" cards="" no="13" sum="0"/>
+   <cards player="VlgrDsplyofPheim" type="Pocket">SA H2</cards>
+   <action player="VlgrDsplyofPheim" type="0" cards="" no="14" sum="0"/>
+   <cards player="hofi10" type="Pocket">X X</cards>
+   <action player="hofi10" type="23" cards="" no="15" sum="44.586"/>
+   <cards player="Lightz" type="Pocket">X X</cards>
+   <action player="Lightz" type="0" cards="" no="16" sum="0"/>
+  </round>
+ </game>
+</session>

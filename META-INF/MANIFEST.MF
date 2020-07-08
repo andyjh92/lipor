@@ -1,14 +1,13 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: RJ Poker Replay
-Bundle-SymbolicName: RjPokerReplay;singleton:=true
-Bundle-Version: 1.2.0
-Bundle-Activator: net.sourceforge.rjPokerReplay.Activator
+Bundle-Name: Lipor
+Bundle-SymbolicName: Lipor;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: io.gitlab.lipor.Activator
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime,
- org.eclipse.ui.intro
+ org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
-Export-Package: net.sourceforge.rjPokerReplay;
+Export-Package: io.gitlab.lipor;
   uses:="org.eclipse.equinox.app,
    org.eclipse.ui.application,
    org.osgi.framework,
@@ -17,13 +16,14 @@ Export-Package: net.sourceforge.rjPokerReplay;
    org.eclipse.jface.resource,
    cardstuff,
    org.eclipse.ui",
- net.sourceforge.rjPokerReplay.actions,
- net.sourceforge.rjPokerReplay.cardstuff;uses:="org.eclipse.swt.graphics",
- net.sourceforge.rjPokerReplay.cardstuffExceptions,
- net.sourceforge.rjPokerReplay.preferences,
- net.sourceforge.rjPokerReplay.util,
- net.sourceforge.rjPokerReplay.views,
- net.sourceforge.rjPokerReplay.wizard
+ io.gitlab.lipor.actions,
+ io.gitlab.lipor.cardstuff;uses:="org.eclipse.swt.graphics",
+ io.gitlab.lipor.cardstuff.win2day,
+ io.gitlab.lipor.cardstuffExceptions,
+ io.gitlab.lipor.preferences,
+ io.gitlab.lipor.util,
+ io.gitlab.lipor.views,
+ io.gitlab.lipor.wizard
 Bundle-Localization: plugin
-Bundle-Vendor: Ralf Joswig
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Vendor: Lipor Community
+Bundle-RequiredExecutionEnvironment: JavaSE-10

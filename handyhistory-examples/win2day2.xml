@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session sessioncode="4027284224">
+ <general>
+  <client_version>20.1.6.1</client_version>
+  <mode>real</mode>
+  <gametype>Holdem NL</gametype>
+  <tablename>€20 Twister, 493068436</tablename>
+  <tournamentcurrency>EUR</tournamentcurrency>
+  <duration>00:03:34</duration>
+  <gamecount>7</gamecount>
+  <startdate>2020-07-08 23:53:22</startdate>
+  <currency>EUR</currency>
+  <nickname>Kreidlpolice69</nickname>
+  <bets>865</bets>
+  <wins>355</wins>
+  <chipsin>460</chipsin>
+  <chipsout>520</chipsout>
+  <statuspoints>EW 1,40</statuspoints>
+  <awardpoints>EW 0</awardpoints>
+  <ipoints>EW 1,40</ipoints>
+  <tournamentcode>493068435</tournamentcode>
+  <tournamentname>€20 Twister</tournamentname>
+  <place>3</place>
+  <buyin/>
+  <totalbuyin/>
+  <win>0</win>
+ </general>
+ <game gamecode="3518935747">
+  <general>
+   <startdate>2020-07-08 23:53:22</startdate>
+   <players>
+    <player name="Leppoista" reg_code="" seat="3" bet="40" win="0" addon="0" chips="500" dealer="1" rebuy="0"/>
+    <player name="jakkidaa" reg_code="" seat="6" bet="40" win="0" addon="0" chips="500" dealer="0" rebuy="0"/>
+    <player name="Kreidlpolice69" reg_code="4027284224" seat="10" bet="120" win="120" addon="0" chips="500" dealer="0" rebuy="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action sum="10" cards="" type="1" player="jakkidaa" no="1"/>
+   <action sum="20" cards="" type="2" player="Kreidlpolice69" no="2"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Leppoista">X X</cards>
+   <action sum="40" cards="" type="23" player="Leppoista" no="3"/>
+   <cards type="Pocket" player="jakkidaa">X X</cards>
+   <action sum="30" cards="" type="3" player="jakkidaa" no="4"/>
+   <cards type="Pocket" player="Kreidlpolice69">D5 SA</cards>
+   <action sum="20" cards="" type="3" player="Kreidlpolice69" no="5"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">S9 CK S8</cards>
+   <action sum="0" cards="" type="4" player="jakkidaa" no="6"/>
+   <action sum="0" cards="" type="4" player="Kreidlpolice69" no="7"/>
+   <action sum="0" cards="" type="4" player="Leppoista" no="8"/>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">C3</cards>
+   <action sum="0" cards="" type="4" player="jakkidaa" no="9"/>
+   <action sum="80" cards="" type="5" player="Kreidlpolice69" no="10"/>
+   <action sum="0" cards="" type="0" player="Leppoista" no="11"/>
+   <action sum="0" cards="" type="0" player="jakkidaa" no="12"/>
+  </round>
+ </game>
+ <game gamecode="3518935784">
+  <general>
+   <startdate>2020-07-08 23:53:48</startdate>
+   <players>
+    <player name="Leppoista" reg_code="" seat="3" bet="20" win="0" addon="0" chips="460" dealer="0" rebuy="0"/>
+    <player name="jakkidaa" reg_code="" seat="6" bet="40" win="50" addon="0" chips="460" dealer="1" rebuy="0"/>
+    <player name="Kreidlpolice69" reg_code="4027284224" seat="10" bet="10" win="0" addon="0" chips="580" dealer="0" rebuy="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action sum="10" cards="" type="1" player="Kreidlpolice69" no="1"/>
+   <action sum="20" cards="" type="2" player="Leppoista" no="2"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="jakkidaa">X X</cards>
+   <action sum="20" cards="" type="3" player="jakkidaa" no="3"/>
+   <cards type="Pocket" player="Kreidlpolice69">S2 C5</cards>
+   <action sum="0" cards="" type="0" player="Kreidlpolice69" no="4"/>
+   <cards type="Pocket" player="Leppoista">X X</cards>
+   <action sum="0" cards="" type="4" player="Leppoista" no="5"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">S10 SQ H9</cards>
+   <action sum="0" cards="" type="4" player="Leppoista" no="6"/>
+   <action sum="0" cards="" type="4" player="jakkidaa" no="7"/>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">S9</cards>
+   <action sum="0" cards="" type="4" player="Leppoista" no="8"/>
+   <action sum="20" cards="" type="5" player="jakkidaa" no="9"/>
+   <action sum="0" cards="" type="0" player="Leppoista" no="10"/>
+  </round>
+ </game>
+ <game gamecode="3518935815">
+  <general>
+   <startdate>2020-07-08 23:54:15</startdate>
+   <players>
+    <player name="Leppoista" reg_code="" seat="3" bet="10" win="0" addon="0" chips="440" dealer="0" rebuy="0"/>
+    <player name="jakkidaa" reg_code="" seat="6" bet="40" win="0" addon="0" chips="490" dealer="0" rebuy="0"/>
+    <player name="Kreidlpolice69" reg_code="4027284224" seat="10" bet="85" win="90" addon="0" chips="570" dealer="1" rebuy="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action sum="10" cards="" type="1" player="Leppoista" no="1"/>
+   <action sum="20" cards="" type="2" player="jakkidaa" no="2"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Kreidlpolice69">D4 SJ</cards>
+   <action sum="40" cards="" type="23" player="Kreidlpolice69" no="3"/>
+   <cards type="Pocket" player="Leppoista">X X</cards>
+   <action sum="0" cards="" type="0" player="Leppoista" no="4"/>
+   <cards type="Pocket" player="jakkidaa">X X</cards>
+   <action sum="20" cards="" type="3" player="jakkidaa" no="5"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">H9 HK D3</cards>
+   <action sum="0" cards="" type="4" player="jakkidaa" no="6"/>
+   <action sum="45" cards="" type="5" player="Kreidlpolice69" no="7"/>
+   <action sum="0" cards="" type="0" player="jakkidaa" no="8"/>
+  </round>
+ </game>
+ <game gamecode="3518935840">
+  <general>
+   <startdate>2020-07-08 23:54:37</startdate>
+   <players>
+    <player name="Leppoista" reg_code="" seat="3" bet="60" win="140" addon="0" chips="430" dealer="1" rebuy="0"/>
+    <player name="jakkidaa" reg_code="" seat="6" bet="60" win="0" addon="0" chips="450" dealer="0" rebuy="0"/>
+    <player name="Kreidlpolice69" reg_code="4027284224" seat="10" bet="20" win="0" addon="0" chips="620" dealer="0" rebuy="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action sum="10" cards="" type="1" player="jakkidaa" no="1"/>
+   <action sum="20" cards="" type="2" player="Kreidlpolice69" no="2"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Leppoista">DA S3</cards>
+   <action sum="40" cards="" type="23" player="Leppoista" no="3"/>
+   <cards type="Pocket" player="jakkidaa">DQ CJ</cards>
+   <action sum="30" cards="" type="3" player="jakkidaa" no="4"/>
+   <cards type="Pocket" player="Kreidlpolice69">D10 H5</cards>
+   <action sum="0" cards="" type="0" player="Kreidlpolice69" no="5"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">S8 C7 C9</cards>
+   <action sum="0" cards="" type="4" player="jakkidaa" no="6"/>
+   <action sum="0" cards="" type="4" player="Leppoista" no="7"/>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">S9</cards>
+   <action sum="0" cards="" type="4" player="jakkidaa" no="8"/>
+   <action sum="0" cards="" type="4" player="Leppoista" no="9"/>
+  </round>
+  <round no="4">
+   <cards type="River" player="">D8</cards>
+   <action sum="20" cards="" type="5" player="jakkidaa" no="10"/>
+   <action sum="20" cards="" type="3" player="Leppoista" no="11"/>
+  </round>
+ </game>
+ <game gamecode="3518935902">
+  <general>
+   <startdate>2020-07-08 23:55:28</startdate>
+   <players>
+    <player name="Leppoista" reg_code="" seat="3" bet="35" win="0" addon="0" chips="510" dealer="0" rebuy="0"/>
+    <player name="jakkidaa" reg_code="" seat="6" bet="35" win="90" addon="0" chips="390" dealer="1" rebuy="0"/>
+    <player name="Kreidlpolice69" reg_code="4027284224" seat="10" bet="20" win="0" addon="0" chips="600" dealer="0" rebuy="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action sum="5" cards="" type="15" player="Kreidlpolice69" no="1"/>
+   <action sum="5" cards="" type="15" player="Leppoista" no="2"/>
+   <action sum="5" cards="" type="15" player="jakkidaa" no="3"/>
+   <action sum="15" cards="" type="1" player="Kreidlpolice69" no="4"/>
+   <action sum="30" cards="" type="2" player="Leppoista" no="5"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="jakkidaa">S10 HK</cards>
+   <action sum="30" cards="" type="3" player="jakkidaa" no="6"/>
+   <cards type="Pocket" player="Kreidlpolice69">C9 D4</cards>
+   <action sum="0" cards="" type="0" player="Kreidlpolice69" no="7"/>
+   <cards type="Pocket" player="Leppoista">H7 D5</cards>
+   <action sum="0" cards="" type="4" player="Leppoista" no="8"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">C8 SQ H3</cards>
+   <action sum="0" cards="" type="4" player="Leppoista" no="9"/>
+   <action sum="0" cards="" type="4" player="jakkidaa" no="10"/>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">H2</cards>
+   <action sum="0" cards="" type="4" player="Leppoista" no="11"/>
+   <action sum="0" cards="" type="4" player="jakkidaa" no="12"/>
+  </round>
+  <round no="4">
+   <cards type="River" player="">D3</cards>
+   <action sum="0" cards="" type="4" player="Leppoista" no="13"/>
+   <action sum="0" cards="" type="4" player="jakkidaa" no="14"/>
+  </round>
+ </game>
+ <game gamecode="3518935947">
+  <general>
+   <startdate>2020-07-08 23:56:00</startdate>
+   <players>
+    <player name="Leppoista" reg_code="" seat="3" bet="470" win="985" addon="0" chips="475" dealer="0" rebuy="0"/>
+    <player name="jakkidaa" reg_code="" seat="6" bet="35" win="0" addon="0" chips="445" dealer="0" rebuy="0"/>
+    <player name="Kreidlpolice69" reg_code="4027284224" seat="10" bet="475" win="0" addon="0" chips="580" dealer="1" rebuy="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action sum="5" cards="" type="15" player="Leppoista" no="1"/>
+   <action sum="5" cards="" type="15" player="jakkidaa" no="2"/>
+   <action sum="5" cards="" type="15" player="Kreidlpolice69" no="3"/>
+   <action sum="15" cards="" type="1" player="Leppoista" no="4"/>
+   <action sum="30" cards="" type="2" player="jakkidaa" no="5"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Kreidlpolice69">HQ CQ</cards>
+   <action sum="60" cards="" type="23" player="Kreidlpolice69" no="6"/>
+   <cards type="Pocket" player="Leppoista">S2 CA</cards>
+   <action sum="470" cards="" type="23" player="Leppoista" no="7"/>
+   <cards type="Pocket" player="jakkidaa">X X</cards>
+   <action sum="0" cards="" type="0" player="jakkidaa" no="8"/>
+   <action sum="410" cards="" type="3" player="Kreidlpolice69" no="9"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">SA S3 D10</cards>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">H3</cards>
+  </round>
+  <round no="4">
+   <cards type="River" player="">SJ</cards>
+  </round>
+ </game>
+ <game gamecode="3518935992">
+  <general>
+   <startdate>2020-07-08 23:56:36</startdate>
+   <players>
+    <player name="Leppoista" reg_code="" seat="3" bet="5" win="0" addon="0" chips="985" dealer="1" rebuy="0"/>
+    <player name="jakkidaa" reg_code="" seat="6" bet="105" win="215" addon="0" chips="410" dealer="0" rebuy="0"/>
+    <player name="Kreidlpolice69" reg_code="4027284224" seat="10" bet="100" win="0" addon="0" chips="105" dealer="0" rebuy="0"/>
+   </players>
+  </general>
+  <round no="0">
+   <action sum="5" cards="" type="15" player="jakkidaa" no="1"/>
+   <action sum="5" cards="" type="15" player="Kreidlpolice69" no="2"/>
+   <action sum="5" cards="" type="15" player="Leppoista" no="3"/>
+   <action sum="15" cards="" type="1" player="jakkidaa" no="4"/>
+   <action sum="30" cards="" type="2" player="Kreidlpolice69" no="5"/>
+  </round>
+  <round no="1">
+   <cards type="Pocket" player="Leppoista">X X</cards>
+   <action sum="0" cards="" type="0" player="Leppoista" no="6"/>
+   <cards type="Pocket" player="jakkidaa">H9 SA</cards>
+   <action sum="15" cards="" type="3" player="jakkidaa" no="7"/>
+   <cards type="Pocket" player="Kreidlpolice69">H5 HQ</cards>
+   <action sum="100" cards="" type="23" player="Kreidlpolice69" no="8"/>
+   <action sum="70" cards="" type="3" player="jakkidaa" no="9"/>
+  </round>
+  <round no="2">
+   <cards type="Flop" player="">D3 S10 DJ</cards>
+  </round>
+  <round no="3">
+   <cards type="Turn" player="">CJ</cards>
+  </round>
+  <round no="4">
+   <cards type="River" player="">D4</cards>
+  </round>
+ </game>
+</session>
